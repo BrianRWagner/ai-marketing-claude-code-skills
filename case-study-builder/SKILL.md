@@ -5,191 +5,207 @@ description: Turn client wins into formatted case studies for proposals, social 
 
 # Case Study Builder
 
-Here's what I've learned about social proof: everyone wants it, nobody makes time to create it.
+Everyone wants social proof. Nobody makes time to create it. You finish a project, the client's happy, you move on — and six months later you're in a sales call with nothing to show.
 
-You finish a project, the client's happy, you move on. Six months later you're in a sales call wishing you had that case study written up. Sound familiar?
-
-This skill fixes that. Give me the raw details of a win, I'll turn it into three formats you can actually use.
+This skill fixes that. Give me the raw details. I'll produce three formats you can use immediately.
 
 ---
 
-## What I Need From You
+## Context Loading Gates
 
-Tell me about a client win:
+**Before generating anything, collect all 8 fields:**
 
-1. **Who was the client?** (Can we name them, or do we anonymize?)
-2. **What was broken before you showed up?**
-3. **What did you actually do?** (Scope, timeline, your role)
-4. **What changed?** (Results, outcomes, transformations)
-5. **Any memorable moments?** (Breakthroughs, pivots, "aha" moments)
+| Field | What to Collect |
+|---|---|
+| 1. Client | Industry, company size/stage, named or anonymized? |
+| 2. Before | What was broken or painful? Any numbers? |
+| 3. Actions | What did you specifically do? Scope, timeline, role |
+| 4. After | **REQUIRED: at least one specific number** |
+| 5. Timeline | How long to achieve the result? |
+| 6. Quote | Direct client quote if available |
+| 7. Naming | Can we name the client, or must we anonymize? |
+| 8. Use case | Where will this be used? (proposals / website / LinkedIn) |
 
-Don't worry about making it sound good. Just give me the facts. I'll handle the storytelling.
+**Outcome Extraction Protocol — enforced on Field 4:**
+
+If the user says "results were good" or "things improved," stop and ask:
+> "I need at least one number to make this credible. Pick one:
+> - Revenue change (e.g., 'closed 3 new clients worth $15K')
+> - Time saved (e.g., 'cut from 10 hours to 2 hours/week')
+> - Lead volume (e.g., 'went from 0 to 5 inbound leads/month')
+> - Rough estimate is fine — it doesn't have to be exact."
+
+**Do not draft until Field 4 has at least one number.**
 
 ---
 
-## The Three Formats
+## Phase 1: Situation Analysis
 
-Every case study needs three versions. Here's why:
+Before drafting, reason through:
 
-### 1. The Two-Liner (For Proposals & Bios)
+1. **Result strength:** Is the outcome a Tier 1 (hard metric), Tier 2 (soft metric), or Tier 3 (proxy)? This determines how confident the language should be.
+2. **Hero check:** Is the story told from the client's perspective, or yours? Client = hero, you = guide.
+3. **Tension check:** What made this hard? Without a challenge, there's no story — just a list.
+4. **Format match:** Which use case did they specify? That determines which format to optimize.
 
-When someone's scanning your proposal, they don't want a story. They want proof you've done this before.
+**Tier system for results language:**
 
-**The formula:**
-> [What you did] + [scale/scope] + [for who] + [result or timeframe].
+| Tier | Type | Example | Language |
+|---|---|---|---|
+| 1 | Hard metric | "Revenue +40%" | State directly |
+| 2 | Soft metric | "Team finally aligned" | "For the first time in years..." |
+| 3 | Proxy metric | "Enabled Series A close" | "Contributed to..." |
+| 4 | Directional | "Noticeable improvement" | "Significant improvement in..." |
+
+---
+
+## Phase 2: The Hero Principle
+
+**The client is the hero. You are the guide.**
+
+Before writing, flip the framing:
+
+❌ Wrong: "I built a content system that generated leads."
+✅ Right: "Sarah went from scrambling to fill her pipeline to getting 3 inbound inquiries per week — all from a content system we built in 6 weeks."
+
+Every format should be written from what the CLIENT experienced, not what YOU delivered.
+
+---
+
+## Phase 3: Generate Three Formats
+
+### Format 1: Two-Liner (Proposals & Bios)
+
+**Formula:** `[What was done] + [scale/scope] + [for who] + [result or timeframe]`
+
+```
+[Strong action verb] [what was delivered] for [specific client descriptor].
+[Outcome metric] in [timeframe].
+```
 
 **Example:**
-> Led the rebrand of a $4B healthcare organization with 150+ locations. 18-month engagement covering brand strategy, messaging, and market positioning.
-
-That's it. Two sentences. Paste it into proposals, email signatures, your LinkedIn About section.
-
----
-
-### 2. The Story Version (For Conversations & LinkedIn)
-
-This is for when you need to sound human. Sales calls. LinkedIn posts. Podcast intros.
-
-**The structure:**
-
-**Set the scene:** What was happening? What was at stake?
-> "They were one of the largest medical groups in the Midwest — $4B in revenue, 150+ locations. But their brand hadn't kept pace with their growth."
-
-**Show the complexity:** What made this hard?
-> "Healthcare branding isn't simple. You're not just talking to patients — you're navigating physicians, insurers, employers, and community stakeholders."
-
-**What you did:** Actions, not features.
-> "I led the rebrand over 18 months: positioning, messaging architecture, visual identity guidance."
-
-**What changed:** The outcome.
-> "By the end, they had a unified brand that worked across all their service lines and stakeholder groups."
-
-Four paragraphs. Tells a story. Makes you memorable.
+> Built a full content system for a Series B SaaS founder with no marketing team.
+> 0 to 3 inbound leads/week in 6 weeks.
 
 ---
 
-### 3. The Full Case Study (For Your Website)
+### Format 2: Story Version (LinkedIn & Sales Calls)
 
-This is the deep version. For your portfolio page, downloadable PDFs, or when a prospect wants to dig in.
+**Structure — 4 paragraphs, 150–250 words:**
 
-**Structure:**
 ```
-# Case Study: [Client]
+**Set the scene:** [Their situation when you arrived — 2-3 sentences with stakes]
+
+**Show the complexity:** [What made this hard — 2-3 sentences]
+
+**What happened:** [Specific actions taken — no feature lists, just moves]
+
+**What changed:** [Outcome — the number + the transformation]
+```
+
+---
+
+### Format 3: Full Case Study (Website & Portfolio)
+
+```markdown
+# Case Study: [Client Name or Descriptor]
 
 ## The Challenge
-[2-3 paragraphs on the situation and problems]
+[2-3 paragraphs: situation, stakes, what wasn't working]
 
-## The Approach  
-[What you did, broken into phases]
+## The Approach
+[Phases or steps — what happened and in what order]
 
 ## The Results
-[Metrics, outcomes, before/after]
+[Metrics, before/after comparison, named outcomes]
 
 ## Key Details
-- Client: [Name or anonymized]
+- Client: [Named or "A [descriptor] company"]
 - Industry: [Sector]
-- Duration: [Timeframe]
-- Scope: [Deliverables]
+- Timeline: [Duration]
+- Scope: [What was delivered]
 
 ## What Made This Different
-[The unique angle or challenge]
+[Unique angle, unexpected obstacle, or pivotal insight]
 
-## Client Quote (if you have one)
-> "[Testimonial]"
-> — Name, Title
+## Client Quote
+> "[Testimonial — or placeholder if not yet collected]"
+> — [Name], [Title]
 ```
 
 ---
 
-## The Results Hierarchy
+## Phase 4: Self-Critique Pass (REQUIRED)
 
-Not every win has hard numbers. Here's how to frame different types of results:
+After generating all three formats, evaluate:
 
-**Tier 1: Hard Metrics** (Best)
-- Revenue increased 40%
-- Reduced costs by $200K
-- Grew pipeline from 10 to 50 qualified leads
+**Two-liner:**
+- [ ] Does it have a specific number? (Not "improved results" — a real metric)
+- [ ] Is it 2 sentences or fewer?
+- [ ] Would someone scanning a proposal stop and read it?
 
-**Tier 2: Soft Metrics** (Still Valuable)
-- "First time the entire team was aligned on messaging"
-- "Clarity that hadn't existed in 5 years"
-- "Process now runs without me"
+**Story version:**
+- [ ] Is the client the hero (not the author)?
+- [ ] Is there genuine tension — something that made this hard?
+- [ ] Does the closing paragraph include the key metric?
 
-**Tier 3: Proxy Metrics** (When Direct Data Missing)
-- "This approach was later adopted company-wide"
-- "Enabled them to close their Series A"
-- "Team went from confused to confident"
+**Full case study:**
+- [ ] Does the Results section lead with numbers?
+- [ ] Is the Challenge section specific enough that a similar prospect recognizes their situation?
+- [ ] Is the client quote (or placeholder) present?
 
-**Tier 4: Directional** (Minimum)
-- "Significant improvement in..."
-- "Noticeable lift in..."
-- "Positive feedback from..."
-
-Something is always better than "we did good work."
+**Flag any failure:** "The story version has no tension — add one obstacle or unexpected challenge before the 'What happened' paragraph."
 
 ---
 
-## When You Can't Name the Client
+## Phase 5: Distribution Plan
 
-Anonymize with enough detail for credibility:
-- "A $4B healthcare organization"
-- "A Series B fintech startup"
-- "A Fortune 500 CPG brand"
-
-The specifics (revenue, industry, company stage) do the work even without the name.
-
----
-
-## Questions to Jog Your Memory
-
-If you're struggling to remember the details:
-
-1. What was the situation when you first showed up?
-2. What were they most frustrated about?
-3. What was the hardest part of the project?
-4. What surprised you?
-5. What would have happened if you hadn't done this work?
-6. Did they ever say anything quotable?
+| Format | Best locations | When to use |
+|---|---|---|
+| Two-liner | Proposals, email bios, LinkedIn About section | Any sales context |
+| Story | LinkedIn post, podcast intros, sales call opener | Weekly content |
+| Full case study | Website portfolio page, PDF download, RFP response | Late-stage buyer research |
 
 ---
 
-## What You Get Back
+## Output Structure
 
-All three versions, ready to use:
+```markdown
+## Case Study: [Client Descriptor] — [Date]
 
-```
-# Case Study: [Client]
+### Situation Summary
+[2-sentence analysis from Phase 1]
+Result tier: [1/2/3/4]
 
-## Two-Liner
-[Ready for proposals]
+---
 
-## Story Version  
-[Ready for conversations]
+### Format 1: Two-Liner
+[Final copy]
 
-## Full Case Study
-[Ready for website]
+### Format 2: Story Version
+[Final copy]
 
-## Usage Notes
-- Where to use each version
-- Talking points if asked follow-up questions
-- Any restrictions (NDA, anonymization)
+### Format 3: Full Case Study
+[Full markdown]
+
+---
+
+### Self-Critique Notes
+- Two-liner: [pass/issue]
+- Story: [pass/issue]
+- Full: [pass/issue]
+
+### Distribution Plan
+[Where to use each]
+
+### Next Step
+[If no quote collected → run testimonial-collector]
+[If strong story → suggest LinkedIn post from story format]
 ```
 
 ---
 
-## Common Mistakes I'll Help You Avoid
-
-❌ **Making yourself the hero.** The client is the hero. You're the guide.
-
-❌ **Vague outcomes.** "Improved their marketing" means nothing. Get specific.
-
-❌ **Skipping the struggle.** The challenge is what makes the outcome impressive.
-
-❌ **Feature lists instead of story.** "We did X, Y, Z" doesn't land. "Here's what changed" does.
-
----
-
-**Need help turning your wins into case studies?**
-→ [Book a strategy call](https://brianrwagner.com)
+**Cross-reference:** If a client quote was captured here, run `testimonial-collector` to properly format and score it for your testimonial library.
 
 ---
 

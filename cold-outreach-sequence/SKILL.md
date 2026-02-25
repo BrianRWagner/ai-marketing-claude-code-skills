@@ -7,226 +7,220 @@ description: Build personalized cold outreach sequences for LinkedIn and email. 
 
 Here's what I've learned about cold outreach: the word "cold" is the problem.
 
-If you're sending messages to strangers who've never heard of you, with templates you copied from some guru — yeah, that's cold. And it doesn't work.
-
-But if you've done even 10 minutes of research, found something specific about them, and have a genuine reason to reach out? That's not cold. That's just... reaching out.
-
-This skill helps you do the second thing.
+Spray-and-pray templates don't work. 10 minutes of research + a specific reference = not cold anymore. This skill builds the second kind.
 
 ---
 
-## Before You Write a Single Message
+## Context Loading Gates
 
-The research is the work. Skip it and you'll sound like everyone else in their inbox.
+**Before writing any message, collect:**
 
-**For each prospect, find:**
+- [ ] **Prospect name and company** — full name, company, role/title
+- [ ] **Research signals** — run tool calls first (see below); do not write without them
+- [ ] **Sender positioning** — what does the sender do, for whom, with what result? (Use `positioning-basics` output if available)
+- [ ] **Platform** — LinkedIn DM, email, or both?
+- [ ] **Batch size** — how many prospects? (determines tier assignment)
 
-- **Recent news** — Funding, launches, hires, press
-- **What they're posting about** — Their content tells you what they care about
-- **Their likely pain** — Given their role and stage, what's keeping them up?
-- **Your connection point** — What can you genuinely comment on?
+**Research tool calls — run before writing:**
 
-**Where to look:**
-- Their LinkedIn activity (posts, comments, shares)
-- Company news (Crunchbase, TechCrunch, press releases)
-- Their website (about page, blog, careers)
-- Podcasts they've appeared on
+```
+web_search('[Company] [Founder/Name] news 2026')
+web_search('[Company] funding recent')
+web_search('[Person name] [Company] LinkedIn')
+```
 
-**Time investment:** 10-15 minutes per high-value prospect.
-
-This is what separates you from spam.
-
----
-
-## The Connection Request (LinkedIn)
-
-You have 300 characters. Don't waste them on a pitch.
-
-**The formula:**
-> [Specific observation] + [Simple reason to connect]
-
-**Examples:**
-
-> "Following [Company]'s growth — the [specific thing] is smart positioning. Would love to connect."
-
-> "[Their recent post] resonated. Been thinking about the same thing. Happy to connect."
-
-> "Congrats on [news]. Impressive trajectory."
-
-**The rules:**
-- No pitching. At all.
-- Be specific (prove you looked)
-- Keep it human
-- No "I'd love to pick your brain"
+**Personalization constraint:** Do not write a Tier 1 message without a named specific signal from research. If search yields 0 signals, default to Tier 3 and say so explicitly.
 
 ---
 
-## First Message (After They Accept)
+## Phase 1: Research & Signal Assessment
 
-Wait 24-48 hours. Then:
+For each prospect, document findings before drafting:
 
-**The formula:**
-> [Thanks] + [Bridge to relevance] + [Light value] + [Soft question]
+**Signal types (ranked by message strength):**
+1. Recent news event (funding, launch, hire, press) → strongest signal
+2. Recent LinkedIn post activity → strong signal
+3. Company stage/growth data → medium signal
+4. Role + industry awareness only → weak signal (Tier 3)
 
-**Example:**
+**Personalization tier assignment:**
 
-> Thanks for connecting. I've been working at the intersection of [relevant area] — [one-line credibility].
->
-> Curious if you have someone owning [relevant function] as you scale, or if that's still founder-led?
->
-> Either way, happy to share what I'm seeing work in the space.
-
-**The rules:**
-- Still not a hard pitch
-- Demonstrate relevance, not desperation
-- Ask a question that invites dialogue
-- Offer value without strings attached
+| Research Result | Tier | Approach |
+|---|---|---|
+| Named signal (news + post + context) | Tier 1 | Fully custom, reference signal in every message |
+| Company info + role context | Tier 2 | Template + personalized opener |
+| No signals found | Tier 3 | Volume template, minimal customization |
 
 ---
 
-## First Follow-Up (If No Response)
+## Phase 2: Sequence Generation
 
-Wait 5-7 days. Then:
+### Connection Request (LinkedIn) — 300 chars max
 
-**The formula:**
-> [Light nudge] + [New value or angle] + [Easy out]
+**Formula:** `[Specific observation from research] + [Simple reason to connect]`
 
-**Example:**
+**Rules:**
+- No pitching
+- Prove you did research (name the signal)
+- One sentence, conversational
+- Never "I'd love to pick your brain"
 
-> Bumping this up — know you're slammed. Came across [relevant thing] and thought of your situation at [Company]. Worth a look if helpful.
+**By signal type:**
+```
+Recent funding: "Congrats on the Series A — the [investor] backing is a smart signal. Would love to connect."
 
-**Or:**
+Recent post: "Your post on [specific topic] resonated — been thinking the same thing. Happy to connect."
 
-> Following up — been seeing [trend] hit companies at your stage. Happy to share what's working if useful. If not, no worries.
-
-**The rules:**
-- Don't just say "following up"
-- Add something new
-- Give them an easy out (takes the pressure off)
-
----
-
-## The Break-Up (Final Attempt)
-
-Wait 7-10 days. Then move on gracefully:
-
-**Example:**
-
-> I'll assume timing isn't right — totally get it. If [relevant pain point] becomes a priority down the road, happy to reconnect. Best of luck with [specific thing they're working on].
-
-**The rules:**
-- No guilt trips
-- No "just checking in one last time"
-- Leave with class
-- They may come back later
+News/launch: "Saw the [product] launch — [specific detail] is smart positioning. Would love to connect."
+```
 
 ---
 
-## Email Version
+### First Message (After Accept — Wait 24-48 Hours)
 
-Same principles, different format.
+**Formula:** `[Thanks] + [Bridge to relevance] + [Light value] + [Soft question]`
 
-**Subject lines that work:**
-- "[Company]'s marketing as you scale"
+**Template:**
+```
+Thanks for connecting. I work with [ICP description] on [specific outcome].
+
+Curious — is [relevant function] something you own directly at [Company], 
+or is that still founder-led?
+
+Happy to share what I'm seeing work at similar-stage companies either way.
+```
+
+---
+
+### Follow-Up #1 (Day 7)
+
+**Formula:** `[Light nudge] + [New signal or angle] + [Easy out]`
+
+**Constraint:** Do NOT write "following up" with nothing new. Add one new piece:
+- A relevant article or trend
+- A related insight you recently had
+- A connection to something they posted
+
+**Template:**
+```
+Bumping this up — came across [specific article/trend/insight] and 
+thought of your situation at [Company].
+
+[One sentence on why it's relevant to them.]
+
+Happy to share more if useful. If not, no worries.
+```
+
+---
+
+### Follow-Up #2 (Day 14)
+
+Shift to email if LinkedIn hasn't converted, or try a different angle.
+
+**Subject line options:**
+- "[Company]'s [function] as you scale"
 - "Saw your [post/news] — quick thought"
-- "[Mutual connection] suggested I reach out"
 - "Question about [specific thing they're doing]"
 
-**Structure:**
+**Email structure:**
 ```
-[1-line hook tied to them]
+[1-line hook tied to their specific situation]
 
-[2-3 sentences: why you're reaching out + relevance]
+[2-3 sentences: why you're reaching out + one proof point]
 
-[1 sentence: soft CTA]
-
-[Simple signature]
-```
-
-**Example:**
-
-```
-Subject: [Company]'s GTM as you scale
-
-Hey [Name],
-
-Saw the [news] — congrats. [One specific observation].
-
-I work with growth-stage companies on [relevant thing]. Helped [similar company] with [specific result].
-
-Worth a quick chat to see if there's a fit?
-
-[Your name]
+[Soft CTA — 1 sentence]
 ```
 
 ---
 
-## The Full Sequence Calendar
-
-| Day | Action | Platform |
-|-----|--------|----------|
-| 0 | Research + Connection request | LinkedIn |
-| 1-2 | Accept → Wait 24h → First message | LinkedIn |
-| 7 | Follow-up #1 | LinkedIn |
-| 14 | Follow-up #2 or try email | LinkedIn/Email |
-| 21 | Break-up message | Same |
-
----
-
-## Personalization Tiers
-
-Not everyone deserves 15 minutes of research. Here's how to think about it:
-
-**Tier 1 — Top 10 prospects:** Full research, fully custom messages
-**Tier 2 — Next 20:** Template with personalized opener
-**Tier 3 — Volume:** Template with minimal customization
-
-The math: 10 highly personalized messages often beat 100 spray-and-pray.
-
----
-
-## What You Get Back
-
-A complete outreach doc for each prospect:
+### Break-Up Message (Day 21)
 
 ```
-# Outreach: [Prospect Name]
+I'll assume timing isn't right — totally get it. 
 
-## Research
-- Company: [stage, news, situation]
-- Their likely pain: [what they're dealing with]
-- Connection point: [what you'll reference]
+If [relevant pain point] becomes a priority down the road, happy to reconnect. 
+Best of luck with [specific thing they're working on based on research].
+```
 
-## Sequence
-### Connection Request:
-[Your message]
+**Post-break-up action:** Add to 6-month re-engagement list with a resurface date.
 
-### First DM:
-[Your message]
+---
 
-### Follow-up #1:
-[Your message]
+## Phase 3: Self-Critique Pass (REQUIRED)
 
-### Break-up:
-[Your message]
+After generating the full sequence, evaluate:
+
+- [ ] Does every message reference the specific signal from research, or are they generic?
+- [ ] Is the connection request under 300 characters?
+- [ ] Does the first message ask a question (invite dialogue) rather than pitch?
+- [ ] Does follow-up #1 add something genuinely new, or is it just "following up"?
+- [ ] Does the break-up message reference something specific about their situation?
+- [ ] Did I correctly assign the personalization tier, or am I over-personalizing a Tier 3 prospect?
+
+Flag any issue: "The first message doesn't include a soft question — it reads as a pitch. Revised to invite dialogue."
+
+---
+
+## Pipeline Tracking Table
+
+Always output a tracking table for the batch:
+
+```markdown
+| Prospect | Company | Platform | Tier | Sent Date | Response | Stage | Next Action | Resurface Date |
+|---|---|---|---|---|---|---|---|---|
+| [Name] | [Co] | LinkedIn | 1 | [date] | — | Connection sent | Wait 24-48h | — |
+| [Name] | [Co] | Email | 2 | [date] | — | First email sent | Follow-up Day 7 | — |
 ```
 
 ---
 
-## What Kills Outreach
+## Iteration Protocol
 
-❌ "I'd love to pick your brain"
-❌ "Can I get 15 minutes of your time?"
-❌ Long paragraphs about yourself
-❌ Immediate pitch in connection request
-❌ Same message to everyone
-❌ Following up every 2 days
-❌ "Hope this finds you well"
+After each response (or non-response), ask:
+- Did the connection request get accepted? If low acceptance rate → revise the observation line
+- Did the first message get a reply? If no → was the question soft enough, or did it feel like a pitch?
+- Did follow-ups get ignored? If yes → try a different angle or acknowledge the silence directly
 
 ---
 
-**Need help building an outreach system that actually works?**
-→ [Book a strategy call](https://brianrwagner.com)
+## Output Structure
+
+```markdown
+## Outreach Sequence: [Prospect Name] — [Date]
+
+### Research Summary
+- Signal type: [news / post / company info / none]
+- Signal found: "[Specific detail]"
+- Personalization tier: [1/2/3]
+- Source: [URL or platform]
+
+### Sequence
+
+**Connection Request (LinkedIn):**
+[Text — max 300 chars]
+
+**First Message (Day 1-2 after accept):**
+[Text]
+
+**Follow-Up #1 (Day 7):**
+[Text]
+
+**Follow-Up #2 (Day 14):**
+Platform: [LinkedIn / Email]
+Subject: [if email]
+[Text]
+
+**Break-Up (Day 21):**
+[Text]
+
+### Pipeline Entry
+| Prospect | Company | Platform | Tier | Stage | Next Action | Resurface Date |
+|---|---|---|---|---|---|---|
+| [Name] | [Co] | [Platform] | [Tier] | Connection sent | Wait 24-48h | — |
+
+### Self-Critique Notes
+[Any issues flagged + revisions made]
+```
 
 ---
 

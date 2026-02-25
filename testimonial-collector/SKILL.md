@@ -1,43 +1,67 @@
 ---
 name: testimonial-collector
-description: Systematically gather and format client testimonials. Use when someone needs social proof, wants to collect feedback, or needs to turn happy clients into public advocates.
+description: Systematically gather, score, and format client testimonials. Use when someone needs social proof, wants to collect feedback, needs to turn happy clients into public advocates, or asks for help requesting or drafting a testimonial.
 ---
 
 # Testimonial Collector
 
-Here's the reality: your happiest clients will vouch for you. They want to help.
+## Context Loading Gates
 
-But they're busy. And you feel weird asking. So you don't.
+**Before proceeding, gather:**
+- [ ] Client name, company, and industry
+- [ ] Project type and specific deliverables
+- [ ] Key results — push for at least one number ("even a rough estimate")
+- [ ] Desired output format (short quote / medium paragraph / full narrative)
+- [ ] Urgency (this week vs. building a library)
 
-Meanwhile, you're in sales calls with no social proof, trying to convince people you're good at what you do.
+If results are vague (e.g., "things improved"), **stop and ask:** "Can you name one specific number — even a rough estimate? That's what makes a testimonial credible and usable." Do not draft until you have this.
 
-This skill fixes the asking part. I'll give you exactly what to say, when to say it, and how to format what you get back.
-
----
-
-## When to Ask
-
-Timing is everything. These are your windows:
-
-✅ **Right after a win.** They just saw results? Ask now.
-✅ **When they thank you unprompted.** That's your cue.
-✅ **At project completion.** Natural checkpoint.
-✅ **When they renew or extend.** They're voting with their wallet.
-
-The moment of peak happiness is the moment to ask. Don't wait.
+If the user wants to skip a field: note it and flag the quality impact in the output.
 
 ---
 
-## How to Ask (Without Being Weird)
+## Phase 1: Situation Analysis
 
-### The Direct Ask
+Before drafting anything, reason through:
 
+1. **Client relationship stage:** Was this a quick project or a deep engagement? Depth affects how much authentic language is available.
+2. **Results clarity:** Are the outcomes measurable (numbers, timelines, named outcomes) or soft (vibes, general satisfaction)?
+3. **Format match:** What placement does the user need this for? A homepage needs different length than a sales deck.
+4. **Voice data:** Does the user have existing communication from this client (emails, Slack, quotes) that can inform tone?
+
+Output a brief situation summary:
+> "You have a [length] engagement with [client] in [industry], with [strong/weak] results data. I'll draft in [format] with [authentic/templated] voice. Main gap to address: [specific gap]."
+
+---
+
+## Phase 2: Quality Scoring Framework
+
+Score the raw testimonial content (or anticipated content) before drafting:
+
+| Dimension | Score 1 | Score 3 | Score 5 |
+|---|---|---|---|
+| **Specificity** | No details | Vague references | Specific named result |
+| **Measurability** | "It was great" | "Noticeable improvement" | "40% increase in leads" |
+| **Authentic Voice** | Sounds like ad copy | Slightly stilted | Reads exactly how a person talks |
+| **Length** | Too short (no context) | Decent but thin | Enough for all 3 formats |
+
+**Scoring rule:**
+- 4+ on all 4 dimensions → ready to use
+- ≤2 on any dimension → apply iteration protocol before delivering
+
+---
+
+## Phase 3: Draft Generation
+
+### The Ask Templates
+
+**Direct Ask:**
+```
 Subject: Quick favor (30 seconds)
 
-```
 Hey [Name],
 
-Loved working on [project] with you — especially seeing [specific result you noticed].
+Loved working on [project] with you — especially seeing [specific result].
 
 Would you be open to sharing a quick testimonial I could use on my site?
 
@@ -46,179 +70,129 @@ A) Send you 3 questions to answer
 B) Write a draft for you to approve/edit
 
 Whatever's easier.
-
-Thanks either way.
 ```
 
-Short. Gives them options. Doesn't make it a big deal.
-
----
-
-### The Question Route
-
-If they say "sure, what do you need?" — send this:
-
+**Question Route:**
 ```
-Awesome. Just 3 quick questions:
-
+3 quick questions:
 1. What was the situation before we worked together?
 2. What changed or improved?
 3. Would you recommend this to others? Why?
-
-A few sentences each is perfect. I'll format it.
 ```
 
-That's it. Don't overthink it.
+**Draft-on-Behalf Framework:**
+Rules for writing in the client's voice:
+- **Tone:** Match their actual communication style (check emails/messages for vocabulary)
+- **Structure:** Situation Before → What Changed → Specific Result → Recommendation
+- **Avoid:** Superlatives without evidence ("amazing," "life-changing")
+- **Avoid:** Leading with praise — lead with the client's situation
+- **Length:** 50-75 words (short), 100-150 words (medium), 200+ (long/full)
+
+Fill-in template:
+```
+"[Client situation in 1 sentence]. [What the engagement delivered — concrete]. 
+[Specific result, ideally with a number]. [Recommendation statement in client's natural voice]."
+```
 
 ---
 
-### The Draft Route
+## Phase 4: Format Production
 
-Some people hate writing. Make it easy:
-
+### Short Format (2-liner)
 ```
-I drafted something based on our work together:
-
-"[Your draft in their voice — keep it short and specific]"
-
-Feel free to edit, tweak, or rewrite entirely. Whatever feels right to you.
-```
-
-Most people will approve with minor edits. You did the hard part.
-
----
-
-## The Deep Dive (For Case Studies)
-
-When you need more than a quote:
-
-1. What was the situation before we started?
-2. What almost stopped you from moving forward?
-3. What was it like working together?
-4. What changed as a result?
-5. What would you tell someone considering this?
-
-These five questions give you enough for a full case study.
-
----
-
-## How to Format What You Get
-
-### Short Format (Social/Website)
-
-```
-"[One punchy sentence about the result]"
+"[One punchy outcome sentence — lead with the result]"
 — [Name], [Title] at [Company]
 ```
+**Use for:** Homepage, LinkedIn featured section, proposal proof points
 
-**Example:**
-> "Brian helped us go from zero LinkedIn presence to 3 inbound leads per week in 6 weeks."
-> — Sarah Chen, CEO at TechCo
-
-This goes on your homepage, your proposals, your LinkedIn featured section.
-
----
-
-### Medium Format (Proposals/About Page)
-
+### Medium Format (2-3 sentences)
 ```
-"[2-3 sentences: problem, experience, result]"
+"[Problem or situation]. [What changed]. [Recommendation or result]."
 — [Name], [Title] at [Company]
 ```
+**Use for:** Services page, sales decks, email sequences
 
-**Example:**
-> "We knew we needed to build our founder brand but had no idea where to start. Brian built us a complete content system in 6 weeks — now we're generating inbound leads for the first time. Can't recommend him enough."
-> — Sarah Chen, CEO at TechCo
+### Long Format (Full narrative)
+Structure:
+1. Context paragraph (2-3 sentences on the situation)
+2. Transformation paragraph (what happened during the engagement)
+3. Results paragraph (outcomes, numbers, named wins)
+4. Closing recommendation sentence
 
-This goes in proposals, on your services page, in case studies.
+**Use for:** Case study pages, downloadable PDFs, high-trust sales assets
 
 ---
 
-### Long Format (Case Study Pages)
+## Phase 5: Self-Critique Pass (REQUIRED)
 
+After generating all formats, evaluate:
+
+**Specificity check:** Does the short version have at least one concrete outcome (not just "great results")?
+**Voice check:** Could the client have actually written this, or does it sound like a marketing headline?
+**Placement check:** Is the recommended format actually correct length for the stated use case?
+**Ethics check:** Does the draft contain any claims the client didn't make or numbers you added?
+
+Flag any issues: "The short version lacks a specific metric — you'll need to get one number from the client before using this on a homepage."
+
+---
+
+## Iteration Protocol
+
+If the received testimonial scores ≤2 on any dimension, send this gentle follow-up:
 ```
-**What [Name] at [Company] Said:**
-
-"[Full quote with context — the whole story]"
-```
-
-This goes on dedicated case study pages or in downloadable PDFs.
-
----
-
-## Editing Rules (Stay Ethical)
-
-**You can:**
-- Fix grammar and typos
-- Tighten for clarity
-- Reorder sentences
-- Cut filler
-
-**You can't:**
-- Add claims they didn't make
-- Exaggerate results
-- Change the meaning
-
-**Always send edits back for approval.** Takes 30 seconds and keeps you honest.
-
----
-
-## The Quality Checklist
-
-Strong testimonials have:
-
-- [ ] **Specific result** — Numbers or concrete outcomes
-- [ ] **Before/after** — What changed
-- [ ] **Credibility markers** — Name, title, company
-- [ ] **Relevance** — Similar to your ideal client
-
-**Weak:** "Great to work with!"
-**Strong:** "Went from 0 to 3 inbound leads per week in 6 weeks."
-
-Specificity is what makes people believe it.
-
----
-
-## Where to Use Testimonials
-
-| Location | Format | Purpose |
-|----------|--------|---------|
-| Homepage | Short | Trust at first glance |
-| Sales pages | Medium | Overcome objections |
-| Proposals | Medium | Relevant proof |
-| LinkedIn | Short | Credibility |
-| Case studies | Long | Deep proof |
-
----
-
-## Following Up (If They Don't Respond)
-
-Wait 5-7 days. Send one follow-up:
-
-```
-Hey [Name], just bumping this — no pressure at all. If timing's bad, totally get it. Let me know either way!
+"Thanks so much — this is great. One small ask: could you add one specific 
+number or outcome? Even rough ('saved us about 5 hours a week') makes it 
+much more compelling for other clients. Totally optional, but makes a real difference."
 ```
 
-If they don't respond to that, let it go. Some people just won't, and that's fine.
+If a second request still yields nothing specific: use Tier 3 proxy language:
+> "noticeable improvement in [area]" or "process now runs without manual oversight"
 
 ---
 
-## Build a Library
+## Placement Recommendation
 
-Create a simple doc or spreadsheet:
+Always deliver a placement recommendation with the formatted testimonials:
 
-| Client | Date | Quote | Format | Permission | Used Where |
-|--------|------|-------|--------|------------|------------|
+| Format | Recommended Locations | Why |
+|---|---|---|
+| Short (2-liner) | Homepage, proposals, LinkedIn | Trust at first glance |
+| Medium | Services page, email, sales decks | Overcome late-stage objections |
+| Long | Case study page, PDF, portfolio | Deep proof for serious buyers |
 
-Review it quarterly:
-- Who haven't you asked?
-- Which testimonials are getting stale?
-- Any gaps in industries or use cases?
+**Cross-reference:** If this client has a strong story, suggest running `case-study-builder` to expand into a full case study.
 
 ---
 
-**Need help building your social proof library?**
-→ [Book a strategy call](https://brianrwagner.com)
+## Output Structure
+
+```markdown
+## Testimonial: [Client Name] — [Date]
+
+### Quality Assessment
+- Specificity: [X/5]
+- Measurability: [X/5]
+- Authentic Voice: [X/5]
+- Length: [X/5]
+- **Total: [X/20] — [Ready to use / Needs iteration]**
+
+### Short Format (2-liner)
+"[Quote]"
+— [Name], [Title], [Company]
+
+### Medium Format
+"[Quote]"
+— [Name], [Title], [Company]
+
+### Long Format
+[Full narrative]
+
+### Placement Recommendation
+[Where to use each format]
+
+### Next Step
+[Iteration note OR cross-reference to case-study-builder]
+```
 
 ---
 
