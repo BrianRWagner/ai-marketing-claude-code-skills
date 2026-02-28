@@ -1,3 +1,24 @@
+## [3.0.0] — February 28, 2026
+
+### What Changed
+3-layer architecture refactor + new Meeting Prep skill.
+
+### Why
+Skills audit (Feb 28) found 3 CC free skills missing YAML front matter (invisible to trigger system). Meeting Prep was identified as the highest-value missing weekly recurring skill.
+
+### What's New
+- **Meeting Prep skill** — INTAKE→ANALYZE→OUTPUT format. Vault search + prior brief lookup + question generation. No autonomy.
+
+### Front Matter Verified
+- `daily-briefing-builder` — INTAKE→ANALYZE→OUTPUT format, confirmed good
+- `tweet-draft-reviewer` — 8 voice rules fully documented, confirmed good
+- `vault-cleanup-auditor` — shell commands complete, confirmed good
+
+### Architecture
+All skills follow INTAKE→ANALYZE→OUTPUT structure. No autonomy triggers. You run it, you get your output.
+
+---
+
 # Changelog
 
 All notable changes to the AI Marketing Skills for Claude Code library.
