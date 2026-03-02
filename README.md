@@ -259,33 +259,22 @@ cp -r ai-marketing-claude-code-skills/* ~/.claude/skills/
 
 ---
 
-## 🔥 Premium on Claw Mart
+## 🔥 Premium Skills (Gumroad)
 
-Deeper frameworks and ready-to-deploy AI systems. Available on [Claw Mart](https://www.shopclawmart.com):
+Full Claude Code editions with structured reasoning phases, self-critique loops, and output precision.
 
-### Skills
+→ [Browse all on Gumroad](https://brianrwagner.gumroad.com)
 
-| Skill | What It Does | Price | Link |
-|-------|--------------|-------|------|
-| 🎙️ Voice Extractor | Extract your authentic writing voice and teach your AI to sound like you | $9 | [Buy →](https://www.shopclawmart.com/listings/voice-extractor-f1578cb8) |
-| 🧠 Founder Intelligence | A decade-plus of books, podcasts, and founder interviews distilled into 9 strategic lenses | $15 | [Buy →](https://www.shopclawmart.com/listings/founder-intelligence-2002a45e) |
-| 🎙️ Voice-Matched Content System | Extract your voice → generate content that sounds like you | $9 | [Buy →](https://www.shopclawmart.com/listings/voice-matched-content-system-095c6e91) |
-| 🔍 Brand Positioning Audit | Audit any brand's positioning in 15 min — scored diagnosis + messaging rewrites | $9 | [Buy →](https://www.shopclawmart.com/listings/brand-positioning-audit-a22b40b6) |
-| ☀️ Morning Brief System | Wake up to weather, email digest, priorities, and overnight work summary | $14 | [Buy →](https://www.shopclawmart.com/listings/morning-brief-system-5c9005d8) |
-| 🚀 AI Employee Onboarding Wizard | Go from zero to a fully configured AI employee in 15 minutes | $9 | [Buy →](https://www.shopclawmart.com/listings/ai-employee-onboarding-wizard-2ed777d1) |
-| 🔍 Competitor Intel Brief | Structured competitive teardown — positioning, ICP, moat assessment, vulnerability map | $12 | [Buy →](https://www.shopclawmart.com/listings/competitor-intel-brief-6dafbc46) |
-
-### Personas
-
-| Persona | What It Does | Price | Link |
-|---------|--------------|-------|------|
-| 🤵 The Chief of Staff | A complete AI Chief of Staff — proactive, opinionated, runs your day | $19 | [Buy →](https://www.shopclawmart.com/listings/the-chief-of-staff-ee036345) |
-| 🏗️ Multi-Agent Team Blueprint | Blueprint for running a 10-agent AI team with roles, routing, and meetings | $19 | [Buy →](https://www.shopclawmart.com/listings/multi-agent-team-blueprint-4da2ac9b) |
-
-👉 Browse all on Claw Mart: [shopclawmart.com](https://www.shopclawmart.com)
-
----
-
+| Skill | Price | Link |
+|-------|-------|------|
+| AI Marketing Bundle (all 7) | $49 | [Buy →](https://brianrwagner.gumroad.com/l/brw-cc-marketing-bundle) |
+| AI Discoverability Audit v2 | $19 | [Buy →](https://brianrwagner.gumroad.com/l/ai-discoverability-audit) |
+| Founder Intelligence | $15 | [Buy →](https://brianrwagner.gumroad.com/l/brw-founder-intelligence) |
+| Competitor Intel Brief | $12 | [Buy →](https://brianrwagner.gumroad.com/l/brw-competitor-intel-brief) |
+| Morning Brief System | $14 | [Buy →](https://brianrwagner.gumroad.com/l/brw-morning-brief-system) |
+| Brand Voice Extractor | $9 | [Buy →](https://brianrwagner.gumroad.com/l/brand-voice-extractor) |
+| AI Employee Onboarding | $9 | [Buy →](https://brianrwagner.gumroad.com/l/brw-ai-employee-onboarding) |
+| Brand Positioning Audit | $9 | [Buy →](https://brianrwagner.gumroad.com/l/brw-brand-positioning-audit) |
 ## About
 
 Created by **Brian Wagner** — AI Marketing Architect
