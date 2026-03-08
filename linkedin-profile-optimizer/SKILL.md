@@ -11,6 +11,20 @@ Most LinkedIn profiles are written for the person who has the profile, not the p
 
 ---
 
+## Mode
+
+Detect from context or ask: *"Quick fixes, full rewrite, or full rewrite + AI visibility?"*
+
+| Mode | What you get | Best for |
+|------|-------------|----------|
+| `quick` | Headline rewrite (3 options) + top 3 highest-impact fixes | Fast improvement before a meeting or launch |
+| `standard` | Full section audit + all rewrites (headline, about, experience bullets) | Profile overhaul |
+| `deep` | Full audit + rewrites + AI visibility checklist + 30-day optimization plan | Targeting inbound AND AI search visibility |
+
+**Default: `standard`** — use `quick` if they say "I have a call tomorrow." Use `deep` if AI discoverability is part of their strategy.
+
+---
+
 ## How This Works
 
 You paste your profile. I diagnose what's not working and rewrite it. Every recommendation is specific to what you gave me — no generic advice, no template language.

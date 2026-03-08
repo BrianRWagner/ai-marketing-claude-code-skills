@@ -8,6 +8,51 @@
 
 ---
 
+## Runtime Context
+**Platform:** Claude Code / OpenClaw  
+**File system:** Available. Read prior outputs before starting. Save all outputs to the paths specified in Memory Protocol.  
+**Cross-skill dependencies:**
+- Upstream: Brand Positioning Audit (entity confusion is a positioning problem first)
+- Downstream: Content Idea Generator (topic gaps), Competitor Intel Brief (competitive AI search gaps)
+
+---
+
+## Memory Protocol
+
+**Save output to:** `audits/ai-discoverability-[brand]-YYYY-MM-DD.md`
+
+**At session start:** Check if a prior audit file exists for this brand. If yes — this is a quarterly re-audit. Follow this flow:
+
+1. Load the prior audit into context
+2. Run the new audit fresh
+3. For each of the 6 sections: show `[Prior Score] → [New Score] = [Delta]`
+4. Highlight: biggest improvements, biggest regressions, any new risks
+5. Update the 30-day action plan based on what did and didn't get implemented since the last audit
+
+**Cross-session rule:** Never treat a re-audit as a cold start. The delta is the value — show what moved.
+
+---
+
+## Ecosystem Connections
+
+Route findings to other skills based on scores:
+
+- **Entity clarity score < 3 (Section 2 FAIL):** Feed into Brand Positioning Audit — entity/positioning confusion is a positioning problem that needs to be solved there first before AI signals will improve
+- **Content signal score = MISSING or WEAK (Section 3):** Feed topic gaps into Content Idea Generator with specific questions the ICP asks AI that the brand doesn't answer
+- **Competitor benchmark shows a gap (Section 1):** Feed into Competitor Intel Brief for that specific competitor — understand their AI signal strategy before trying to close the gap
+
+---
+
+### Why This Matters Now
+
+**AI traffic converts better than Google traffic.**
+
+Airbnb CEO Brian Chesky confirmed that visitors arriving through ChatGPT, Gemini, or Claude convert at higher rates than Google search traffic. Why? Users asking AI are further along in their decision-making than someone typing broad queries into search.
+
+If you're not showing up in AI answers, you're missing the highest-intent traffic on the internet.
+
+---
+
 ## Description
 
 Use when a founder, marketer, or consultant wants to audit how visible their brand or website is to AI search engines and LLMs. Also use when the user mentions "AI SEO," "GEO," "AEO," "AI discoverability," "ChatGPT can't find me," "Perplexity results," "AI search visibility," or "how do I show up in AI answers."
@@ -121,14 +166,79 @@ Does your site use schema markup that helps AI systems understand who you are?
 - FAQ
 - Article (on blog posts)
 
-**How to check:** Use Google's Rich Results Test or Schema.org validator. For AI agents: fetch the page source and search for `<script type="application/ld+json">` blocks, then validate the JSON structure.
+**How to check:** Fetch the page source and search for `<script type="application/ld+json">` blocks, then validate the JSON structure. No external tool needed for basic checks.
 
 **Score:**
 - **Implemented correctly** — Key schemas present and valid
 - **Missing** — No schema markup
 - **Incorrect** — Schema present but errors/warnings
 
-Provide specific implementation recommendations.
+Provide specific implementation recommendations. If schemas are missing, provide these ready-to-use templates:
+
+**Organization Schema (add to homepage `<head>`):**
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "[Brand Name]",
+  "url": "[https://yourdomain.com]",
+  "logo": "[https://yourdomain.com/logo.png]",
+  "description": "[One-sentence description of what you do and who you serve]",
+  "sameAs": [
+    "[https://linkedin.com/company/yourcompany]",
+    "[https://twitter.com/yourhandle]"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer service",
+    "email": "[hello@yourdomain.com]"
+  }
+}
+```
+
+**Person Schema (for personal brands / founder sites, add to homepage or about page):**
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "[Full Name]",
+  "url": "[https://yourdomain.com]",
+  "image": "[https://yourdomain.com/headshot.jpg]",
+  "jobTitle": "[Your Title]",
+  "description": "[One sentence — what you do and who you help]",
+  "sameAs": [
+    "[https://linkedin.com/in/yourprofile]",
+    "[https://twitter.com/yourhandle]"
+  ],
+  "worksFor": {
+    "@type": "Organization",
+    "name": "[Company Name if applicable]"
+  }
+}
+```
+
+**Product Schema (add to product or pricing page):**
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "[Product Name]",
+  "description": "[What it does and who it's for — one sentence]",
+  "brand": {
+    "@type": "Brand",
+    "name": "[Brand Name]"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "[price]",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock",
+    "url": "[https://yourdomain.com/pricing]"
+  }
+}
+```
+
+Replace all bracketed values. Add inside a `<script type="application/ld+json">` tag in the `<head>` of the relevant page.
 
 ---
 
@@ -358,6 +468,51 @@ You have zero content ranking for these. That's your content roadmap.
 - **Score > 70:** Focus on competitor gap analysis and maintaining position. You're visible — now own the category.
 - **Score 40-70:** Prioritize entity clarity and content signals. Foundation is there but AI isn't citing you.
 - **Score < 40:** Start with entity clarity and schema. No point building content before the foundation is right.
+
+---
+
+## After Delivering the Audit
+
+End every audit with this iteration menu:
+
+```
+That's your full AI Discoverability Audit for [Brand Name]. Overall score: [X]/100.
+
+What's next?
+
+A) Go deeper on the lowest-scoring section — full diagnosis + 3 specific fixes with implementation detail
+B) Build the 30-day implementation plan — detailed breakdown with owners, tools, and checkpoints for each action
+C) Run the competitor benchmark — I'll query AI systems for [top competitor name] and compare their visibility to yours
+D) Schedule quarterly re-audit — save this as the baseline and note what to check next time
+
+Which one?
+```
+
+### If They Choose A — Deep Section Dive
+Identify the lowest-scoring section. Run a second-pass diagnosis:
+- What specifically is causing the low score (not category-level — exact cause)
+- 3 specific fixes with: what to do, how to do it, how long it takes, how to verify it worked
+
+### If They Choose B — 30-Day Implementation Plan
+Expand the Signal Fix plan with:
+- Owner for each action (founder / dev / content person)
+- Specific tool for each action (no "use a schema plugin" — name the plugin)
+- Checkpoint: how to verify completion
+- Priority rank: which 3 actions will move the score most in the first 2 weeks
+
+### If They Choose C — Competitor Benchmark
+Query the competitor name in AI systems. Compare:
+- Their AI Presence Score (run same 5 query types)
+- Their entity clarity (what does AI say about them?)
+- Their content signal strength (visible topics they rank for in AI answers)
+- Gap analysis: where are they stronger? Where are you stronger?
+
+### If They Choose D — Quarterly Re-Audit Setup
+Save this audit as baseline. Note:
+- Current score: [X]/100
+- Lowest section: [section name]
+- Priority actions committed to: [top 3 from 30-day plan]
+- Re-audit trigger: 90 days OR after completing the 30-day plan — whichever comes first
 
 ---
 

@@ -15,6 +15,20 @@ This skill fixes the asking part. I'll give you exactly what to say, when to say
 
 ---
 
+## Mode
+
+Detect from context or ask: *"One script, full system, or full system with campaign?"*
+
+| Mode | What you get | Best for |
+|------|-------------|----------|
+| `quick` | 1 outreach script + 1 format template | Asking one client, right now |
+| `standard` | Full collection system: timing, scripts, formatting, display guidance | Building repeatable social proof |
+| `deep` | Full system + multi-channel strategy + case study pipeline | Sales enablement, proposal library |
+
+**Default: `standard`** — use `quick` if they have one client in mind. Use `deep` if they want a system they can hand to a VA.
+
+---
+
 ## When to Ask
 
 Timing is everything. These are your windows:

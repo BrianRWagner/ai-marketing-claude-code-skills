@@ -23,10 +23,30 @@ Remove AI-generated patterns and restore natural human voice to your writing.
 
 **You can replicate this with ChatGPT if you:** Include all 47 patterns, build a scoring system, track changes manually, and spend 15 minutes per doc. This skill does it in 30 seconds.
 
+## Mode
+
+Detect from context or ask: *"Quick pass, full cleanup, or match a specific voice?"*
+
+| Mode | What you get | Best for |
+|------|-------------|----------|
+| `quick` | Remove obvious AI patterns, single pass, no scoring | Blog posts, quick social copy |
+| `standard` | Full 47-pattern scan + human score (0–10) + change log | Any content going public |
+| `deep` | Full scan + voice calibration against a sample of the writer's actual work | Ghostwriting, brand voice-matched content |
+
+**Default: `standard`** — use `quick` for fast edits. Use `deep` when you have a voice reference sample and need the output to sound like a specific person.
+
+---
+
 ## Usage
 
 ```
 /de-ai-ify <file_path>
+```
+
+Or with mode flag:
+
+```
+/de-ai-ify <file_path> --mode quick|standard|deep
 ```
 
 Or with custom scoring:

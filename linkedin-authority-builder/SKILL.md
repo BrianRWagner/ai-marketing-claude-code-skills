@@ -13,6 +13,20 @@ This skill builds a content system that makes you impossible to forget for your 
 
 ---
 
+## Mode
+
+Detect from context or ask: *"Starter plan, full content system, or 90-day build?"*
+
+| Mode | What you get | Best for |
+|------|-------------|----------|
+| `quick` | 3 content pillars + 1-week posting starter plan | Getting unstuck, first week of consistency |
+| `standard` | Full content system: pillars, formats, posting rhythm + first week written | Building a repeatable presence |
+| `deep` | Full system + 90-day calendar + 10 posts written + engagement playbook | Serious authority-building campaign |
+
+**Default: `standard`** — use `quick` if they just need to start posting. Use `deep` if they're committing to LinkedIn as a growth channel.
+
+---
+
 ## Before We Build Anything
 
 I need to understand your situation:

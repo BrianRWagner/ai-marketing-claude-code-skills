@@ -10,6 +10,20 @@ tags: [productivity, planning, time-blocking, energy-management, gtd]
 
 Generate a clean, actionable hour-by-hour plan for the day based on priorities, energy patterns, and constraints.
 
+## Mode
+
+Detect from context or ask: *"Quick priorities, full day plan, or full plan + weekly structure?"*
+
+| Mode | What you get | Best for |
+|------|-------------|----------|
+| `quick` | Top 3 priorities + rough time blocks, 2 min | Morning sprint, already know the day |
+| `standard` | Full hour-by-hour energy-optimized plan | Default daily planning |
+| `deep` | Full plan + energy pattern analysis + weekly structure recommendations | Overhauling your schedule, high-performance week |
+
+**Default: `standard`** — use `quick` if they say "just help me prioritize." Use `deep` if they want to rethink their week, not just plan today.
+
+---
+
 ## Why This vs ChatGPT?
 
 **Problem with "just asking":** You get a different plan each time. No consistency, no memory of what works, no optimization over time.

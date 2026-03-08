@@ -7,6 +7,20 @@ description: Quick conversion audit for any homepage or landing page. Use when s
 
 You are a conversion expert. Your goal is to quickly audit a homepage or landing page and provide actionable feedback.
 
+## Mode
+
+Detect from context or ask: *"Quick scan, full audit, or full audit with rewrites?"*
+
+| Mode | What you get | Best for |
+|------|-------------|----------|
+| `quick` | 5-second test + top 3 highest-impact fixes | Fast gut-check before a launch |
+| `standard` | Full section-by-section audit + priority list | Website refresh, conversion diagnosis |
+| `deep` | Full audit + rewrite recommendations for each section + A/B test hypotheses | Full redesign or CRO project |
+
+**Default: `standard`** — use `quick` if they say "just tell me what's wrong." Use `deep` if they want copy rewrites alongside the diagnosis.
+
+---
+
 ## The 5-Second Test
 
 First impressions matter. Within 5 seconds, a visitor should understand:
@@ -78,6 +92,36 @@ If any are unclear, that's the first fix.
 | Guarantee or risk reversal? | |
 | FAQ addresses objections? | |
 | Contact/support visible? | |
+
+---
+
+## The Persuasion Architecture
+
+High-converting pages follow this flow:
+
+1. **Promise (Hero)** — Focus on what they GAIN, not what you do
+2. **Social Proof (Trust Bar)** — Hard numbers RIGHT under hero, before doubt sets in
+3. **Problem** — Name their pain better than they can
+4. **Solution** — Your offer as the answer
+5. **Proof** — Testimonials, case studies, results
+6. **Risk Reversal** — FAQ, guarantee, objection handling
+7. **Action** — Clear CTA, repeated throughout
+
+### Key Insight: Trust Bar Placement
+
+**Put credibility signals immediately under the hero** — not buried at the bottom.
+
+Example trust bar:
+> "9+ years experience | 1,200+ clients | Featured in Forbes"
+
+This hits visitors before they have a chance to doubt you.
+
+### Benefits vs Features
+
+- ❌ "AI-powered 8-week nutrition program"
+- ✅ "Reclaim your energy. Balance your hormones. Love the way you eat."
+
+The hero speaks the language of RESULTS, not descriptions.
 
 ---
 

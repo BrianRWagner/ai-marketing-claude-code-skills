@@ -2,6 +2,20 @@
 
 Give me a goal. I'll plan it, confirm with you, execute it, and report back. You steer — I drive.
 
+## Mode
+
+Detect from context or ask: *"Just do it, plan first, or plan + phase approvals?"*
+
+| Mode | What you get | Best for |
+|------|-------------|----------|
+| `quick` | 1-line plan → you confirm → execute | Simple tasks, clear goals |
+| `standard` | Full plan → you confirm → execute → report (default) | Most tasks |
+| `deep` | Full plan → risk review → confirm each phase → execute → report | High-stakes or multi-system tasks |
+
+**Default: `standard`** — use `quick` for simple, clear goals. Use `deep` when mistakes would be expensive to undo.
+
+---
+
 ## How It Works
 
 ```

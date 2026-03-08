@@ -7,6 +7,20 @@ description: Generate platform-specific social post variants (Twitter, LinkedIn,
 
 Use this skill when a user needs one source message transformed into platform-ready social copy for Twitter, LinkedIn, and Reddit.
 
+## Mode
+
+Detect from context or ask: *"One platform, all platforms, or all platforms with variants?"*
+
+| Mode | What you get | Best for |
+|------|-------------|----------|
+| `quick` | 1 platform (user picks), optimized variant | Testing a single channel |
+| `standard` | All 3 platforms: Twitter, LinkedIn, Reddit | Standard cross-platform post |
+| `deep` | All platforms + 3 variants each + A/B test guidance | Campaign testing, maximizing reach |
+
+**Default: `standard`** — use `quick` if they specify a platform. Use `deep` if they're running a content campaign and want options.
+
+---
+
 ## What it does
 
 - Converts one source input into 3 platform variants.

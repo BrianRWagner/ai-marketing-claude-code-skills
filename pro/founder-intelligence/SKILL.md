@@ -1,7 +1,31 @@
 # Founder Intelligence Skill
-**Version:** 2.0 (Claude Code)
+**Version:** 2.1 (Claude Code)
 **Purpose:** High-judgment business advice built from a decade-plus of obsessive note-taking — books, podcasts, founder interviews, and hard-won operator experience. Routes your decisions through 9 proven strategic lenses so your AI thinks like the people who built lasting businesses.
 **Goal:** Decision-quality answers with clear tradeoffs, risks, and first actions. Not motivational advice. Not quotes. Not vibes.
+
+---
+
+## Runtime Context
+**Platform:** Claude Code / OpenClaw  
+**File system:** Available. Read prior outputs before starting. Save all outputs to the paths specified in Memory Protocol.  
+**Cross-skill dependencies:**
+- Upstream: None required — this skill starts the strategic reasoning chain
+- Downstream: Brand Positioning Audit (when positioning gaps found), Competitor Intel Brief (when competitive context needed), Content Idea Generator or Scribe (when content strategy needed)
+
+---
+
+## Memory Protocol
+
+**Save output to:** `strategy/founder-intelligence-[topic]-YYYY-MM-DD.md`
+
+**At session start:** Check if a prior analysis file exists for this topic/decision. If yes:
+- Load it into context
+- Note this is a follow-up or continuation session
+- Reference prior recommendation and check if context has changed since
+
+**Cross-session rule:** If a prior analysis exists, always load it before starting. Do not re-run full intake if context is already established — summarize prior state and proceed from current question.
+
+---
 
 ---
 
@@ -179,6 +203,46 @@ F) Done — move on
 Just reply with a letter or describe where you want to go.
 ```
 
+## Saving This Analysis
+
+At the end of every Mode A or Mode B output, add:
+
+```
+---
+## Analysis Saved
+Output saved to: `strategy/founder-intelligence-[topic]-[YYYY-MM-DD].md`
+
+Includes:
+- Question: [the original question]
+- Lenses applied: [list]
+- Key insight: [one sentence]
+- Recommendation: [the call made]
+- Inversion critique: [the steelman risk or opposite view]
+```
+
+## Feeding This Into Other Skills
+
+If the analysis surfaces specific outputs for other skills, name them explicitly:
+
+```
+---
+## Next Skill Handoffs
+
+- **Positioning/messaging gaps found?** → Pass to Brand Positioning Audit
+  Key issues identified: [specific positioning problems]
+
+- **Competitive context needed?** → Pass to Competitor Intel Brief
+  Competitive question framing: [specific question for the teardown]
+
+- **Content strategy needed?** → Pass key insights to Content Idea Generator or Scribe
+  Topic angles: [specific themes surfaced]
+
+Handoff format:
+| Question | Lenses Applied | Key Insight | Recommended Action |
+|----------|---------------|-------------|-------------------|
+| [question] | [lenses] | [insight] | [action] |
+```
+
 ---
 
 # MODE B — Iteration
@@ -274,6 +338,11 @@ Are we deliberately different in a way that improves economics, or are we copyin
 
 **Failure Mode:** Categories that truly require breadth. Copying the vibe without integrating ops + sourcing + brand.
 
+**Worked Example:**
+Problem: SaaS company has 47 pricing tiers and conversion is declining
+Lens sees: Assortment complexity is destroying trust and creating decision paralysis
+Output: Collapse to 3 tiers; cut the bottom 20 features used by <5% of users; lead with curation, not choice
+
 ---
 
 ## Bezos Flywheel Lens
@@ -299,6 +368,11 @@ If we invest aggressively now, will this create a self-reinforcing flywheel late
 **Use When:** Platform dynamics. Scale unlocks advantage. You can reinvest.
 
 **Failure Mode:** No real flywheel exists. Growth is mistaken for advantage. Discipline disappears because capital feels cheap.
+
+**Worked Example:**
+Problem: E-commerce startup debating whether to invest in same-day delivery or margin improvement
+Lens sees: Same-day delivery lowers prices → more customers → more seller selection → more customers (flywheel)
+Output: Invest in delivery infrastructure now; accept lower margins for 18 months to activate the compounding loop
 
 ---
 
@@ -326,6 +400,11 @@ Does this business earn returns because it is truly better, or because condition
 
 **Failure Mode:** Fast-changing markets where stability does not exist.
 
+**Worked Example:**
+Problem: Founder considering entering a new vertical that looks profitable
+Lens sees: New vertical has no pricing power — it's commoditized. Current business has 70% gross margin. New one has 30%.
+Output: Don't enter. Redeploy capital into expanding the existing moat — pricing power is the signal to protect.
+
 ---
 
 ## Porter Competitive Strategy Lens
@@ -349,6 +428,11 @@ What are we choosing not to do?
 **Use When:** Everyone claims differentiation. You are stuck in feature parity.
 
 **Failure Mode:** Too rigid early. Can suppress experimentation if used prematurely.
+
+**Worked Example:**
+Problem: B2B software company adding features to match every competitor request
+Lens sees: Feature parity is not a strategy — it's a race to average that nobody wins on cost
+Output: Choose 3 use cases to dominate completely; explicitly stop serving the other 7; own a niche, not a market
 
 ---
 
@@ -381,6 +465,11 @@ If none exist, advantage is fragile.
 
 **Failure Mode:** Applied too early, before any advantage can exist.
 
+**Worked Example:**
+Problem: Startup claiming "network effects" as their competitive moat to investors
+Lens sees: Product has 800 users. Network effects require critical mass to exist. Current state = zero network power.
+Output: Stop claiming network effects until 10K+ active users. Real moat right now = switching costs from data ingestion — lead with that.
+
 ---
 
 ## Howard Marks Risk Lens
@@ -406,6 +495,11 @@ What happens if we are wrong?
 
 **Failure Mode:** Over-applied caution that prevents action.
 
+**Worked Example:**
+Problem: Agency owner considering a $200K bet on a new service line because three clients said they'd buy it
+Lens sees: Three conversations in a bull market are not a demand signal — they are optimism
+Output: Run a paid pilot at 25% of full price before committing headcount; if 3 clients won't pay even the reduced rate, the demand isn't real
+
 ---
 
 ## Ferriss Small Bets Lens
@@ -429,6 +523,11 @@ What is the smallest action that gives real signal?
 **Use When:** You are stuck deciding. Downside feels abstract.
 
 **Failure Mode:** Endless testing replaces commitment.
+
+**Worked Example:**
+Problem: Consultant paralyzed about raising rates — afraid they'll lose their top three clients
+Lens sees: Fear of loss is imaginary until tested; the real data lives 1 email away
+Output: Send the rate increase to one client this week, observe the actual response, then decide on the other two
 
 ---
 
@@ -455,6 +554,11 @@ Are we selling a product, or engineering belief?
 
 **Failure Mode:** Narrative outruns economics.
 
+**Worked Example:**
+Problem: New productivity app with real utility struggling to get adoption against established players
+Lens sees: Adoption is a belief problem, not a feature problem — users need to see themselves as the type of person who uses this
+Output: Sponsor 1 niche community where early adopters self-identify (e.g., Notion power users), build tribal identity before scaling ads
+
 ---
 
 ## Watkins Execution Lens
@@ -479,6 +583,11 @@ Where can we create momentum fastest?
 **Use When:** Entering a new role. Organization is stalled. Execution is noisy.
 
 **Failure Mode:** Early wins become theater and distract from real strategy.
+
+**Worked Example:**
+Problem: New VP of Sales 30 days in; team is missing targets and morale is low
+Lens sees: Credibility is zero until a visible win lands; no strategy speech will substitute for a closed deal
+Output: Get personally involved in the 2 most advanced pipeline deals this week; close at least one within 30 days before changing any process
 
 ---
 

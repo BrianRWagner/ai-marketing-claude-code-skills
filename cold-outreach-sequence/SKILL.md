@@ -15,6 +15,20 @@ This skill helps you do the second thing.
 
 ---
 
+## Mode
+
+Detect from context or ask: *"One message, full sequence, or full outreach system?"*
+
+| Mode | What you get | Best for |
+|------|-------------|----------|
+| `quick` | 1 connection request + 1 follow-up for a single prospect | Testing an angle, one-off outreach |
+| `standard` | Full 4-touch sequence for a single prospect | Active pipeline, individual targets |
+| `deep` | Multi-prospect sequence system + A/B variants + tracking framework | Launching an outreach campaign |
+
+**Default: `standard`** — use `quick` if they give you one name and say "draft something." Use `deep` if they're building a repeatable outreach engine.
+
+---
+
 ## Before You Write a Single Message
 
 The research is the work. Skip it and you'll sound like everyone else in their inbox.

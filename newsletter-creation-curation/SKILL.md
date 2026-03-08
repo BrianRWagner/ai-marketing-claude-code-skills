@@ -11,6 +11,20 @@ Use this skill to create B2B newsletters that match business context, not generi
 Deep strategic guidance is in `PLAYBOOK.md`.
 Use this file as the executable operating manual.
 
+## Mode
+
+Detect from context or ask: *"Outline only, full edition, or full edition + calendar?"*
+
+| Mode | What you get | Best for |
+|------|-------------|----------|
+| `quick` | Edition outline + 3 lead story angles, no writing | Planning, editorial direction |
+| `standard` | Full newsletter edition, all sections written | Publishing this week |
+| `deep` | Full edition + 4-week content calendar + audience segmentation recommendations | Launching or systematizing a newsletter |
+
+**Default: `standard`** — use `quick` if they're still deciding what to write. Use `deep` if they're building a newsletter from scratch or scaling.
+
+---
+
 ## Quick Decision Tree (5 Dimensions)
 
 Answer these in order before writing anything.

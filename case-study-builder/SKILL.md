@@ -13,6 +13,20 @@ This skill fixes that. Give me the raw details of a win, I'll turn it into three
 
 ---
 
+## Mode
+
+Detect from context or ask: *"Quick writeup, full case study, or full asset package?"*
+
+| Mode | What you get | Best for |
+|------|-------------|----------|
+| `quick` | 1 format: paragraph summary for proposals | Fast social proof, proposal inserts |
+| `standard` | 3 formats: proposal blurb, social proof pull-quote, sales story | Active pitching, LinkedIn, website |
+| `deep` | 3 formats + blog-ready case study + FAQ variant + campaign assets | Content marketing, SEO, sales enablement |
+
+**Default: `standard`** — use `quick` if they say "just need something fast." Use `deep` if they want to turn the win into a marketing asset.
+
+---
+
 ## What I Need From You
 
 Tell me about a client win:

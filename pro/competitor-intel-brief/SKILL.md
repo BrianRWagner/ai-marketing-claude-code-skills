@@ -5,6 +5,59 @@ description: Run a structured competitive teardown in 20 minutes. Covers positio
 
 # Competitor Intel Brief
 
+## Runtime Context
+**Platform:** Claude Code / OpenClaw  
+**File system:** Available. Read prior outputs before starting. Save all outputs to the paths specified in Memory Protocol.  
+**Cross-skill dependencies:**
+- Upstream: Founder Intelligence (competitive context may come from there), Brand Positioning Audit (positioning gaps to investigate)
+- Downstream: Brand Positioning Audit (Section 3 — Competitive Separation), Founder Intelligence (competitive context for lens application)
+
+---
+
+## Memory Protocol
+
+**Save output to:** `research/competitor-[name]-YYYY-MM-DD.md`
+
+**At session start:** Check if a prior analysis file exists for this competitor. If yes:
+- Load it into context
+- Note this is a re-audit session
+- After scoring each section, add a **"Change since last audit"** note:
+  - Score improved / declined / stable
+  - What specifically changed
+  - New vulnerabilities identified or prior gaps now closed
+
+**Cross-session rule:** If a prior teardown exists, always load it before running the new analysis — do not treat this as a cold start. Surface the delta, not just the snapshot.
+
+---
+
+## Ecosystem Connections
+
+When this analysis is complete, identify if outputs should flow to other skills:
+
+- **Feeds into Brand Positioning Audit:** Pass the competitive landscape summary (Sections 1, 3, 5) in structured markdown so it can populate Section 3 (Competitive Separation) of that audit
+- **Feeds into Founder Intelligence:** Pass competitor analysis framing when competitive context is needed for lens application
+
+**Output format for Brand Positioning handoff:**
+```
+## Competitive Landscape (from Competitor Intel Brief)
+Competitor: [name]
+Their primary position: [one sentence]
+Their ICP: [one sentence]
+Their primary vulnerability: [one sentence]
+Recommended separation claim: [exploit language from Section 5]
+```
+
+**Output format for Founder Intelligence handoff:**
+```
+## Competitive Context for Analysis
+Competitor: [name]
+Moat durability: [score + one-liner]
+Biggest structural vulnerability: [one sentence]
+Relevant strategic question: [frame for lens application]
+```
+
+---
+
 **Run a structured competitive teardown in 20 minutes.**
 
 Most competitive research is vague, slow, and useless in a meeting. "They're strong in content" is not intelligence. This skill runs a structured teardown — positioning, ICP, offer gaps, moat assessment using Helmer's 7 Powers, vulnerability mapping, and a direct attack brief. Every finding needs a specific signal. Output is pitch-deck ready without editing.
@@ -318,12 +371,81 @@ That's your full competitive teardown on [competitor name].
 
 What's next?
 
-A) Go deeper on any section — tell me which one and what question you need answered
-B) Run the same analysis on a second competitor
-C) Build a side-by-side comparison table (useful for pitch decks or strategy docs)
+A) Go deeper on a specific section
+B) Compare to another competitor
+C) Build the counter-strategy
 D) Done — you have what you need
 
 Which one?
+```
+
+### If They Choose A — Go Deeper on a Section
+
+Ask which section. Then apply these execution protocols:
+
+**For Moat Assessment (Section 4):**
+- Run a second-pass analysis of the specific power type they want to explore
+- Provide the strongest counter-argument to your original assessment
+- Rate your confidence in the moat assessment 1-5 with explicit reasoning
+- End with: "If you're right that this moat is stronger than I rated it, the strategic implication changes to: [X]"
+
+**For Vulnerability Map (Section 5):**
+- Expand each vulnerability with:
+  - Probability of exploitation: Low / Medium / High (with reasoning)
+  - Estimated timeline: How long before a well-funded competitor could exploit this?
+  - Specific first move: The exact action you'd take in week 1 to start owning this gap
+
+**For ICP Profile (Section 1b):**
+- Add a second ICP segment if evidence supports it (e.g., a secondary buyer or a different industry vertical they're starting to target)
+- Map how the messaging differs between segments — where does their copy try to serve both and fail?
+
+### If They Choose B — Compare to Another Competitor
+
+Ask for the second competitor's name and URL.
+- Run the same 6-section framework on Competitor 2
+- After completing both teardowns, add a side-by-side comparison table:
+
+| Dimension | [Competitor 1] | [Competitor 2] | You (if positioning provided) |
+|-----------|----------------|----------------|-------------------------------|
+| Target ICP | — | — | — |
+| Primary message | — | — | — |
+| Price point | — | — | — |
+| Top content channel | — | — | — |
+| Strongest moat | — | — | — |
+| Primary vulnerability | — | — | — |
+| AI search presence | — | — | — |
+
+Include a 2-sentence "so what" under the table: what the comparison reveals, and what it means for the user's decision.
+
+### If They Choose C — Build the Counter-Strategy
+
+Given the full competitive map, determine the optimal positioning response:
+- What position can you own that neither competitor can claim credibly?
+- Where is the market segment that's either underserved or overpriced?
+- What's the asymmetric message — something true about you that's structurally false for them?
+
+Format the output directly in Brand Positioning Audit format (Sections 1-6) so it can be fed into that skill without reformatting:
+
+```
+## Counter-Strategy → Brand Positioning Audit Format
+
+### ICP Clarity
+Target: [specific audience that the competitor leaves underserved]
+
+### Value Clarity
+Claim: [outcome you deliver that they can't match]
+
+### Differentiation
+Position: [the specific thing that makes this impossible for them to copy]
+
+### Proof Required
+What you'd need: [type of proof that would close deals against this competitor]
+
+### Message-Market Fit
+Language: [words the target ICP uses that the competitor doesn't use in their messaging]
+
+### Competitive Separation
+Attack brief: [positioning statement + why they can't say this back]
 ```
 
 ---

@@ -10,6 +10,20 @@ tags: [youtube, transcription, summarization, video, telegram]
 
 Automatically fetch transcripts from YouTube videos, generate structured summaries, and deliver full transcripts to messaging platforms.
 
+## Mode
+
+Detect from context or ask: *"Quick TL;DR, full summary, or full summary with content angles?"*
+
+| Mode | What you get | Best for |
+|------|-------------|----------|
+| `quick` | 3-bullet TL;DR + single key takeaway | Fast consumption, sharing a clip |
+| `standard` | Full structured summary: thesis, insights, takeaway | Learning, note-taking, research |
+| `deep` | Full summary + chapter breakdown + content repurposing opportunities | Turning a video into a content asset |
+
+**Default: `standard`** — use `quick` if they just want the gist. Use `deep` if they want to extract the video into usable content.
+
+---
+
 ## Why This vs ChatGPT?
 
 **Problem with ChatGPT:** It can't access YouTube transcripts directly. You have to manually copy/paste captions or use a third-party tool first, then feed the text to ChatGPT. Multi-step, clunky, loses video metadata.

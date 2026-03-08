@@ -1,13 +1,35 @@
 ---
 name: brand-voice-extractor
 description: "Extract or build a distinct brand voice profile that AI agents can use to produce on-brand content every time. Two modes: Extract (analyze content you're proud of) or Build (construct a voice from scratch). Outputs a complete voice profile with personality traits, tone spectrum, vocabulary guide, rhythm patterns, and example phrases. Use this before any content creation skill for consistent, human-sounding output."
-version: "1.0.0"
+version: "1.1.0"
 price: "$9"
 author: "@BrianRWagner"
 slug: "brw-brand-voice-extractor"
 ---
 
 # Brand Voice Extractor
+
+## Runtime Context
+**Platform:** Claude Code / OpenClaw  
+**File system:** Available. Read prior outputs before starting. Save all outputs to the paths specified in Memory Protocol.  
+**Cross-skill dependencies:**
+- Upstream: None required — this is the starting point
+- Downstream: This skill produces a complete VOICE-PROFILE.md ready for use in any content generation workflow.
+
+---
+
+## Memory Protocol
+
+**Save output to:** `voice/[name]-voice-profile-YYYY-MM-DD.md`
+
+**At session start:** Check if a prior voice profile file exists for this person/brand. If yes:
+- Load it into context
+- Note this is a re-run / refinement session
+- Compare new samples to prior profile — flag if voice has evolved or if patterns conflict
+
+**Cross-session rule:** If a prior voice profile exists, always load it before starting — do not treat every run as a cold start. Reference what was previously extracted and ask if anything has changed since.
+
+---
 
 Generic copy converts worse than copy with a distinct voice.
 
@@ -86,6 +108,21 @@ Store the profile somewhere accessible (e.g., `brand/VOICE-PROFILE.md` in your w
 
 ## Extract Mode: What the Agent Analyzes
 
+### Extraction Reasoning Chain
+
+Before outputting patterns, follow this process explicitly:
+
+> **Analyze samples → Extract signals per dimension → Synthesize conflicts (when patterns contradict, weight 3 most recent samples 2x) → Validate against quality bar → Output**
+
+Do not skip steps. Each stage informs the next. Surfacing the reasoning process catches extraction errors before they lock into the profile.
+
+### Input Constraints
+
+- **Minimum sample length:** If total sample content < 500 words, request more before proceeding. A profile built on too little material will be too general to be useful.
+- **Corporate/committee voice detection:** If samples read as committee-written (passive voice >30%, no personal opinions, heavy hedging throughout), flag this to the user before proceeding: *"These samples may reflect corporate/edited voice rather than your authentic voice. For best results, share something you wrote quickly and unfiltered — an email, a Slack message, a quick post."*
+
+---
+
 **Tone patterns**
 - Formal ↔ Casual (contractions? fragments? slang?)
 - Serious ↔ Playful (humor? gravity?)
@@ -99,10 +136,21 @@ Store the profile somewhere accessible (e.g., `brand/VOICE-PROFILE.md` in your w
 - Everyday vs. formal vocabulary
 
 **Rhythm patterns**
+
+*Technical HOW:* Count average words per sentence across all samples. Measure sentence length variance (do most sentences cluster around the same length, or does it range widely?). Flag if >40% of sentences are similar length — that signals a monotone rhythm that may need to be intentional, not accidental.
+
 - Average sentence and paragraph length
 - Mix of short/punchy vs. longer/flowing
 - Fragment use
 - List frequency
+
+**Transition patterns**
+
+*Technical HOW:* Scan for bridge phrases appearing 3+ times across samples. Extract the exact wording — not paraphrases, the literal phrases. These become the transition fingerprints. Examples: "Here's the thing...", "What that means is...", "The reality is..."
+
+- Recurring bridge phrases (extract verbatim)
+- How they move between ideas (abrupt? flowing? with a pivot?)
+- Signature openers and closers
 
 **Structural patterns**
 - How you open (story? question? bold claim?)
@@ -115,6 +163,13 @@ Store the profile somewhere accessible (e.g., `brand/VOICE-PROFILE.md` in your w
 - Teacher or peer?
 - Polished or raw?
 - Optimistic or realistic?
+
+### Conflict Resolution
+
+When patterns contradict across samples (e.g., some samples are formal, some are casual):
+1. Weight the 3 most recent samples 2x in your analysis
+2. Flag the conflict explicitly in the profile: *"Voice is inconsistent across [dimension] — recent samples lean [X], older samples lean [Y]. Profile reflects recent direction."*
+3. Ask the user: "I'm seeing tension in [dimension]. Which direction is closer to where you want to go?"
 
 ---
 
@@ -203,7 +258,26 @@ If any answer is no, the profile needs more specificity.
 
 ---
 
+## After Delivering the Profile
+
+Once the voice profile is output, always offer the next step:
+
+```
+Your voice profile is complete. What's next?
+
+A) Test it — Generate 3 sample sentences in this voice to validate it feels right
+B) Refine it — Tell me what's off; I'll diagnose which pattern needs adjustment
+C) Strengthen it — I'll identify the weakest dimension and deepen it with more sample analysis
+D) Done — Save to voice profile file; it's ready for use in any content generation workflow
+```
+
+Just reply with a letter or describe where you want to go.
+
+---
+
 ## How This Connects to Other Skills
+
+This skill produces a complete VOICE-PROFILE.md ready for use in any content generation workflow.
 
 Voice profile → **direct-response-copy:** "Write landing page copy using this voice profile."
 Voice profile → **content-atomizer:** "Repurpose this using my voice profile for tone."

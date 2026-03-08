@@ -12,6 +12,20 @@ tags: [research, trends, reddit, twitter, competitive-intel, content-research]
 
 Scans Reddit, X, and web for the last 30 days, identifies patterns, extracts community insights, and delivers actionable intelligence with copy-paste-ready prompts.
 
+## Mode
+
+Detect from context or ask: *"Quick pulse, full research, or strategic intelligence brief?"*
+
+| Mode | What you get | Best for |
+|------|-------------|----------|
+| `quick` | Reddit only, top 10 insights, 10 min | Fast topic pulse, content spark |
+| `standard` | Reddit + X + web, full synthesis with themes | Content planning, market research |
+| `deep` | Full research + strategic brief + content angles + competitive intelligence | Product decisions, campaign strategy |
+
+**Default: `standard`** — use `quick` if they want a fast read. Use `deep` if they're making a business or product decision.
+
+---
+
 ## Why This vs ChatGPT?
 
 **Problem with "research [topic]":** ChatGPT's training data is months/years old. It gives you general knowledge, not current signals.

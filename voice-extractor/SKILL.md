@@ -17,6 +17,20 @@ That's what this skill does. You give it writing samples, it gives you back a Vo
 
 ---
 
+## Mode
+
+Detect from context or ask: *"Quick voice snapshot, full Voice Guide, or full guide with examples?"*
+
+| Mode | What you get | Best for |
+|------|-------------|----------|
+| `quick` | Top 5 voice characteristics + 3 do/don't rules | Fast style reference, single piece |
+| `standard` | Full Voice Guide: tone, vocabulary, rhythm, structure | AI training, ghostwriting, brand documentation |
+| `deep` | Full Voice Guide + 10 sample rewrites + writing rules checklist + AI training examples | Onboarding writers, building a brand voice system |
+
+**Default: `standard`** — use `quick` if they just need a fast reference. Use `deep` if they're onboarding a ghostwriter or building a content team.
+
+---
+
 ## What You Need to Start
 
 Get me 3-5 writing samples. More is better. Could be:
