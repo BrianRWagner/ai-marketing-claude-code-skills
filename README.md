@@ -226,23 +226,48 @@ Deep work execution mode. When you have a clear task and need to execute without
 
 ## Installation
 
-### Claude Code (Primary)
+### Quick Install (any platform)
 
 ```bash
-# Clone and copy to Claude Code skills
 git clone https://github.com/BrianRWagner/ai-marketing-claude-code-skills.git
-mkdir -p ~/.claude/skills
-cp -r ai-marketing-claude-code-skills/* ~/.claude/skills/
+cd ai-marketing-claude-code-skills
+bash scripts/install.sh
 ```
 
-### Other Platforms
+Auto-detects Claude Code, OpenClaw, Cursor, and Windsurf. Walks you through the rest.
 
-| Platform | Install Location | Notes |
-|----------|-----------------|-------|
-| **OpenClaw** | `~/.openclaw/skills/` | Native support. [OpenClaw-optimized version →](https://github.com/BrianRWagner/ai-marketing-openclaw-skills) |
-| **GitHub Copilot** | `.github/skills/` in repo | Via workspace context |
-| **Cursor** | `.cursor/rules/` | Via rules/context |
-| **ChatGPT/Claude.ai** | Paste SKILL.md content | Manual prompt |
+**Flags:**
+```bash
+bash scripts/install.sh --all              # install to every detected platform
+bash scripts/install.sh --platform=cursor  # specific platform only
+bash scripts/install.sh --include-pro      # include pro/ skills (if purchased)
+bash scripts/install.sh --dry-run          # preview without writing files
+```
+
+### Platform Support
+
+| Platform | Install Location | File Used | Notes |
+|----------|-----------------|-----------|-------|
+| **Claude Code** | `~/.claude/skills/` | `SKILL.md` | Full detail, all phases |
+| **OpenClaw** | `~/.openclaw/skills/` | `SKILL-OC.md` ¹ | Token-efficient edition |
+| **Cursor** | `.cursor/rules/` (project) | `SKILL.md` → `.mdc` | Converted with rule frontmatter |
+| **Windsurf** | `.windsurf/rules/` (project) | `SKILL.md` → `.md` | Converted with rule frontmatter |
+| **Generic** | `./ai-marketing-skills/` | `SKILL.md` | Plain copy, any tool |
+
+> ¹ **Dual-file system:** Each skill ships two versions — `SKILL.md` (Claude Code, verbose, all phases) and `SKILL-OC.md` (OpenClaw, condensed, ~200 lines, token-efficient). The installer automatically routes the right file to the right platform. If `SKILL-OC.md` isn't present yet for a skill, it falls back to `SKILL.md`.
+
+### List Available Skills
+
+```bash
+bash scripts/list-skills.sh
+```
+
+### Convert to Platform Format
+
+```bash
+bash scripts/convert.sh --platform=cursor --output-dir=./.cursor/rules
+bash scripts/convert.sh --all   # convert for all platforms into ./converted/
+```
 
 ---
 
