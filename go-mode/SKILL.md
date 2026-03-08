@@ -1,3 +1,12 @@
+---
+name: go-mode
+description: Autonomous goal execution — give a goal, get a plan, confirm, execute, report. You steer, Claude drives.
+version: 2.0.0
+author: BrianRWagner
+tags: [autonomy, planning, execution, goal-setting, productivity]
+homepage: https://github.com/BrianRWagner/ai-marketing-claude-code-skills
+---
+
 # 🎯 Go Mode — Autonomous Goal Execution
 
 Give me a goal. I'll plan it, confirm with you, execute it, and report back. You steer — I drive.

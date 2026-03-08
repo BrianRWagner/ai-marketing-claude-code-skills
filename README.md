@@ -1,12 +1,16 @@
-# AI Marketing Skills
+# AI Marketing Skills for Claude Code
 
-**Marketing frameworks that AI actually executes.**
+**Marketing frameworks that Claude Code actually executes.**
 
-Not guides. Not courses. *Skills* — packaged expertise your AI agent loads and follows.
+Not guides. Not courses. *Skills* — packaged expertise your AI coding agent loads and follows.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Skills](https://img.shields.io/badge/Skills-17-green.svg)](#available-skills)
-[![Compatible](https://img.shields.io/badge/Works%20With-Claude%20Code%20%7C%20OpenClaw%20%7C%20Copilot-purple.svg)](#compatibility)
+[![Skills](https://img.shields.io/badge/Skills-24-green.svg)](#available-skills)
+[![Claude Code](https://img.shields.io/badge/Claude%20Code-Native-blueviolet.svg)](#installation)
+[![Also Works](https://img.shields.io/badge/Also%20Works-OpenClaw%20%7C%20Copilot%20%7C%20Cursor-gray.svg)](#compatibility)
+[![Updated](https://img.shields.io/badge/Updated-Feb%2028%202026-brightgreen.svg)](./CHANGELOG.md)
+
+> **February 2026 — v2.0:** All skills upgraded to production-grade with mandatory intake gates, structured reasoning phases, self-critique loops, and context loading. [See what changed →](./CHANGELOG.md)
 
 ---
 
@@ -18,7 +22,22 @@ Agent Skills are an [open standard](https://agentskills.ai) for packaging expert
 
 **Agent Skills:** Your agent reads it → Your agent applies it → Every time. Perfectly.
 
-Think of it like giving your AI a playbook written by an expert. Instead of prompting from scratch every time, the skill provides the framework, questions, and output format automatically.
+Think of it like giving Claude Code a playbook written by an expert. Instead of prompting from scratch every time, the skill provides the framework, questions, and output format automatically.
+
+---
+
+## Quick Install (Claude Code)
+
+```bash
+# Clone the repo
+git clone https://github.com/BrianRWagner/ai-marketing-claude-code-skills.git
+
+# Copy skills to Claude Code's skills folder
+mkdir -p ~/.claude/skills
+cp -r ai-marketing-claude-code-skills/* ~/.claude/skills/
+```
+
+That's it. Claude Code will now automatically use these skills when you mention related topics.
 
 ---
 
@@ -196,51 +215,34 @@ Industry-adaptive B2B newsletter creation with stage, role, and geography-aware 
 
 ---
 
-## How to Use These Skills
+#### 🚀 Go Mode
+Deep work execution mode. When you have a clear task and need to execute without distraction.
 
-### Step 1: Choose Your AI Tool
+**Use when:** "Go mode", "Execute this", "Let's build", "Ship it"
 
-These skills work with any AI that can read instructions:
+→ [go-mode/SKILL.md](./go-mode/SKILL.md)
 
-| Tool | Where to Put Skills |
-|------|---------------------|
-| **Claude Code** | `~/.claude/skills/` |
-| **OpenClaw** | `~/.openclaw/skills/` |
-| **GitHub Copilot** | `.github/skills/` in your repo |
-| **VS Code Copilot** | `.github/skills/` in your workspace |
-| **ChatGPT/Claude (manual)** | Paste SKILL.md content into your prompt |
+---
 
-### Step 2: Install the Skill
+## Installation
 
-**Option A: Clone the whole repo**
+### Claude Code (Primary)
+
 ```bash
-git clone https://github.com/BrianRWagner/ai-marketing-skills.git
+# Clone and copy to Claude Code skills
+git clone https://github.com/BrianRWagner/ai-marketing-claude-code-skills.git
+mkdir -p ~/.claude/skills
+cp -r ai-marketing-claude-code-skills/* ~/.claude/skills/
 ```
 
-**Option B: Copy individual skills**
-```bash
-# Clone first
-git clone https://github.com/BrianRWagner/ai-marketing-skills.git
+### Other Platforms
 
-# Copy what you need (example: Claude Code)
-cp -r ai-marketing-skills/positioning-basics ~/.claude/skills/
-cp -r ai-marketing-skills/voice-extractor ~/.claude/skills/
-```
-
-### Step 3: Use It
-
-Once installed, just ask your AI to help with that topic. The skill activates automatically based on keywords.
-
-**Examples:**
-- "Help me with positioning for my SaaS product"
-- "Audit my homepage: [url]"
-- "Extract my voice from these writing samples"
-- "Build me a LinkedIn content strategy"
-- "What are people saying about [topic] on Reddit?"
-- "Summarize this YouTube video"
-- "This sounds too AI — make it human"
-
-The AI will follow the skill's framework instead of generic responses.
+| Platform | Install Location | Notes |
+|----------|-----------------|-------|
+| **OpenClaw** | `~/.openclaw/skills/` | Native support. [OpenClaw-optimized version →](https://github.com/BrianRWagner/ai-marketing-openclaw-skills) |
+| **GitHub Copilot** | `.github/skills/` in repo | Via workspace context |
+| **Cursor** | `.cursor/rules/` | Via rules/context |
+| **ChatGPT/Claude.ai** | Paste SKILL.md content | Manual prompt |
 
 ---
 
@@ -248,43 +250,31 @@ The AI will follow the skill's framework instead of generic responses.
 
 | Platform | Status | Notes |
 |----------|--------|-------|
-| Claude Code | ✅ Full Support | Native skills folder |
-| OpenClaw | ✅ Full Support | Native skills folder |
-| GitHub Copilot | ✅ Full Support | Via .github/skills |
-| VS Code Copilot | ✅ Full Support | Via workspace |
-| ChatGPT | ⚠️ Manual | Paste SKILL.md content |
-| Claude.ai | ⚠️ Manual | Paste SKILL.md content |
-| Cursor | ✅ Full Support | Via rules/context |
+| **Claude Code** | ✅ Native | Primary target |
+| **OpenClaw** | ✅ Compatible | Works as-is, [optimized version available](https://github.com/BrianRWagner/ai-marketing-openclaw-skills) |
+| **GitHub Copilot** | ✅ Compatible | Via .github/skills |
+| **Cursor** | ✅ Compatible | Via rules/context |
+| **ChatGPT** | ⚠️ Manual | Paste SKILL.md content |
+| **Claude.ai** | ⚠️ Manual | Paste SKILL.md content |
 
 ---
 
-## 🔥 Premium on Claw Mart
+## 🔥 Premium Skills (Gumroad)
 
-Deeper frameworks and ready-to-deploy AI systems. Available on [Claw Mart](https://www.shopclawmart.com):
+Full Claude Code editions with structured reasoning phases, self-critique loops, and output precision.
 
-### Skills
+→ [Browse all on Gumroad](https://brianrwagner.gumroad.com)
 
-| Skill | What It Does | Price | Link |
-|-------|-------------|-------|------|
-| **🎙️ Voice Extractor** | Extract your authentic writing voice and teach your AI to sound like you — not like ChatGPT | $9 | [Buy →](https://www.shopclawmart.com/listings/voice-extractor-f1578cb8) |
-| **🧠 Founder Intelligence** | A decade-plus of books, podcasts, and founder interviews distilled into 9 strategic lenses. Decision-quality answers — not motivational advice. | $15 | [Buy →](https://www.shopclawmart.com/listings/founder-intelligence-2002a45e) |
-| **🎙️ Voice-Matched Content System** | Extract your voice from writing samples → generate content that sounds like you, not AI | $9 | [Buy →](https://www.shopclawmart.com/listings/voice-matched-content-system-095c6e91) |
-| **🔍 Brand Positioning Audit** | Audit any brand's positioning in 15 min — scored diagnosis + messaging rewrites | $9 | [Buy →](https://www.shopclawmart.com/listings/brand-positioning-audit-a22b40b6) |
-| **☀️ Morning Brief System** | Wake up to weather, email digest, priorities, and overnight work summary | $14 | [Buy →](https://www.shopclawmart.com/listings/morning-brief-system-5c9005d8) |
-| **🚀 AI Employee Onboarding Wizard** | Go from zero to a fully configured AI employee in 15 minutes — generates 7 production-ready config files | $9 | [Buy →](https://www.shopclawmart.com/listings/ai-employee-onboarding-wizard-2ed777d1) |
-| **🔍 Competitor Intel Brief** | Structured competitive teardown — positioning, ICP, moat assessment, vulnerability map, and attack brief | $12 | [Buy →](https://www.shopclawmart.com/listings/competitor-intel-brief-6dafbc46) |
-
-### Personas
-
-| Persona | What It Does | Price | Link |
-|---------|-------------|-------|------|
-| **🤵 The Chief of Staff** | A complete AI Chief of Staff — proactive, opinionated, runs your day | $19 | [Buy →](https://www.shopclawmart.com/listings/the-chief-of-staff-ee036345) |
-| **🏗️ Multi-Agent Team Blueprint** | Blueprint for running a 10-agent AI team with roles, routing, and meetings | $19 | [Buy →](https://www.shopclawmart.com/listings/multi-agent-team-blueprint-4da2ac9b) |
-
-👉 Browse all on Claw Mart: [shopclawmart.com](https://www.shopclawmart.com)
-
----
-
+| Skill | Price | Link |
+|-------|-------|------|
+| AI Marketing Bundle (all 7) | $49 | [Buy →](https://brianrwagner.gumroad.com/l/brw-cc-marketing-bundle) |
+| AI Discoverability Audit v2 | $19 | [Buy →](https://brianrwagner.gumroad.com/l/ai-discoverability-audit) |
+| Founder Intelligence | $15 | [Buy →](https://brianrwagner.gumroad.com/l/brw-founder-intelligence) |
+| Competitor Intel Brief | $12 | [Buy →](https://brianrwagner.gumroad.com/l/brw-competitor-intel-brief) |
+| Morning Brief System | $14 | [Buy →](https://brianrwagner.gumroad.com/l/brw-morning-brief-system) |
+| Brand Voice Extractor | $9 | [Buy →](https://brianrwagner.gumroad.com/l/brand-voice-extractor) |
+| AI Employee Onboarding | $9 | [Buy →](https://brianrwagner.gumroad.com/l/brw-ai-employee-onboarding) |
+| Brand Positioning Audit | $9 | [Buy →](https://brianrwagner.gumroad.com/l/brw-brand-positioning-audit) |
 ## About
 
 Created by **Brian Wagner** — AI Marketing Architect
@@ -315,4 +305,4 @@ MIT — Use freely. Attribution appreciated.
 
 ---
 
-*Marketing frameworks that AI actually executes.* 🔱
+*Marketing frameworks that Claude Code actually executes.* 🔱

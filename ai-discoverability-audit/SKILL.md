@@ -5,11 +5,9 @@ description: Audit how a brand appears in AI-powered search (ChatGPT, Perplexity
 
 # AI Discoverability Audit
 
-You are an AI discoverability expert. Audit how a brand appears in AI search and recommendation systems, identify gaps, and provide actionable recommendations.
+You are an AI discoverability expert. Audit how a brand appears in AI search and recommendation systems, identify gaps, and produce an action plan with a re-audit schedule.
 
-**Why This Matters:** Traditional SEO optimizes for Google. AI discoverability optimizes for how LLMs understand, describe, and recommend a brand. If AI assistants don't know you exist, you're invisible to a growing segment of high-intent searchers.
-
-**Web Access Note:** If you have web access, run queries directly on AI platforms. If not, provide the user with the exact queries to run and have them report results.
+**Why This Matters:** Traditional SEO optimizes for Google. AI discoverability optimizes for how LLMs understand, describe, and recommend a brand. If AI assistants can't describe you accurately, you're invisible to a growing segment of high-intent searchers.
 
 ---
 
@@ -27,84 +25,102 @@ Detect from context or ask: *"Quick scan, full audit, or deep competitive analys
 
 ---
 
-## Before Auditing
+## Context Loading Gates
 
-Gather this context (ask if not provided):
-1. **Company name and website**
-2. **Primary product/service**
-3. **Target customer**
-4. **Geography** (local, national, global)
-5. **Top 3 competitors**
+**Before running any queries, collect:**
+
+- [ ] **Company name and website URL**
+- [ ] **Primary product/service and category** (in plain English — not jargon)
+- [ ] **Target customer** (specific role/situation)
+- [ ] **Geography** (local, national, global)
+- [ ] **Top 3 competitors** (real company names — for comparative testing)
+- [ ] **Prior audit results** (if any — for comparison/trending)
+- [ ] **Current positioning statement** (from `positioning-basics` if available — to compare against AI's actual description)
+
+**If prior audit exists:** Load it and frame this as a comparison audit, not a fresh start. Produce a trend comparison at the end.
 
 ---
 
-## The Audit Process
+## Phase 1: Pre-Audit Analysis
 
-### Phase 1: Direct Brand Queries
+Before running queries, reason through:
 
-Test how AI platforms describe the brand. Run on ChatGPT, Perplexity, and Claude:
+1. **Entity clarity check:** Is the company name distinctive, or could it be confused with another entity? Common names (e.g., "Signal") are more likely to be misattributed.
+2. **Baseline hypothesis:** Based on company size, age, and online presence — is it likely to be well-known to AI systems, partially known, or invisible?
+3. **Competitive context:** Which competitors are likely well-represented in AI training data? This informs where the gaps will be.
+4. **Positioning gap risk:** If `positioning-basics` output is available, there may be a mismatch between how the brand wants to be described and how AI actually describes it.
 
+Output a pre-audit hypothesis:
+> "Based on company profile, I expect [strong/moderate/weak] recognition. Main risk: [misattribution / missing from category / weak authority]. Competitor most likely to dominate: [name]."
+
+---
+
+## Phase 2: Structured Query Testing
+
+**Web access:** Run queries directly if available. If not, provide exact queries for the user to run and paste results.
+
+### Direct Brand Queries (run on ChatGPT AND Perplexity AND Claude)
+
+```
 1. "What is [Company]?"
 2. "What does [Company] do?"
 3. "Is [Company] any good?"
 4. "What do people say about [Company]?"
+```
 
-**Document:**
-- Does AI know the brand? (Yes/No/Partial)
-- Is the description accurate?
-- Sentiment: positive, neutral, or negative?
-- Sources cited (if any)?
-- **Misattribution check:** Is the brand confused with a competitor or different company? Wrong founder, wrong industry, wrong location?
+**Document per query:**
+- AI knows the brand? (Yes / No / Partial)
+- Description accurate? (match to stated positioning)
+- Sentiment: positive / neutral / negative
+- Sources cited?
+- **Misattribution check:** Wrong founder? Wrong industry? Confused with competitor?
 
-### Phase 2: Category Queries
+### Category Queries
 
-Test if the brand appears in category recommendations:
-
+```
 1. "What are the best [category] companies?"
 2. "Who should I hire for [service] in [location]?"
 3. "Recommend a [product/service] for [use case]"
-4. "[Competitor] alternatives"
+4. "[Top Competitor] alternatives"
+```
 
-**Document:**
-- Does the brand appear? (Yes/No)
-- Position (1st, 2nd, not at all)
-- Which competitors appear instead?
-- Reasons AI gives for recommendations
+**Document:** Brand appears? Position in list? Which competitors appear instead?
 
-### Phase 3: Expertise Queries
+### Expertise Queries
 
-Test if the brand/founder is cited as authority:
-
+```
 1. "Who are the experts in [industry]?"
-2. "What are best practices for [topic brand covers]?"
-3. "[Founder name] - who is this?"
+2. "What are best practices for [topic]?"
+3. "[Founder name] — who is this?"
+```
 
-**Document:** Is brand/founder cited? Is their content referenced? Are competitors cited instead?
+**Document:** Cited? Content referenced? Competitors cited instead?
 
-### Phase 4: Competitive Comparison `[standard+]`
+### Competitive Comparison Matrix
 
-Run the same queries for top competitors. Compare:
+Run the same queries for top 3 competitors and compare:
 
-| Query Type | Your Brand | Competitor A | Competitor B |
-|------------|------------|--------------|--------------|
-| Direct recognition | | | |
-| Category presence | | | |
-| Authority citations | | | |
+| Query Type | Your Brand | [Competitor A] | [Competitor B] | [Competitor C] |
+|---|---|---|---|---|
+| Direct recognition | | | | |
+| Category presence | | | | |
+| Authority citations | | | | |
+| Sentiment | | | | |
 
 ---
 
-## Scoring Framework
+## Phase 3: Structured Scoring
 
-Rate each dimension 1-5:
+Rate each dimension 1-5 using explicit criteria:
 
-| Dimension | Score | Criteria |
-|-----------|-------|----------|
-| **Recognition** | 1-5 | Does AI know you? |
-| **Accuracy** | 1-5 | Is info correct and current? |
-| **Sentiment** | 1-5 | Is description positive? |
-| **Category Presence** | 1-5 | Appear in "best of" queries? |
-| **Authority** | 1-5 | Cited as expert? |
-| **Competitive Position** | 1-5 | How do you compare? |
+| Dimension | 1 | 3 | 5 |
+|---|---|---|---|
+| **Recognition** | AI doesn't know the brand | Partial/vague knowledge | Accurate, detailed description |
+| **Accuracy** | Wrong info / misattribution | Mostly right, minor gaps | Fully accurate and current |
+| **Sentiment** | Negative or skeptical | Neutral | Positive with specific reasons |
+| **Category Presence** | Never appears in category queries | Occasionally appears | Consistently in top 3 |
+| **Authority** | Never cited as expert | Occasionally mentioned | Regularly cited for expertise |
+| **Competitive Position** | Dominated by competitors | On par | Clearly leads in AI recommendations |
 
 **Total: X/30**
 - 25-30: Strong presence (maintain and expand)
@@ -114,58 +130,139 @@ Rate each dimension 1-5:
 
 ---
 
-## Gap Analysis `[standard+]`
+## Phase 4: Gap Analysis & Recommendations
 
-**Critical (Fix now):** Factual errors, misattribution, brand not recognized, competitors dominating category queries
+**Classify each gap:**
 
-**High Priority (30 days):** Weak descriptions, missing from recommendations, no authority citations
+| Priority | Trigger | Timeline |
+|---|---|---|
+| Critical | Factual errors, misattribution, brand not recognized | Fix now |
+| High | Weak descriptions, missing from recommendations | 30 days |
+| Opportunity | Adjacent categories, founder thought leadership | 90 days |
 
-**Opportunities (90 days) `[deep only]`:** Adjacent categories, founder thought leadership, AI-friendly content
+**Recommendation categories:**
 
----
+**Entity Clarity (Foundation):**
+- Fix factual errors in source material AI trains on
+- Claim Google Knowledge Panel
+- Create AI-parseable "About" page with clear entity signals
 
-## Recommendations
-
-### If Invisible or Weak (Do These First)
-1. Fix factual errors or misattribution - update source material
-2. Claim Google Knowledge Panel - establishes entity recognition
-3. Create clear "About" content - AI-parseable company description
-4. Build review presence - 10+ reviews on trusted platforms (G2, Capterra, Google)
-5. Publish 3-5 answer-worthy articles - target common category questions
-
-### Technical
-- Structured data (schema for organization, products, reviews)
-- Wikipedia presence (if notable)
+**Trust Signals:**
+- 10+ reviews on G2, Capterra, or Google
 - Consistent directory listings
+- Structured schema markup (org, product, review)
 
-### Content
-- Answer-worthy content (directly answer common questions)
-- Entity clarity (crystal clear what brand IS and DOES)
-- Citation-worthy assets (resources others reference)
+**Content Authority:**
+- 3-5 answer-worthy articles targeting category questions directly
+- Wikipedia presence (if notable)
+- Founder bylines in authoritative publications
 
-### Authority
-- Founder visibility (LinkedIn, podcasts, speaking, bylines)
-- PR for authoritative publications
-- Quality backlinks
+**Competitive Gap:**
+- If competitor dominates a category query → publish a direct comparison piece
+- If competitor appears in "[Brand] alternatives" → create better content targeting that query
 
-### Ongoing
-- Monthly re-audit core queries
-- Track competitor AI presence
+**Constraint:** Never recommend keyword stuffing, fake reviews, or misleading schema. These tactics risk penalties and undermine genuine authority.
 
 ---
 
-## Output Format
+## Phase 5: Self-Critique Pass (REQUIRED)
 
-**quick:** Top 3 findings + immediate fixes. No scoring table.
+After completing the audit:
 
-**standard:** Executive Summary → Detailed Results → 30-day Action Plan
+- [ ] Did I run queries on at least 2 AI platforms, or only one?
+- [ ] Did I check for misattribution specifically (not just presence)?
+- [ ] Is the competitive comparison based on the same query set, or different queries?
+- [ ] Are my recommendations specific and implementable, or just generic "improve your SEO"?
+- [ ] Is the re-audit schedule set with specific dates and what to measure?
+- [ ] If prior audit exists: did I actually compare scores and show the trend?
 
-**deep:** Full standard output + competitive comparison table + 90-day roadmap + ongoing query list for monthly re-audits
+Flag gaps: "I could only test Perplexity — have the user run the same queries on ChatGPT and paste results for a complete audit."
 
 ---
 
-**Want a full AI discoverability audit for your brand?**
-→ [Book a strategy call](https://brianrwagner.com)
+## Phase 6: Re-Audit Schedule (MANDATORY)
+
+Set specific re-audit dates before delivering:
+
+**30-day re-audit:** After implementing critical fixes — did recognition improve?
+**60-day re-audit:** After publishing answer-worthy content — any new category mentions?
+**90-day re-audit:** Full comparative re-audit — full trend comparison to this baseline
+
+**Comparison table format for future audits:**
+```
+| Dimension | [Baseline Date] | 30-Day | 60-Day | 90-Day | Δ |
+|---|---|---|---|---|---|
+| Recognition | [X/5] | | | | |
+| Category | [X/5] | | | | |
+| Authority | [X/5] | | | | |
+| Total | [X/30] | | | | |
+```
+
+---
+
+## Output Structure
+
+```markdown
+## AI Discoverability Audit: [Company] — [Date]
+
+### Pre-Audit Hypothesis
+[Prediction + reasoning]
+
+---
+
+### Phase 1: Direct Brand Queries
+**ChatGPT:** [findings]
+**Perplexity:** [findings]
+**Claude:** [findings]
+**Misattribution found:** [Yes/No — details]
+
+### Phase 2: Category Queries
+[Findings per query]
+
+### Phase 3: Expertise Queries
+[Findings]
+
+### Competitive Comparison
+[Table with real competitor names]
+
+---
+
+### Scores
+| Dimension | Score |
+|---|---|
+| Recognition | /5 |
+| Accuracy | /5 |
+| Sentiment | /5 |
+| Category Presence | /5 |
+| Authority | /5 |
+| Competitive Position | /5 |
+| **TOTAL** | **/30** |
+
+**Rating:** [Strong / Moderate / Weak / Invisible]
+
+---
+
+### Gap Analysis
+
+**Critical (Fix Now):**
+1. [Specific fix]
+
+**High Priority (30 Days):**
+1. [Specific fix]
+
+**Opportunities (90 Days):**
+1. [Specific improvement]
+
+---
+
+### Re-Audit Schedule
+- 30-day: [YYYY-MM-DD] — measure: [what to check]
+- 60-day: [YYYY-MM-DD] — measure: [what to check]
+- 90-day: [YYYY-MM-DD] — full comparative re-audit
+
+### Self-Critique Notes
+[Any gaps, limitations, or things the user needs to run manually]
+```
 
 ---
 

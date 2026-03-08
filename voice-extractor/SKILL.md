@@ -5,15 +5,9 @@ description: Extract and document someone's authentic writing voice from samples
 
 # Voice Extractor
 
-Here's the thing about AI-generated content: it all sounds the same.
+AI-generated content all sounds the same. The fix isn't better prompts — it's teaching the AI how you actually communicate.
 
-Generic. Safe. Forgettable.
-
-The fix isn't better prompts. It's teaching the AI how YOU actually communicate.
-
-That's what this skill does. You give it writing samples, it gives you back a Voice Guide — your communication DNA, documented and ready to use.
-
-**Why this matters:** Once you have a Voice Guide, every piece of AI output sounds like you. Not like ChatGPT. Not like every other founder on LinkedIn. *You.*
+This skill extracts your communication DNA from writing samples and produces a Voice Guide: documented, tested, and ready to use.
 
 ---
 
@@ -31,189 +25,216 @@ Detect from context or ask: *"Quick voice snapshot, full Voice Guide, or full gu
 
 ---
 
-## What You Need to Start
+## Context Loading Gates
 
-Get me 3-5 writing samples. More is better. Could be:
-- Emails you've sent
-- LinkedIn posts
-- Articles or blog posts
-- Transcripts of you speaking (podcasts, calls)
-- Slack messages (often more authentic than polished writing)
+**Before extracting, collect:**
 
-The messier and more authentic, the better. Transcripts of you talking are gold — that's where your real voice lives.
+- [ ] **Writing samples** — minimum 3 samples OR 500 total words (see priority list below)
+- [ ] **Purpose of voice guide** — AI training? Ghostwriter onboarding? Team alignment?
+- [ ] **Confidence zones** — Any topics where they want to sound more/less authoritative?
+- [ ] **Known anti-patterns** — Any words or phrases they already know they want to avoid?
 
-Also tell me:
-- What's this voice guide for? (AI training, ghostwriter, team alignment)
-- Any topics where you want to sound MORE confident vs. more exploratory?
+**Sample priority (most → least authentic):**
+1. Casual Slack or email (raw, unedited voice)
+2. Podcast or call transcript
+3. LinkedIn posts or articles
+4. Website copy (often edited, less authentic)
 
----
+**Minimum sample gate:** If samples total under 500 words, stop:
+> "These samples are too short to extract reliable patterns. Please add 2-3 more — emails, Slack messages, or transcripts work best. The messier and more casual, the better."
 
-## How I Extract Your Voice
-
-### Step 1: Find Your Core Energy
-
-Every person has a natural communication mode. I'm looking for:
-
-**What role do you naturally play?**
-- The teacher who breaks things down?
-- The challenger who pushes back?
-- The cheerleader who builds confidence?
-- The straight-shooter who cuts through BS?
-
-**What's your default energy?**
-- Calm authority ("Here's what works")
-- High enthusiasm ("This is exciting, let me show you")
-- Understated confidence ("I've seen this a hundred times")
-
-**What do you actually care about?**
-I'll look for themes that repeat across your samples. The stuff you can't help but talk about.
+Do not attempt full extraction from under 500 words. Offer quick mode instead.
 
 ---
 
-### Step 2: Steal Your Phrases
+## Phase 1: Sample Quality Assessment
 
-This is where it gets specific. I'm hunting for:
+Before extracting, reason through:
 
-**Your transition phrases** — How do you shift topics?
-- "Here's the thing..."
-- "What I've learned is..."
-- "Let me put it this way..."
+1. **Sample authenticity:** Are these samples from edited/polished contexts (website, press) or raw contexts (Slack, email)? More polish = less authentic voice.
+2. **Sample variety:** Do the samples cover different contexts (professional, casual, educational)? Single-context samples produce single-dimension voice guides.
+3. **Exclusion check:** Identify and flag patterns that are NOT the authentic voice:
+   - Platform formatting tics (LinkedIn line breaks, Twitter brevity forcing)
+   - Typos and autocorrect errors
+   - Phrases borrowed from others (quotes, retweets)
+   - Unusually formal writing (legal docs, press releases)
+4. **Sample size adequacy:** Is there enough material for full mode, or should I use quick mode?
 
-**Your emphasis phrases** — How do you land a point?
-- "The reality is..."
-- "What that actually means..."
-- "This is the part people miss..."
-
-**Your closers** — How do you wrap up?
-- "That's the move."
-- "Start there."
-- "You've got this."
-
-These become the cheat codes for anyone (or any AI) writing as you.
+Output a sample assessment:
+> "I have [X samples / Y words] to work with. Quality: [high/medium — why]. I'll use [full/quick] mode. Excluding: [any patterns and why]."
 
 ---
 
-### Step 3: Map Your Confidence Zones
+## Phase 2: Core Energy Extraction
 
-Not every topic deserves the same energy. I'll figure out:
+Identify the fundamental communication mode:
 
-**Where you're an expert** (write with full authority):
-- Zero hedging
-- "Here's what works" energy
-- Definitive statements
+**Role:**
+- Teacher (breaks things down systematically)
+- Challenger (pushes back on assumptions)
+- Cheerleader (builds confidence and momentum)
+- Straight-shooter (cuts through BS efficiently)
 
-**Where you're experienced but not the expert** (write with earned opinion):
-- "What I've found..."
-- "In my experience..."
-- Still confident, just not absolute
+**Default energy:**
+- Calm authority ("Here's what works.")
+- High enthusiasm ("This is exciting — let me show you.")
+- Understated confidence ("I've seen this a hundred times.")
 
-**Where you're actively learning** (write with curiosity):
-- "What I'm seeing..."
-- "I'm testing this right now..."
-- Excited but exploratory
-
-This calibration is what makes the voice feel real, not like a one-note character.
+**Recurring themes:** What topics appear unprompted across samples? These are the things they actually care about.
 
 ---
 
-### Step 4: Document the Anti-Patterns
+## Phase 3: Phrase Extraction (Systematic)
 
-Just as important as what you DO say is what you'd NEVER say.
+Scan all samples and extract:
 
-I'll identify:
-- Words that would feel wrong coming from you
-- Phrases that make you cringe
-- Tones you avoid
-- Jargon you hate (even industry-standard jargon)
+**Transition phrases** (how they shift topics):
+- Quote exact examples from samples
+- Pattern: "Here's the thing...", "What I've learned...", "Let me put it differently..."
 
-**Example from my own voice guide:**
-- Never use "synergy" or "leverage" as verbs
-- Avoid hedging words like "maybe" or "possibly"
-- Don't start sentences with "So," when writing (fine when talking)
-- Cut "I think" — just say the thing
+**Emphasis phrases** (how they land a point):
+- Quote exact examples
+- Pattern: "The reality is...", "This is the part people miss...", "Here's the actual problem..."
 
----
-
-## What You Get Back
-
-A complete Voice Guide document:
-
-```
-# [Name]'s Voice Guide
-
-## Who You Are
-- Core energy: [cheerleader/challenger/teacher/etc.]
-- Natural role: [how you show up]
-- Authority zones: [where you're the expert]
-
-## Your Signature Phrases
-### Transitions
-[The phrases you use to shift topics]
-
-### Emphasis
-[The phrases you use to land points]
-
-### Closers
-[How you wrap things up]
-
-## Confidence Calibration
-### Full authority (no hedging):
-[Topics where you're the expert]
-
-### Earned perspective:
-[Topics where you have experience]
-
-### Active exploration:
-[Topics where you're learning]
-
-## What You Never Do
-[Words, phrases, tones to avoid]
-
-## Quick Examples
-### This sounds like you:
-[Example in your voice]
-
-### This doesn't:
-[Same content, wrong voice]
-```
+**Closers** (how they wrap up):
+- Quote exact examples
+- Pattern: "That's the move.", "Start there.", "You've got this."
 
 ---
 
-## How to Use the Voice Guide
+## Phase 4: Confidence Zone Mapping
 
-**For AI training:** Paste the Voice Guide into your system prompt. Every output gets filtered through your style.
+| Zone | Description | Language Markers |
+|---|---|---|
+| Full authority | Topics they're an expert in | No hedging, definitive statements, "here's what works" |
+| Earned perspective | Topics with experience but not mastery | "In my experience...", "What I've found..." |
+| Active exploration | Topics they're learning now | "I'm testing this...", "What I'm seeing..." |
 
-**For ghostwriters:** Hand it over on day one. Cuts revision cycles in half.
-
-**For your team:** Now everyone knows what "on brand" actually sounds like.
-
-**For yourself:** When you're stuck, read it. It reminds you how you actually communicate when you're not overthinking it.
+Map their stated expertise areas to each zone. This calibration is what makes the voice feel real vs. one-dimensional.
 
 ---
 
-## The 10-Minute Version
+## Phase 5: Anti-Pattern Documentation
 
-Short on time? I can do a quick extraction:
+Extract what they'd NEVER say:
+- Words that would feel wrong in their voice
+- Phrases that make them cringe
+- Tones they naturally avoid
+- Industry jargon they hate
+
+Source these from sample evidence where possible: "You never used [word] across [X samples] — it doesn't fit your voice."
+
+---
+
+## Phase 6: Validation Test (REQUIRED)
+
+After extracting the full profile, generate 2 test sentences on the same topic:
+
+**Version A** (using the extracted voice profile):
+> "[Sample sentence in their voice]"
+
+**Version B** (wrong voice — contrasting example):
+> "[Same content, different voice — shows what to avoid]"
+
+Ask the user: "Does Version A actually sound like you when you're not overthinking it? What feels off?"
+
+This validation catches extraction errors before the guide is put into production.
+
+---
+
+## Quick Mode (`--quick`)
+
+When samples are thin (300–500 words) or time is short:
 
 1. Read 3 samples fast
 2. Pull 10 signature phrases
-3. Note 3 things you'd never say
-4. One sentence describing your energy
+3. Note 3 things they'd never say
+4. Write 1 sentence describing their energy
 
-That's a minimum viable voice guide. Better than nothing by a mile.
+**Output:** Minimum viable voice guide.
 
----
-
-## Real Talk
-
-The best voice guides come from messy, authentic content. Not your polished website copy — the email you fired off at 11pm. Not the edited article — the podcast where you riffed for an hour.
-
-Give me the real stuff. I'll find the patterns.
+**Difference from full mode:**
+- Quick: ~10 phrases, 3 anti-patterns, 1-sentence energy descriptor
+- Full: Complete profile with confidence calibration, validated test sentences, and source-cited examples
 
 ---
 
-**Want a custom voice guide built for your business?**
-→ [Book a strategy call](https://brianrwagner.com)
+## Phase 7: Self-Critique Pass (REQUIRED)
+
+After generating the Voice Guide:
+
+- [ ] Are the extracted phrases actually from the samples, or am I inferring them?
+- [ ] Does the anti-pattern list include specific words/phrases, or just vague categories?
+- [ ] Do the validation test sentences demonstrate a real difference between in-voice and out-of-voice?
+- [ ] Is the confidence zone mapping specific to named topics, or just generic?
+- [ ] Would a ghostwriter be able to use this guide without asking follow-up questions?
+
+Flag any issues: "The anti-pattern section only has 2 entries — not enough for a usable guide. I need more samples or direct input from the user."
+
+---
+
+## Output Structure
+
+```markdown
+## Voice Guide: [Name] — [Date]
+
+### Sample Assessment
+- Samples: [count, types]
+- Total words: [count]
+- Quality: [high/medium — reason]
+- Mode: [quick/full]
+- Excluded: [patterns excluded + why]
+
+---
+
+### Core Energy
+- Role: [teacher/challenger/cheerleader/straight-shooter]
+- Default energy: [description]
+- Recurring themes: [list]
+
+### Signature Phrases
+**Transitions:**
+- "[Phrase]" (source: [email/post])
+- "[Phrase]"
+
+**Emphasis:**
+- "[Phrase]" (source: [email/post])
+
+**Closers:**
+- "[Phrase]"
+
+### Confidence Calibration
+**Full authority (no hedging):**
+Topics: [list]
+Sounds like: "[example sentence]"
+
+**Earned perspective:**
+Topics: [list]
+Sounds like: "[example sentence]"
+
+**Active exploration:**
+Topics: [list]
+Sounds like: "[example sentence]"
+
+### Anti-Patterns (Never Use)
+- [Word/phrase] — why: [evidence from samples]
+- [Word/phrase] — why: [evidence]
+
+### Validation Test
+**This sounds like you:**
+"[Version A]"
+
+**This doesn't:**
+"[Version B — contrast]"
+
+### Self-Critique Notes
+[Any gaps, things to validate with user]
+
+### Usage Instructions
+- For AI: Paste this guide into your system prompt
+- For ghostwriter: Share on day 1 — cuts revision cycles in half
+- For team: This is the benchmark for "on brand"
+```
 
 ---
 
