@@ -8,6 +8,20 @@
 
 ---
 
+## Mode
+
+Detect from context or ask: *"Quick scan, full Signal Audit, or deep competitive analysis?"*
+
+| Mode | What you get | Best for |
+|------|-------------|----------|
+| `quick` | Phase 1 only (direct brand queries) + top 3 priority fixes | Fast visibility check, pre-meeting intel |
+| `standard` | All 6 audit sections + scored report + 30-day action plan | Quarterly brand audit, GTM prep |
+| `deep` | Full audit + quarterly re-audit comparison + competitive AI benchmarking + 90-day roadmap | Full AI discoverability overhaul |
+
+**Default: `standard`** — use `quick` for a fast read. Use `deep` if this is a re-audit or you need competitive benchmarking included.
+
+---
+
 ## Runtime Context
 **Platform:** Claude Code / OpenClaw  
 **File system:** Available. Read prior outputs before starting. Save all outputs to the paths specified in Memory Protocol.  

@@ -5,6 +5,20 @@ description: Run a structured competitive teardown in 20 minutes. Covers positio
 
 # Competitor Intel Brief
 
+## Mode
+
+Detect from context or ask: *"Quick teardown, full intel brief, or full brief with attack plan?"*
+
+| Mode | What you get | Best for |
+|------|-------------|----------|
+| `quick` | Positioning snapshot + top 3 vulnerabilities | Fast competitive context before a sales call |
+| `standard` | Full 4-step teardown: positioning, ICP, offer, moat + vulnerability map | Pre-pitch, GTM planning, repositioning |
+| `deep` | Full teardown + direct attack brief + quarterly re-audit comparison | Competitive strategy overhaul, new market entry |
+
+**Default: `standard`** — use `quick` before a call. Use `deep` if you're building a sustained competitive strategy.
+
+---
+
 ## Runtime Context
 **Platform:** Claude Code / OpenClaw  
 **File system:** Available. Read prior outputs before starting. Save all outputs to the paths specified in Memory Protocol.  

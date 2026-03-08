@@ -9,6 +9,20 @@ slug: "brw-brand-voice-extractor"
 
 # Brand Voice Extractor
 
+## Mode
+
+Detect from context or ask: *"Quick snapshot, full Voice Guide, or full guide with AI training examples?"*
+
+| Mode | What you get | Best for |
+|------|-------------|----------|
+| `quick` | Top 5 voice traits + 3 core do/don't rules | Fast reference before a single piece |
+| `standard` | Complete Voice Guide: personality, tone, vocabulary, rhythm, phrases | AI training, ghostwriting, brand docs |
+| `deep` | Full Voice Guide + 10 before/after rewrites + AI prompt template + onboarding guide | Content team onboarding, agency handoff |
+
+**Default: `standard`** — use `quick` for a fast reference. Use `deep` if you're onboarding writers or building a content system.
+
+---
+
 ## Runtime Context
 **Platform:** Claude Code / OpenClaw  
 **File system:** Available. Read prior outputs before starting. Save all outputs to the paths specified in Memory Protocol.  

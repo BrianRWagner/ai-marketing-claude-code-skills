@@ -5,6 +5,20 @@
 
 ---
 
+## Mode
+
+Detect from context or ask: *"Quick lens, full analysis, or full analysis with roadmap?"*
+
+| Mode | What you get | Best for |
+|------|-------------|----------|
+| `quick` | 1–2 most relevant lenses applied directly | Fast directional answer before a decision |
+| `standard` | All 9 lenses evaluated, router applies top 3, full recommendation | Strategic decisions, pivots, key bets |
+| `deep` | Full analysis + risk matrix + 90-day implementation roadmap + follow-up question set | Major strategic moves, board-level decisions |
+
+**Default: `standard`** — use `quick` for a fast gut-check. Use `deep` when the stakes are high and you need implementation guidance, not just direction.
+
+---
+
 ## Runtime Context
 **Platform:** Claude Code / OpenClaw  
 **File system:** Available. Read prior outputs before starting. Save all outputs to the paths specified in Memory Protocol.  
