@@ -21,6 +21,20 @@ This skill builds that operating system for you in one guided session. Seven pro
 
 ---
 
+## Mode
+
+Detect from context or ask: *"Quick setup, full OS build, or full build with team customization?"*
+
+| Mode | What you get | Best for |
+|------|-------------|----------|
+| `quick` | 3 core files: IDENTITY.md, AGENTS.md, USER.md | Fast standalone agent setup |
+| `standard` | All 7 files: full production-ready AI employee OS | New agent deploy, solo operator |
+| `deep` | All 7 files + role-specific variations + team deployment guide | Multi-agent setup, onboarding a team |
+
+**Default: `standard`** — use `quick` for a fast single-agent setup. Use `deep` if deploying across a team or building a multi-agent system.
+
+---
+
 ## Context Loading Gates
 
 **The AI must confirm all gates before generating any files.**

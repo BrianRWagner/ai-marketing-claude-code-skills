@@ -23,6 +23,20 @@ This audit diagnoses your positioning across 6 dimensions. Finds the root failur
 
 ---
 
+## Mode
+
+Detect from context or ask: *"Quick diagnosis, full audit, or full audit with rewrites?"*
+
+| Mode | What you get | Best for |
+|------|-------------|----------|
+| `quick` | Root failure identified + top 2 fixes | Fast gut-check, pre-meeting clarity |
+| `standard` | 6-dimension scorecard + root cause + specific rewrite-level fixes | Full positioning overhaul |
+| `deep` | Full audit + headline/subheadline/CTA rewrites + competitive separation analysis | GTM launch, rebrand, investor pitch |
+
+**Default: `standard`** — use `quick` for fast direction. Use `deep` when you need ready-to-use copy alongside the diagnosis.
+
+---
+
 ## Context Loading Gates
 
 **The AI must confirm all gates before running any analysis.**

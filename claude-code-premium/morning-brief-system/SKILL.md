@@ -21,6 +21,20 @@ This skill ends that. Give it your day's context and it outputs a single, struct
 
 ---
 
+## Mode
+
+Detect from context or ask: *"Quick priorities, full brief, or full brief with weekly context?"*
+
+| Mode | What you get | Best for |
+|------|-------------|----------|
+| `quick` | Top 3 priorities + 2 watch-outs, 2 min | Rushed morning, already have context |
+| `standard` | Full brief: locked commitments, priorities, blockers, decisions needed | Default daily planning |
+| `deep` | Full brief + weekly arc context + energy allocation + EOD success criteria | High-stakes week, major deliverables in play |
+
+**Default: `standard`** — use `quick` if you're already oriented and just need the brief. Use `deep` at the start of a high-stakes week.
+
+---
+
 ## Context Loading Gates
 
 **The AI must confirm all gates before generating the brief.**
