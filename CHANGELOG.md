@@ -1,3 +1,26 @@
+## [3.1.0] — March 8, 2026
+
+### What Changed
+`quick|standard|deep` execution mode added to all 19 free skills. Inspired by ECC's runtime profile system.
+
+### Why
+Skills were all-or-nothing. A user who needed a fast answer got the same full process as someone doing a deep audit. Mode switching gives users the right output depth without multiple skills.
+
+### What's New
+- **Mode table** in every skill — immediately after the intro, before Phase 1
+- `quick` — minimum viable output, right answer for fast use cases (15 min or less)
+- `standard` — full process, unchanged from prior behavior (default — no breaking changes)
+- `deep` — extended research, iteration, and frameworks for serious projects
+- `SKILL-MODE-PATTERN.md` — implementation guide for adding this pattern to any skill
+
+### Skills Updated
+All 19 free skills: ai-discoverability-audit, case-study-builder, cold-outreach-sequence, content-idea-generator, de-ai-ify, go-mode, homepage-audit, last30days, linkedin-authority-builder, linkedin-profile-optimizer, marketing-principles, newsletter-creation-curation, plan-my-day, positioning-basics, reddit-insights, social-card-gen, testimonial-collector, voice-extractor, youtube-summarizer
+
+### Notes
+Standard mode = identical to v3.0.0 behavior. Fully backward compatible.
+
+---
+
 ## [3.0.0] — February 28, 2026
 
 ### What Changed
