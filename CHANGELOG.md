@@ -90,3 +90,13 @@ Major upgrade across 12 skills. Every updated skill was graded against the [Clau
 ### Initial Release
 
 19 marketing skills covering strategy, content, research, conversion, and productivity. Based on the [AgentSkills.ai](https://agentskills.ai) open standard.
+
+## v3.2.0 — March 14, 2026 (Night Sprint)
+
+### Claw Mart v2 Updates
+- **Chief of Staff v2**: Three operating modes (quick/standard/deep), WAL Protocol, working buffer for context survival, self-critique protocol, crisis mode, multi-model routing guide, group chat intelligence, lessons-learned system
+- **Multi-Agent Team Blueprint v2**: Starter kits (Content Machine, Research Engine, Ops Hub), cost calculator, 4-week phased deployment guide, queue system with JSON templates, inter-agent communication patterns, failure recovery guide
+- **Morning Brief System v2**: Quick/standard/deep modes, context loading gates, carry-forward and crisis modes, overload protocol, self-critique, weekly mode
+
+### New Files
+- Added SKILL-OC.md (OpenClaw-optimized) for Chief of Staff v2 and Multi-Agent Team Blueprint v2

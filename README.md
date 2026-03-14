@@ -5,10 +5,10 @@
 Not guides. Not courses. *Skills* — packaged expertise your AI coding agent loads and follows.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Skills](https://img.shields.io/badge/Skills-24-green.svg)](#available-skills)
+[![Skills](https://img.shields.io/badge/Skills-23%20Free%20%2B%2010%20Pro-green.svg)](#available-skills)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-Native-blueviolet.svg)](#installation)
 [![Also Works](https://img.shields.io/badge/Also%20Works-OpenClaw%20%7C%20Copilot%20%7C%20Cursor-gray.svg)](#compatibility)
-[![Updated](https://img.shields.io/badge/Updated-Mar%208%202026-brightgreen.svg)](./CHANGELOG.md)
+[![Updated](https://img.shields.io/badge/Updated-Mar%2014%202026-brightgreen.svg)](./CHANGELOG.md)
 
 > **March 2026 — v3.1:** All 19 free skills now support `quick|standard|deep` execution modes. Get fast answers or deep audits from the same skill — no extra prompting. [See what changed →](./CHANGELOG.md)
 
