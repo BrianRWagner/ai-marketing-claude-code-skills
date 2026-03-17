@@ -1,74 +1,112 @@
 ---
 name: multi-agent-team-blueprint
-version: "2.0.0"
-price: "$19"
-author: "@BrianRWagner"
+version: "3.0.0"
+updated: 2026-03-17
 platform: openclaw
-type: persona
-description: "10-agent team with roles, routing, cron templates, starter kits, and phased deployment."
+description: "Use when: user wants to deploy multiple coordinated AI agents, build a content pipeline, or set up overnight autonomous operations. NOT for: single-agent setup, simple automation, users who haven't deployed any agent yet."
 ---
 
-**Platform:** OpenClaw (token-optimized)
+# Multi-Agent Team Blueprint v3 — OpenClaw (Condensed)
 
-## Org Chart
-```
-HUMAN → 🔱 Chief of Staff (Premium)
-  ├── ✏️ Scribe (Mid) → 🔍 Proof (Mid)
-  ├── 🔧 Forge (Free/Codex)
-  ├── 📡 Radar (Mid) → 🔬 Neptune (Free/Gemini)
-  ├── 📊 Apollo (Mid)
-  ├── 📋 Atlas (Mid)
-  ├── 👀 Watch (Mid)
-  └── 🌈 Iris (Cheapest)
+## Setup
+```bash
+node scripts/setup-team.mjs [workspace] --starter=A   # Content Machine
+node scripts/setup-team.mjs [workspace] --starter=B   # Research Engine
+node scripts/setup-team.mjs [workspace] --starter=C   # Operations Hub
+node scripts/setup-team.mjs [workspace] --starter=FULL # All 10 agents
 ```
 
-## Rules
-1. ALL content → Proof before publishing
-2. Only CoS on premium model
-3. Agents escalate to CoS when uncertain
-4. Human can call meetings
+## Starter Kits (Start Here, Not Full Team)
 
-## Starter Kits (pick one, deploy week 1)
+| Kit | Agents | Monthly Cost | Best For |
+|-----|--------|-------------|---------|
+| A | CoS + Scribe + Proof | $25-65 | Content output |
+| B | CoS + Radar + Neptune | $20-55 | Research/intel |
+| C | CoS + Watch + Atlas | $25-60 | Ops/projects |
 
-**Kit A — Content Machine:** CoS + Scribe + Proof
-**Kit B — Research Engine:** CoS + Radar + Neptune
-**Kit C — Operations Hub:** CoS + Watch + Atlas
+## The Org Chart
+```
+HUMAN → Chief of Staff (Premium)
+           ├── Scribe (Content, Mid-tier)
+           ├── Proof (QA/Editor, Mid-tier)
+           ├── Forge (Builder, Free/Codex)
+           ├── Radar (Intel, Mid-tier)
+           ├── Neptune (Deep Research, Free/Gemini)
+           ├── Apollo (Sales, Mid-tier)
+           ├── Atlas (Ops/PM, Mid-tier)
+           ├── Watch (Inbox, Mid-tier)
+           └── Iris (Triage, Cheapest)
+```
 
-## Scaling
-- Week 1: Starter kit (3 agents)
-- Week 2: +Research
-- Week 3: +Ops
-- Week 4: Full team + overnight builds
-
-## Cost
-Only CoS on premium ($15-40/mo). Rest mid-tier or free. Full team: $40-112/mo.
+**Hard rules:**
+1. ALL content through Proof before publishing
+2. Escalate uncertainty to Chief of Staff
+3. Chief of Staff delegates — human sees summaries only
+4. Queue files = shared state. Only assigned agent changes status.
 
 ## Queue System
-Agents read/write `queues/content.json`, `queues/build.json`, `queues/intel.json`.
-Status flow: `pending → in_progress → done | blocked | failed`
+```json
+{
+  "items": [{
+    "id": "content-001",
+    "priority": "high",
+    "task": "LinkedIn post: [topic]",
+    "assignee": "scribe",
+    "status": "pending",
+    "createdAt": "2026-03-17T10:00:00Z"
+  }]
+}
+```
+Status: `pending → in_progress → done | blocked | failed`
 
-## Key Cron Templates
+## Content Pipeline (Kit A)
+```
+Chief of Staff sets direction
+  → Scribe drafts (2 AM cron) → saves to drafts/
+  → Proof reviews (6 AM cron) → score 1-10
+    → 7+ approved → ready-to-post/[platform]/
+    → <7 rejected → feedback written to draft file → Scribe retries
+```
 
-**Scribe (2 AM):** Draft 2-3 posts from queue → save to drafts/
-**Proof (9 PM):** Review drafts/ → score 1-10 → 7+ to ready-to-post/
-**Forge (5 AM):** Pick highest-priority build task → build → commit
-**Radar (9:30 AM):** Scan web/social → intel report → flag deep dives
-**Night Shift (2 AM):** Multi-role meeting → transcript to memory/meetings/
-**Memory (3 AM):** Consolidate daily notes → update MEMORY.md
-
-## Inter-Agent Patterns
-- **Pipeline:** Scribe → Proof → ready-to-post (sequential)
-- **Escalation:** Any → CoS → Human (if needed)
-- **Research Chain:** Radar → Neptune → CoS (signal → deep dive → action)
+## Cron Schedule Template (Kit A)
+| Job | Time | Model |
+|-----|------|-------|
+| Scribe Daily | 2 AM | claude-sonnet-4 |
+| Proof Evening | 6 AM | claude-sonnet-4 |
+| Memory Consolidation | 5:30 AM | sonnet or haiku |
 
 ## Folder Structure
 ```
-drafts/ | ready-to-post/ | queues/ | research/ | pipeline/ | memory/
+drafts/          ← Scribe writes here
+ready-to-post/   ← Proof approves to here
+  linkedin/ | x/
+queues/          ← Shared state
+  content.json | build.json | review.json | intel.json
+memory/          ← Agent logs
+research/        ← Radar + Neptune output
 ```
 
-## Common Mistakes
-1. All agents on premium model (only CoS needs it)
-2. No Proof gate (unreviewed AI content = bad)
-3. Too many crons at once (start with 3-4)
-4. No memory system (agents forget everything)
-5. No queue system (agents can't coordinate)
+## Deployment Guide (4 Weeks)
+- **Week 1:** Deploy starter kit. First autonomous output = milestone.
+- **Week 2:** Add Radar + Neptune (if not in kit).
+- **Week 3:** Add Apollo + Atlas + Watch.
+- **Week 4:** Full team. Night shift meetings running.
+
+## ⚠️ Common Failures
+- Queue JSON corrupted by simultaneous writes → agents update ONLY their item atomically
+- Proof runs before Scribe → schedule Scribe 2 AM, Proof 6 AM
+- Night shift "meeting" = one agent playing all roles, not real coordination
+- Timezone mismatch on cron → all templates use `"tz": "America/New_York"` — adjust yours
+- Agent escalation with no timeout → add `timeout` field to queue items
+
+## Failure Recovery
+```
+Queue corrupted → git checkout queues/content.json
+Agent stuck >30min → kill session, restart with simpler task
+Proof before Scribe → swap cron schedule
+Memory incomplete → run consolidation after all overnight jobs (5:30+ AM)
+```
+
+## Files
+- `scripts/setup-team.mjs` — workspace + queues + cost estimate
+- `references/examples.md` — queue examples, night shift transcript, failure recovery

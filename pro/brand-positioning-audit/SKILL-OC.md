@@ -1,99 +1,112 @@
 ---
 name: brand-positioning-audit
-version: "2.0.0"
-price: "$9"
-author: "@BrianRWagner"
-platform: claude-code
-slug: "brw-brand-positioning-audit"
-description: "Diagnose brand positioning with a 6-dimension scorecard, identify the root failure, and receive specific rewrite-level fixes — including headline, subheadline, and CTA rewrites ready to use."
+version: "3.0.0"
+updated: 2026-03-17
+platform: openclaw
+description: "Use when: user wants to diagnose brand messaging, score positioning, find root positioning failure, or get headline/CTA rewrites. NOT for: writing copy from scratch, content strategy, voice/tone issues."
 ---
 
-**Platform:** OpenClaw (token-optimized)
+# Brand Positioning Audit v3 — OpenClaw (Condensed)
 
-## Gate Check (required before analysis)
-
-```
-[ ] Brand URL provided (minimum required)
-[ ] OR current messaging pasted directly (if no website)
-[ ] ICP defined (optional — improves diagnosis)
-[ ] Top competitors identified (optional — improves competitive scoring)
-[ ] Stated frustration with current positioning (optional)
+## Pre-Flight Script
+```bash
+node scripts/audit-prep.mjs <brand_url> [competitor_url]
+# Fetches verbatim copy, structures it for scoring
+# Output: structured extract → Claude scores from evidence
 ```
 
-If URL unavailable → ask for homepage copy + about page copy. Do not audit vague descriptions.
+## Input Requirements
+Confirm before starting:
+- [ ] Brand URL OR pasted homepage copy
+- [ ] ICP (optional but improves accuracy)
+- [ ] Top competitors (optional but improves competitive separation score)
 
-## Mode
+If URL unavailable: ask for homepage copy + about page copy pasted directly.
+
+## Three Modes
 
 | Mode | Output | Use when |
-|------|--------|----------|
-| `quick` | Root failure identified + top 2 fixes | Fast gut-check |
-| `standard` | 6-dimension scorecard + root cause + specific fixes | Default |
-| `deep` | Full audit + headline/subheadline/CTA rewrites + competitive separation | GTM launch, rebrand, investor pitch |
+|------|--------|---------|
+| `quick` | Root failure + top 2 fixes | Fast gut-check |
+| `standard` | 6-dimension scorecard + root cause + fixes | Full audit |
+| `deep` | Full audit + 3 complete rewrite sets + competitor benchmark | GTM, rebrand, investor pitch |
 
-## Phase 1: Fetch Content
+## The 6 Dimensions (Score 1-10 Each)
 
-Run `web_fetch([URL])` to extract homepage + about copy before analyzing.
+**1. ICP Clarity** — Can someone name 5 real people who fit?
+- 10 = specific ICP with context. 1 = anyone could be the customer.
 
-## Phase 2: 6-Dimension Scorecard (score each 1–5)
+**2. Value Clarity** — Specific outcome + mechanism?
+- 10 = "Cut response time in half by routing tickets automatically"
+- 1 = "The better way to work"
 
-| Dimension | What to Assess |
-|-----------|----------------|
-| 1. ICP Clarity | Can a stranger identify exactly who this is for in 5 seconds? |
-| 2. Problem Statement | Is there a specific pain named, or generic category language? |
-| 3. Differentiation | Is there an "only we" claim? Could a competitor say the same? |
-| 4. Proof & Credibility | Specific evidence — numbers, named clients, named outcomes? |
-| 5. CTA Clarity | One clear action? Friction level? Specific or vague? |
-| 6. Competitive Separation | Does it feel like it could belong to a competitor? |
+**3. Differentiation** — Could a competitor say this exact thing?
+- 10 = position so specific competitor can't claim it without changing their business
+- 1 = interchangeable with every competitor
 
-Scoring: 1–2 = actively hurting | 3 = neutral/generic | 4–5 = functional/exceptional
+**4. Proof Credibility** — Earned or asserted?
+- 10 = specific numbers, named clients, before/after results
+- 1 = "trusted by satisfied customers"
 
-## Phase 3: Root Failure Identification
+**5. Message-Market Fit** — ICP's language or inside-out language?
+- 10 = exact phrases ICP uses to describe their problem
+- 1 = entirely internal language ("platform", "capabilities", "solution")
 
-After scoring, name ONE primary root failure from:
-- ICP problem (too broad — trying to be for everyone)
-- Category problem (undefined or wrong category)
-- Differentiation problem (no "only we" claim)
-- Proof problem (claims without evidence)
-- Messaging problem (right strategy, wrong words)
-
-State: "The root failure is [X]. Everything else is a symptom of this."
-
-## Phase 4: Specific Fixes (not direction — actual copy)
-
-For each dimension scored < 4:
-```
-Current: "[actual copy from their site]"
-Problem: [one sentence — why this doesn't work]
-Rewrite: "[specific replacement copy]"
-```
-
-In deep mode — also provide:
-- **Headline rewrite** (3 variants)
-- **Subheadline rewrite** (2 variants)
-- **CTA rewrite** (2 variants)
+**6. Competitive Separation** — Clear reason to choose you vs. alternatives?
+- 10 = creates comparison frame that makes competitors look wrong for the buyer
+- 1 = no competitive framing at all
 
 ## Output Format
+```markdown
+## Scorecard
+| Dimension | Score | Evidence (verbatim) |
+| ICP Clarity | X | "[quote]" |
+| Value Clarity | X | "[quote]" |
+| Differentiation | X | "[quote]" |
+| Proof Credibility | X | "[quote]" |
+| Message-Market Fit | X | "[quote]" |
+| Competitive Separation | X | "[quote]" |
+| **Overall** | **X** | |
 
+## Root Failure: [type]
+[1-2 sentences: what's broken and why fixing others won't help until this is fixed]
+
+## Priority Fixes
+Fix 1 (root): [specific action] — Why: [one sentence]
+Fix 2: [specific action]
+Fix 3: [specific action]
+
+## Rewrite Pack
+Option A — Benefit-forward: Headline | Sub | CTA
+Option B — ICP-specific: Headline | Sub | CTA
+Option C — Differentiation-led: Headline | Sub | CTA
+
+## Strategic Risks if Unchanged
+1. [specific consequence]
+2. [second risk]
+3. [competitor who could take your category position]
 ```
-## Brand Positioning Audit: [Brand] — [Date]
 
-### Scorecard
-| Dimension | Score /5 | Key Finding |
+## Root Failure Types
+- **Clarity failure** — Can't tell what this is or who it's for. Fix everything here first.
+- **Audience failure** — ICP too broad or wrong. All messaging aimed at no one.
+- **Differentiation failure** — Position real but not owned. Any competitor can claim it.
+- **Proof failure** — Claims not earned. Needs proof that doesn't exist yet.
+- **Language failure** — Insight right, words wrong. Rewrites will fix it.
 
-### Total: X/30
+## After Audit — Next Options
+A) More rewrites — 5 more headline options for strongest angle
+B) Competitor benchmark — same scorecard on competitor, side-by-side
+C) Decision mode — evaluating 2 positioning directions
+D) Done
 
-### Root Failure
-[Single identified root cause — stated directly]
+## ⚠️ Common Failures
+- A/B test variant scored instead of real homepage → confirm verbatim copy with user first
+- Rewrite options all sound the same → generate each independently from its frame (outcome / ICP / differentiation)
+- Self-critique always scores 8+ → cite specific evidence for any score above 7 or the critique is invalid
+- Wrong ICP → wrong audit → ask "tell me about a customer who churned in first 90 days"
+- Rewrites don't match voice → ask for voice profile or 2 example sentences before writing rewrites
 
-### Section Fixes
-[Per-dimension: Current → Problem → Rewrite]
-
-### Priority Order
-1. [Fix this first — highest leverage]
-
-### Next Steps
-[Cross-skill routing if applicable]
-```
-
----
-*Skill by Brian Wagner | AI Marketing Architect | $9*
+## Files
+- `scripts/audit-prep.mjs` — fetches and structures brand page copy
+- `references/examples.md` — full audit example + before/after for each root failure type

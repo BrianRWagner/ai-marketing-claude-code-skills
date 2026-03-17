@@ -1,13 +1,48 @@
 ---
 name: brand-voice-extractor
-description: "Extract or build a distinct brand voice profile that AI agents can use to produce on-brand content every time. Two modes: Extract (analyze content you're proud of) or Build (construct a voice from scratch). Outputs a complete voice profile with personality traits, tone spectrum, vocabulary guide, rhythm patterns, and example phrases. Use this before any content creation skill for consistent, human-sounding output."
-version: "1.1.0"
+version: "3.0.0"
+updated: 2026-03-17
+changelog: "v3 — Thariq standard: scripts, gotchas, references, dual-mode"
+description: "Use when: user wants to define, document, or extract their brand voice so AI can write consistently in that voice. Triggers: 'define my brand voice', 'extract my voice from my writing', 'my AI doesn't sound like me', 'create a voice profile', 'brand voice guide', 'voice consistency', 'write in my style'. Two modes: Extract (has existing content) or Build (starting fresh). Run this BEFORE any content creation skill. NOT for: editing existing content (use de-ai-ify), writing content right now (use copywriting skill), or brand positioning diagnosis (use brand-positioning-audit)."
 price: "$9"
 author: "@BrianRWagner"
 slug: "brw-brand-voice-extractor"
 ---
 
 # Brand Voice Extractor
+
+**Scripts:** `node scripts/analyze-voice.mjs <file1> [file2] [file3]` — quantitative pre-analysis before extraction
+**References:** `references/examples.md` — complete voice profile example + build mode example
+
+---
+
+## ⚠️ Gotchas (Real Failure Points)
+
+**1. Extracting from website copy gives corporate voice, not authentic voice.**
+Website copy is almost always committee-edited. Extracting from it produces a polished, sanitized, generic profile. Fix: Always ask first — "Do you have emails, newsletter editions, or quick LinkedIn posts?" Raw content beats polished content for extraction every time.
+
+**2. Build mode with vague answers produces generic profiles.**
+"I'm direct and clear" gives nothing actionable to work with. Every consultant says this. Fix: When answers are vague, ask: "Give me one sentence you wrote recently that felt exactly right. One that felt wrong." Real examples anchor the profile.
+
+**3. Profile drift — old content captures old voice.**
+If samples are 2+ years old, the profile captures an earlier version of their voice. Fix: Always ask "When was this written?" Weight recent content 2x per the conflict resolution rule. Flag if all samples are >1 year old.
+
+**4. Too few samples produce narrow, overfit profiles.**
+Three LinkedIn posts capture only LinkedIn voice — probably more polished and punchy than their real default. Fix: The script warns when total content is <500 words. Require at least 500 words across 3+ content types.
+
+**5. Validation test is skipped.**
+The profile gets delivered without asking "does this sound like you?" One in three profiles gets something wrong that the user only notices when they see bad output from it. Fix: The validation test (generate on-brand + off-brand example) is mandatory, not optional.
+
+**6. Profile not saved = lost on session end.**
+If the user doesn't explicitly save the profile to a file, it's gone on session close. Fix: Always conclude with: "Saving to `voice/[name]-voice-profile-YYYY-MM-DD.md`. Do you want me to save it somewhere else?"
+
+**7. Conflict resolution picks a direction silently.**
+When patterns contradict (formal old posts, casual recent posts), the skill weights recent samples 2x without surfacing the decision to the user. Fix: Always flag the conflict explicitly — "I'm seeing tension in formality. Recent posts lean casual; older posts lean formal. I'm using recent as the baseline. Is that right?"
+
+**8. Deep mode rewrite quality degrades with large prior context.**
+"10 before/after rewrites" in deep mode is token-heavy. When prior context is large, Claude cuts corners on rewrites 7-10. Fix: Use deep mode in a fresh session with only the profile and samples loaded. Don't run it after a long research or strategy session.
+
+---
 
 ## Mode
 

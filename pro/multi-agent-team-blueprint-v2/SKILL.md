@@ -1,19 +1,48 @@
 ---
 name: multi-agent-team-blueprint
-version: "2.0.0"
+version: "3.0.0"
+updated: 2026-03-17
+changelog: "v3 — Thariq standard: scripts, gotchas, references, dual-mode"
 price: "$19"
 author: "@BrianRWagner"
 type: persona
 slug: "brw-multi-agent-team-blueprint"
-description: "A complete 10-agent team architecture with roles, model routing, cron templates, meeting system, and phased deployment guide. Build a team that works while you sleep — without burning your budget."
+description: "Use when: user wants to build a multi-agent AI system, deploy multiple coordinated AI agents, set up overnight autonomous agent operations, create a content pipeline with multiple agents, or scale beyond a single AI assistant. Triggers: 'build a team of agents', 'multi-agent setup', 'AI content pipeline', 'Scribe and Proof agents', 'overnight autonomous AI work', 'agent cron jobs', 'agents that work while I sleep'. NOT for: single-agent setup (use Chief of Staff skill), simple task automation, or users who haven't deployed at least one agent yet."
 ---
 
 > **Optimized for OpenClaw, Claude Code, Cursor, and any AI that accepts markdown instructions.**
 > Deploy agents incrementally using the starter kits below. Full team online in 4 weeks.
 
+**Quick setup:** `node scripts/setup-team.mjs [workspace] --starter=A` (A=Content, B=Research, C=Ops)
+**References:** `references/examples.md` — queue examples, night shift transcript, failure recovery.
+
 ---
 
-# Multi-Agent Team Blueprint — v2
+## ⚠️ Gotchas (Real Failure Points)
+
+**1. Queue files get corrupted when two agents run simultaneously.**
+If Scribe and Proof both write to `queues/content.json` in the same second, the JSON breaks. Fix: Each agent reads the queue, updates ONLY its own items, and writes back immediately. The `scripts/setup-team.mjs` creates valid queue structures; agents must follow the atomic update pattern.
+
+**2. Proof runs before Scribe finishes.**
+Proof cron at 9 PM runs before Scribe's 2 AM cron produces anything. Proof reviews an empty folder and reports nothing to review — silently failing. Fix: Schedule Scribe first (2 AM), Proof second (6 AM). Or add an empty-folder guard to Proof's prompt.
+
+**3. "10 agents" actually requires separate AI subscriptions.**
+The routing table assumes Codex CLI (OpenAI), Gemini (Google), and your primary model (Anthropic). Running a full 10-agent team = 3+ subscriptions + infrastructure for cron. Fix: Starter kits exist precisely for this reason — Kit A (3 agents) costs $25-65/month and validates the system before committing to full setup.
+
+**4. Night shift meeting is one agent, not many.**
+The meeting template spawns a single session playing all roles. It doesn't coordinate between actual agents — it's simulation. Transcripts are useful, but they don't replace real multi-agent coordination. Fix: Be clear about this in Week 1 expectations — simulation first, real coordination after proving the pattern.
+
+**5. Cron timezone mismatches cause off-hours runs.**
+If your server is UTC and you configure "9 AM ET" without timezone handling, Scribe runs at 1 AM ET in winter or 2 AM ET in summer. Fix: All cron templates in this skill use `"tz": "America/New_York"` — adjust for your timezone before deploying.
+
+**6. Agent escalation has no timeout.**
+If an agent "escalates to Chief of Staff" but CoS isn't running, the item sits in an undefined state. Fix: Every queue item needs a `timeout` field — if in_progress for >2 hours without update, auto-flag as `blocked`.
+
+**7. Proof rejection feedback loop is manual.**
+When Proof rejects a Scribe draft, Scribe doesn't automatically see the feedback unless it's written back to the draft file. Fix: Proof must write rejection notes to the draft file itself, not to a separate report. Scribe reads drafts before writing.
+
+**8. Memory consolidation at 3 AM may miss sessions that run overnight.**
+If Forge is running an overnight build that logs to memory, and consolidation runs at 3 AM mid-build, consolidation captures an incomplete picture. Fix: Run memory consolidation after all overnight agents complete (5:30 AM or later).
 
 One agent is an assistant. Ten agents is a company.
 

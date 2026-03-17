@@ -1,15 +1,48 @@
 ---
 name: brand-positioning-audit
-version: "2.0.0"
+version: "3.0.0"
+updated: 2026-03-17
+changelog: "v3 — Thariq standard: scripts, gotchas, references, dual-mode"
 price: "$9"
 author: "@BrianRWagner"
 platform: claude-code
 slug: "brw-brand-positioning-audit"
-description: "Diagnose brand positioning with a 6-dimension scorecard, identify the root failure, and receive specific rewrite-level fixes — including headline, subheadline, and CTA rewrites ready to use."
+description: "Use when: user wants to diagnose why their brand messaging isn't working, score their positioning against a framework, understand their root positioning failure, or get specific rewrite-level copy fixes. Triggers: 'audit my brand positioning', 'why isn't my messaging working', 'does my positioning make sense', 'score my homepage', 'brand positioning diagnosis', 'headline isn't converting', 'ICP clarity check'. NOT for: writing new copy from scratch (use copywriting skill), auditing content strategy (use content audit), or voice/tone issues (use brand-voice-extractor)."
 ---
 
 > **Optimized for Claude Code, Cursor, GitHub Copilot, and any AI that accepts markdown instructions.**
 > Paste this SKILL.md into your AI's context or project instructions and run it immediately.
+
+**Pre-flight script:** `node scripts/audit-prep.mjs <brand_url> [competitor_url]` — fetches and structures page copy before scoring.
+**References:** `references/examples.md` — complete audit example, before/after for each root failure type.
+
+---
+
+## ⚠️ Gotchas (Real Failure Points)
+
+**1. URL-only input can fetch the wrong page.**
+If the website runs A/B tests on the homepage, the audit may score a variant, not the canonical positioning. Fix: After fetching, show the hero headline verbatim and ask: "Is this your current hero copy, or a test variant?"
+
+**2. Rewrite pack options all converge on the same angle.**
+Option A/B/C should represent genuinely different positioning strategies. When AI generates all three, they often collapse into slight variations of the same idea. Fix: Explicitly specify the three frames before generating — Benefit-forward (outcome), ICP-specific (who), Differentiation-led (vs.) — and generate each independently.
+
+**3. Root failure diagnosis is too fast.**
+Skimming 3 sentences and declaring "differentiation failure" misses second-order issues. Fix: Root failure must cite evidence from at least 3 of the 6 dimensions and explain why fixing one thing unlocks the rest.
+
+**4. Self-critique scores are performative.**
+The mandatory self-critique almost never produces scores below 7. The AI rates its own work charitably. Fix: Self-critique must cite specific evidence for any score above 7 — not just assert "quality is high." If all 4 scores are 8+, something is wrong.
+
+**5. Competitor benchmark requires a real competitor website.**
+If the user's "competitor" uses a PDF, Notion page, or requires login, the benchmark can't be run. Fix: Fall back to asking the user to paste the competitor's hero copy directly if the URL doesn't return scrapable content.
+
+**6. Score inflation normalizes weak positioning.**
+Audits frequently score 5-6/10 when the real problem is a 2/10 differentiation failure masked by acceptable ICP and proof scores. Fix: Weight differentiation 1.5x in the overall average — it's the most common root failure and most underscored dimension.
+
+**7. Wrong ICP means wrong audit.**
+If the user gives an incorrect ICP ("we sell to SMBs" when they actually close mid-market), the entire message-market fit score is miscalibrated. Fix: Before scoring, ask: "Tell me about a customer who churned in the first 90 days. Who were they?" ICP clarity comes from failure cases, not ideal cases.
+
+**8. Rewrites don't match brand voice.**
+The rewrite pack sounds like "good marketing copy" — not the user's actual voice. Fix: Ask upfront: "Do you have a voice profile?" If yes, load it. If no, ask for 2 sentences that sound like them before writing rewrites.
 
 ---
 

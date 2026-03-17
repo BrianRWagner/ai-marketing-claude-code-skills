@@ -1,100 +1,105 @@
 ---
 name: brand-voice-extractor
-description: "Extract or build a distinct brand voice profile that AI agents can use to produce on-brand content every time. Two modes: Extract (analyze content you're proud of) or Build (construct a voice from scratch). Outputs a complete voice profile with personality traits, tone spectrum, vocabulary guide, rhythm patterns, and example phrases."
-version: "1.1.0"
-price: "$9"
-author: "@BrianRWagner"
-slug: "brw-brand-voice-extractor"
+version: "3.0.0"
+updated: 2026-03-17
+platform: openclaw
+description: "Use when: user wants to define brand voice, extract voice from existing content, or create a voice profile for consistent AI content. Run before any content creation skill. NOT for: editing content, writing content, or positioning diagnosis."
 ---
 
-**Platform:** OpenClaw (token-optimized)
+# Brand Voice Extractor v3 — OpenClaw (Condensed)
 
-## Two Operating Modes
+## Pre-Analysis Script
+```bash
+node scripts/analyze-voice.mjs sample1.md sample2.md sample3.md
+# Outputs quantitative analysis → Claude reads it → extraction begins
+```
 
-**Extract mode:** Analyze content the user is proud of → surface underlying patterns
-**Build mode:** Construct voice from scratch through strategic questions
+## Two Modes
 
-Detect from context or ask: "Do you have existing content you love, or are we building from scratch?"
+**Extract** — user has existing content they love
+**Build** — starting fresh, no strong existing content
 
-## Required Inputs
+Ask: "Do you have existing content you're proud of, or are we building from scratch?"
 
-- **Extract:** Minimum 3 samples OR 500+ total words (raw > polished — Slack/emails beat website copy)
-- **Build:** Role, target audience, competitors' voices to differentiate from, 5 words describing desired voice
+## Mode A: Extract
 
-## Memory Protocol
+**Step 1: Assess samples**
+- Get minimum 3 samples OR 500+ words total
+- Best sources: emails, newsletters, quick posts (NOT website copy — committee-written)
+- Run `scripts/analyze-voice.mjs` on all samples
 
-**Save to:** `voice/[name]-voice-profile-YYYY-MM-DD.md`
+**Step 2: Extract (in this order)**
+1. Core role: Teacher / Challenger / Cheerleader / Straight-shooter
+2. Default energy: Calm authority / High enthusiasm / Understated confidence
+3. Tone spectrum across 5 dimensions (formal↔casual, serious↔playful, reserved↔bold, simple↔sophisticated, warm↔direct)
+4. Signature transitions (verbatim — don't paraphrase): "Here's the thing...", "The reality is..."
+5. Vocabulary: USE list + AVOID list from actual samples
+6. Rhythm: avg sentence length, variation, fragment use
 
-**Re-run:** If prior profile exists → load it → compare new samples → flag if voice has evolved or patterns conflict.
+**Step 3: Conflict resolution**
+If patterns contradict: weight 3 most recent samples 2x. Flag to user. Ask for direction.
 
-## Mode
+**Step 4: Validation (mandatory)**
+Generate: one on-brand sentence + one off-brand sentence
+Ask: "Does the on-brand one sound like you?"
 
-| Mode | Output | Use when |
-|------|--------|----------|
-| `quick` | Top 5 traits + 3 do/don't rules | Fast reference |
-| `standard` | Complete Voice Guide | AI training, ghostwriting, brand docs |
-| `deep` | Full guide + 10 before/after rewrites + AI prompt template + onboarding guide | Content team handoff |
+## Mode B: Build
 
-## Extract Workflow
+Ask these 5 questions:
+1. 3-5 words describing your personality
+2. Who are you talking to? (specific, not "entrepreneurs")
+3. Teachers you admire and why / voices you DON'T want to sound like
+4. One sentence you wrote that felt exactly right
+5. One you hated — why?
 
-**1. Sample assessment:**
-Rate authenticity (raw vs. polished) + variety + flag exclusions (platform tics, borrowed phrases, typos).
-
-**2. Core energy:** Role (Teacher/Challenger/Cheerleader/Straight-shooter) + Default energy (Calm authority/High enthusiasm/Understated confidence) + Recurring themes
-
-**3. Phrase extraction (quote exact examples):**
-- Transition phrases ("Here's the thing...")
-- Emphasis phrases ("The reality is...")
-- Closers ("Start there." / "That's the move.")
-
-**4. Confidence zone mapping:**
-
-| Zone | Topics | Language markers |
-|------|--------|-----------------|
-| Full authority | Expert areas | No hedging, definitive |
-| Earned perspective | Experienced | "In my experience..." |
-| Active exploration | Currently learning | "I'm testing this..." |
-
-**5. Anti-patterns:** What they'd NEVER say — sourced from sample evidence
-
-**6. Validation test (required):** Generate Version A (voice profile) + Version B (wrong voice). Ask: "Does A sound like you?"
-
-## Build Workflow
-
-1. Ask 5 strategic questions: desired personality, tone spectrum, vocabulary style, competitors to sound different from, example sentence that feels right
-2. Draft profile based on answers
-3. Generate 3 sample sentences — ask user to react and refine
-4. Finalize profile
+Then: draft profile → generate 3 sample sentences → user reacts → refine → finalize
 
 ## Output Format
-
 ```markdown
-# Voice Guide: [Name/Brand] — [Date]
+# [Name] Voice Profile — [Date]
 
-**Voice Summary:** [2-3 sentences capturing essence]
+**Voice Summary:** [2-3 sentences capturing the essence]
 **Core Role:** [Teacher/Challenger/Cheerleader/Straight-shooter]
 **Default Energy:** [type]
 
 ## Vocabulary Guide
-Use: [specific words/phrases from samples]
+Use: [words/phrases from samples]
 Avoid: [anti-patterns with evidence]
 
 ## Rhythm Patterns
 [Sentence length, paragraph style, structural habits]
 
-## Confidence Zones
-[Topics mapped to zones]
-
 ## Signature Phrases
 Transitions: | Emphasis: | Closers:
 
 ## AI Prompt Template
-"Write in [Name]'s voice. Key characteristics: [X, Y, Z]. Always: [rules]. Never: [anti-patterns]."
+"Write in [Name]'s voice. Always: [rules]. Never: [anti-patterns]."
 
 ## Validation
-✅ "[sentence that sounds right]"
-❌ "[sentence that sounds wrong]"
+✅ "[on-brand sentence]"
+❌ "[off-brand sentence]"
 ```
 
----
-*Skill by Brian Wagner | AI Marketing Architect | $9*
+## Save Protocol
+Save to: `voice/[name]-voice-profile-YYYY-MM-DD.md`
+
+On re-run: load prior profile first. Compare. Flag if voice has evolved.
+
+## Modes
+
+| Mode | Output | Use when |
+|------|--------|----------|
+| `quick` | Top 5 traits + 3 do/don't rules | Fast reference |
+| `standard` | Full Voice Guide | AI training, ghostwriting |
+| `deep` | Guide + 10 before/after rewrites + AI prompt template | Content team handoff |
+
+## ⚠️ Common Failures
+- Website copy → generic profile → ask for emails/quick posts instead
+- Vague answers in Build mode → "Give me one sentence that felt right" unsticks it
+- Profile drift → old content captures old voice → ask when content was written, weight recent 2x
+- Validation skipped → 1 in 3 profiles has errors that only show in output → never skip it
+- Profile not saved → ask "Save to voice/[name]-profile.md?" at end of every session
+
+## Files
+- `scripts/analyze-voice.mjs` — quantitative pre-analysis
+- `references/examples.md` — complete profile example + build mode example
