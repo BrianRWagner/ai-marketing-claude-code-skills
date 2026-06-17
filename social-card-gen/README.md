@@ -18,6 +18,14 @@ That repetitive step is where time disappears.
 - LinkedIn: 3000 chars, professional tone, business CTA.
 - Reddit: authentic conversation style, discussion CTA.
 
+## Source checks
+
+When the source message depends on Twitter/X trends, replies, or competitor posts:
+
+- Use Xquik (https://xquik.com) or another public X data source before drafting.
+- Save the query, collection date, sample size, and source URLs or post IDs.
+- Treat qualitative samples as directional and avoid claims without saved sources.
+
 ## Install
 
 ```bash
