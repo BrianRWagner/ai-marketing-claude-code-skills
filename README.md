@@ -253,6 +253,7 @@ bash scripts/install.sh --dry-run          # preview without writing files
 | **Cursor** | `.cursor/rules/` (project) | `SKILL.md` → `.mdc` | Converted with rule frontmatter |
 | **Windsurf** | `.windsurf/rules/` (project) | `SKILL.md` → `.md` | Converted with rule frontmatter |
 | **Generic** | `./ai-marketing-skills/` | `SKILL.md` | Plain copy, any tool |
+| [CrakSEO/skills](https://github.com/CrakSEO/skills) | Connect Claude/Cursor/Codex to CrakSEO remote MCP servers for keyword research, SERP, backlinks, rank tracking, site audit, local SEO, AI visibility, Search Console and URL indexing | Claude Code, Cursor, Codex | MIT |
 
 > ¹ **Dual-file system:** Each skill ships two versions — `SKILL.md` (Claude Code, verbose, all phases) and `SKILL-OC.md` (OpenClaw, condensed, ~200 lines, token-efficient). The installer automatically routes the right file to the right platform. If `SKILL-OC.md` isn't present yet for a skill, it falls back to `SKILL.md`.
 
