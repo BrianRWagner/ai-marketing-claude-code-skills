@@ -11,6 +11,20 @@ No APIs. No paid services. No agent autonomy required. You run it, you get your 
 
 ---
 
+## Mode
+
+Detect from context or ask: *"Just today's top 3, the full brief, or the full brief plus a week-ahead look?"*
+
+| Mode | What you get | Best for |
+|------|-------------|----------|
+| `quick` | Today's 3 actions only (Step 1). No content scan, no weather. | Busy mornings, a 30-second check |
+| `standard` | Full brief: actions, unposted content, weather, self-critique | Your normal morning routine |
+| `deep` | Full brief plus carryover from the last 7 days of action files, stalled drafts older than 14 days, and one "if you only do one thing" call | Monday planning, or after time away |
+
+**Default: `standard`.** Use `quick` if they say "just the top 3." Use `deep` on Mondays or when they ask what slipped.
+
+---
+
 ## How to Use
 
 Open Claude Code in your vault directory and say:

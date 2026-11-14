@@ -10,9 +10,11 @@ Not guides. Not courses. *Skills* — packaged expertise your AI coding agent lo
 [![Also Works](https://img.shields.io/badge/Also%20Works-Codex%20%7C%20ChatGPT%20%7C%20Meta%20Muse%20%7C%20Grok%20%7C%20Cursor-gray.svg)](#compatibility)
 [![Updated](https://img.shields.io/badge/Updated-Nov%2014%202026-brightgreen.svg)](./CHANGELOG.md)
 
+> **November 2026 — v4.1:** All 20 skills now support `quick|standard|deep` modes. Founder Intelligence gets its full 15-lens library back. [See what changed →](./CHANGELOG.md)
+>
 > **November 2026 — v4.0:** The premium skills are now free. Founder Intelligence, Competitor Intel Brief, Brand Voice Extractor, Brand Positioning Audit and the full AI Discoverability Audit (previously $9-$19) are in the library below. [See what changed →](./CHANGELOG.md)
 >
-> **March 2026 — v3.1:** All 16 free skills support `quick|standard|deep` execution modes. Get fast answers or deep audits from the same skill — no extra prompting. [See what changed →](./CHANGELOG.md)
+> **March 2026 — v3.1:** The original 16 free skills gained `quick|standard|deep` execution modes. Get fast answers or deep audits from the same skill — no extra prompting. [See what changed →](./CHANGELOG.md)
 
 ---
 
@@ -75,7 +77,7 @@ Apply timeless marketing and business principles from the masters (Drucker, Ogil
 ---
 
 #### 🧠 Founder Intelligence
-High-judgment advice on a strategic decision, routed through specific founder and operator lenses (Drucker, Helmer, Buffett and more) to a concrete recommendation.
+High-judgment advice on a strategic decision, routed through specific founder and operator lenses (Drucker, Helmer, Buffett and more) to a concrete recommendation. Includes a 15-lens library (9 core, 6 specialist) and a lens-router script.
 
 **Use when:** "Should we narrow our market?", "pricing decision", "what would a great operator do here?"
 
@@ -115,6 +117,8 @@ Generate content ideas based on your positioning and ICP. Multiple frameworks fo
 
 #### 🎙️ Voice Extractor
 Extract and document someone's authentic writing voice from samples. Create voice guides for AI training or ghostwriting.
+
+**Which voice skill?** Voice Extractor gives you a fast, one-page voice spec from a few samples. Brand Voice Extractor is the full profile for a team or several AI tools, and can build a voice from scratch.
 
 **Use when:** "Capture my voice", "Voice guide", "Write like me", "Train AI on my style"
 

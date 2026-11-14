@@ -11,6 +11,20 @@ Run it monthly or whenever the vault starts feeling messy.
 
 ---
 
+## Mode
+
+Detect from context or ask: *"Quick health check, full audit, or full audit with a cleanup plan?"*
+
+| Mode | What you get | Best for |
+|------|-------------|----------|
+| `quick` | Counts for all 4 checks plus the 5 worst offenders. Nothing saved. | A fast look at how messy things are |
+| `standard` | All 4 checks, full report saved to `vault-audit/YYYY-MM-DD-audit.md`, delta vs. last audit | Monthly maintenance |
+| `deep` | Full audit plus a proposed action for every flagged file (archive, merge, finish, delete), grouped into a 30-minute cleanup session. Proposes only; never moves or deletes without approval. | Quarterly reset, or when the vault has gotten away from you |
+
+**Default: `standard`.** Use `quick` if they just want to know how bad it is. Use `deep` when they want to actually clean up.
+
+---
+
 ## How to Use
 
 Open Claude Code and say:

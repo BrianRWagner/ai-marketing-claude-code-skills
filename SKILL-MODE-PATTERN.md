@@ -1,5 +1,5 @@
 # SKILL_MODE Pattern — v1.0
-**Stolen from:** everything-claude-code (ECC) runtime profile system
+**Inspired by:** the everything-claude-code (ECC) runtime profile system
 **Applied to:** AI marketing skills
 
 ---
@@ -44,22 +44,30 @@ Detect from context or ask: *"[One-line question specific to this skill]"*
 
 ---
 
-## Skills Updated (v2.1)
+## Skills Using This Pattern
 
-- [x] `ai-discoverability-audit` — quick (Phase 1 only) / standard (full) / deep (+ 90-day plan)
-- [x] `cold-outreach-sequence` — quick (1 message) / standard (4-touch) / deep (campaign system)
-- [x] `de-ai-ify` — quick (fast pass) / standard (full scan) / deep (+ voice calibration)
+All 20 skills in the library (as of v4.1):
 
-## Skills To Update (Next)
-
-- [ ] `linkedin-authority-builder`
-- [ ] `linkedin-profile-optimizer`
-- [ ] `content-idea-generator`
-- [ ] `homepage-audit`
-- [ ] `reddit-insights`
-- [ ] `last30days`
-- [ ] `positioning-basics`
-- [ ] `marketing-principles`
+- [x] `ai-discoverability-audit`
+- [x] `brand-positioning-audit`
+- [x] `brand-voice-extractor`
+- [x] `case-study-builder`
+- [x] `cold-outreach-sequence`
+- [x] `competitor-intel-brief`
+- [x] `content-idea-generator`
+- [x] `daily-briefing-builder`
+- [x] `founder-intelligence`
+- [x] `homepage-audit`
+- [x] `linkedin-authority-builder`
+- [x] `linkedin-profile-optimizer`
+- [x] `marketing-principles`
+- [x] `meeting-prep`
+- [x] `positioning-basics`
+- [x] `social-card-gen`
+- [x] `testimonial-collector`
+- [x] `tweet-draft-reviewer`
+- [x] `vault-cleanup-auditor`
+- [x] `voice-extractor`
 
 ---
 

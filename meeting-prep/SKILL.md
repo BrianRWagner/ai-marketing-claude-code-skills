@@ -1,11 +1,25 @@
 ---
-name: meeting-prep-cc
+name: meeting-prep
 description: Generate a pre-meeting prep brief in Claude Code. Researches participants, pulls vault context, builds agenda, surfaces sharp questions. Use when user says "prep for this meeting," "I have a call with," "meeting tomorrow with," or "prep brief for [name/company]."
 ---
 
-# Meeting Prep (Claude Code Edition)
+# Meeting Prep
 
 Generate a meeting prep brief from your Obsidian vault. Researches participants, surfaces vault history, builds a prioritized agenda, and generates sharp questions. No autonomy — you run it, you get your brief.
+
+---
+
+## Mode
+
+Detect from context or ask: *"Quick refresher, full prep brief, or deep prep for a high-stakes meeting?"*
+
+| Mode | What you get | Best for |
+|------|-------------|----------|
+| `quick` | Who they are, last touchpoint, open commitments, 3 questions. Skips the full agenda. | A call in 10 minutes |
+| `standard` | Full brief: vault search, prior notes, open commitments, agenda, questions | Most client, sales and partner meetings |
+| `deep` | Full brief plus web research on each participant and company, likely objections with responses, and a one-line desired outcome with a fallback ask | Pitches, renewals, negotiations, first meetings with senior people |
+
+**Default: `standard`.** Use `quick` if the meeting is soon or routine. Use `deep` when money, a decision or a first impression is on the line.
 
 ---
 

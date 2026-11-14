@@ -1,3 +1,14 @@
+## [4.1.0] — November 14, 2026
+
+### What Changed
+- **Every skill now has `quick|standard|deep` modes.** Added to the four that were missing them: Daily Briefing Builder, Meeting Prep, Tweet Draft Reviewer, Vault Cleanup Auditor.
+- **Founder Intelligence: full lens library restored.** New `references/lenses.md` with full entries for the 9 core lenses plus 6 specialist lenses (Trader Joe's, Porter, Howard Marks, Ferriss, Red Bull, Watkins). `lens-router.mjs` now routes to the specialist lenses and matches whole words only.
+- **Meeting Prep** renamed from `meeting-prep-cc` to `meeting-prep` to match its folder.
+- **README** explains when to use Voice Extractor vs. Brand Voice Extractor.
+- `SKILL-MODE-PATTERN.md` updated to list all 20 skills.
+
+---
+
 ## [4.0.0] — November 14, 2026
 
 ### What Changed

@@ -11,6 +11,20 @@ Built on 8 voice rules distilled from real content analysis — what separates h
 
 ---
 
+## Mode
+
+Detect from context or ask: *"Just a score, full review, or full review with alternate versions?"*
+
+| Mode | What you get | Best for |
+|------|-------------|----------|
+| `quick` | Score out of 10, the single weakest rule, and a one-line fix | Last check before posting |
+| `standard` | Score, all 8 rules broken down, and a rewrite if it scores below 7 | Any draft you care about |
+| `deep` | Full review plus 3 rewrites with different hooks, and a note on which rule you break most often across the batch | Batch reviews, or tuning your voice over time |
+
+**Default: `standard`.** Use `quick` if they say "just score it." Use `deep` for folder scans or when they ask for options.
+
+---
+
 ## How to Use
 
 **Single draft:**
@@ -33,11 +47,11 @@ When this skill is invoked, follow these phases exactly.
 
 ### PHASE 1: INTAKE
 
-Determine input mode:
+Determine the input type:
 
-**Mode A — Direct paste:** User provided draft text inline. Proceed to PHASE 2 with that text.
+**Input A — Direct paste:** User provided draft text inline. Proceed to PHASE 2 with that text.
 
-**Mode B — Folder scan:** User asked to review drafts folder. Run:
+**Input B — Folder scan:** User asked to review drafts folder. Run:
 
 ```bash
 VAULT="${VAULT_PATH:-$(pwd)}"

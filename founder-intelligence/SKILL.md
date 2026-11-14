@@ -45,11 +45,21 @@ Ask for missing inputs in one message. If there is no live decision, do not run 
 - Dalio: principles and repeatable decision systems
 - Hamilton Helmer: 7 Powers and structural advantage
 
+Specialist lenses (pull in when the decision clearly fits; check all six in `deep`):
+- Trader Joe's: curation, operational simplicity, refusing industry norms
+- Porter: tradeoffs and what you choose not to do
+- Howard Marks: downside, survival, second-order risk
+- Ferriss: smallest test that gives real signal
+- Red Bull: belief and category creation through marketing
+- Watkins: early wins and momentum in a new role or stalled org
+
+Full entries for all 15 lenses (core question, principles, when to use) live in `references/lenses.md`. Load it before writing the analysis.
+
 ## Workflow
 1. Confirm the actual decision in one sentence.
 2. Run `node scripts/lens-router.mjs "decision statement"` for a fast initial routing pass.
 3. Choose the top 3 lenses for `standard`; use more only if `deep` requires it.
-4. Analyze what each chosen lens reveals.
+4. Open `references/lenses.md` and analyze what each chosen lens reveals, using its core question and principles.
 5. Integrate the analysis into one recommendation.
 6. State the biggest risk and one 48-hour first move.
 
@@ -111,7 +121,7 @@ If absent, ask once for stable preferences and store them in `${CLAUDE_PLUGIN_DA
 ## Constraints
 - No motivational language.
 - No quote-dumping.
-- Do not cover all 9 lenses unless the user needs deep mode.
+- Do not cover every lens unless the user needs deep mode.
 - If two options are truly close, explain the deciding variable.
 
 ## Decision Logic
@@ -122,7 +132,7 @@ If absent, ask once for stable preferences and store them in `${CLAUDE_PLUGIN_DA
 
 ## Gotchas
 1. Users often ask for strategy when the real issue is commitment. Name the choice they are avoiding.
-2. Nine lenses applied equally creates mush. Route hard.
+2. Every lens applied equally creates mush. Route hard.
 3. Founder quotes are not analysis. Translate them into operating logic.
 4. Advice that ignores stage is usually wrong.
 5. A recommendation without an assumption test is just confidence theater.
@@ -134,5 +144,6 @@ If absent, ask once for stable preferences and store them in `${CLAUDE_PLUGIN_DA
 Check: trigger clarity, bounded inputs, outcome orientation, format lock, examples, frameworks, constraints, taste, decision logic, and post-use refinement.
 
 ## References
+- Full lens library (9 core + 6 specialist) lives in `references/lenses.md`.
 - Concrete decision examples live in `references/examples.md`.
 - Use `scripts/lens-router.mjs` for deterministic lens routing before writing the analysis.
