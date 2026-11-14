@@ -191,4 +191,4 @@ Confidence calibration:
 ---
 
 _Generated with Voice Extractor by Brian Wagner_
-_https://brianwagner4.gumroad.com_
+_https://github.com/BrianRWagner/ai-marketing-claude-code-skills_

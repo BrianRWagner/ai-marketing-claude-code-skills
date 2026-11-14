@@ -49,7 +49,7 @@ for arg in "$@"; do
       echo "Options:"
       echo "  --platform=<name>  Target platform: claude | cursor | windsurf | generic"
       echo "  --all              Install to all detected platforms"
-      echo "  --include-pro      Include pro/ skills (requires local copies from Gumroad)"
+      echo "  --include-pro      Include a local pro/ folder, if you have one"
       echo "  --dry-run          Preview installs without writing files"
       echo "  --help             Show this help"
       echo ""
@@ -272,7 +272,7 @@ install_to_platform() {
         (( pro_count++ )) || true
       done
     else
-      echo -e "  ${YELLOW}⚠${RESET}  No pro/ directory found. Purchase from brianrwagner.gumroad.com first."
+      echo -e "  ${YELLOW}⚠${RESET}  No pro/ directory found. All skills are free in the main folder."
     fi
   fi
 
@@ -358,7 +358,7 @@ else
       pro_choice="${pro_choice:-N}"
       [[ "$pro_choice" =~ ^[Yy]$ ]] && INCLUDE_PRO=true
     else
-      echo -e "${DIM}Pro skills: not found locally. Purchase at brianrwagner.gumroad.com${RESET}"
+      echo -e "${DIM}All skills are free and included above.${RESET}"
     fi
   fi
 fi

@@ -5,11 +5,13 @@
 Not guides. Not courses. *Skills* — packaged expertise your AI coding agent loads and follows.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Skills](https://img.shields.io/badge/Skills-16%20Free%20%2B%2010%20Pro-green.svg)](#available-skills)
+[![Skills](https://img.shields.io/badge/Skills-20%20Free-green.svg)](#available-skills)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-Native-blueviolet.svg)](#installation)
 [![Also Works](https://img.shields.io/badge/Also%20Works-Codex%20%7C%20ChatGPT%20%7C%20Meta%20Muse%20%7C%20Grok%20%7C%20Cursor-gray.svg)](#compatibility)
-[![Updated](https://img.shields.io/badge/Updated-Mar%2014%202026-brightgreen.svg)](./CHANGELOG.md)
+[![Updated](https://img.shields.io/badge/Updated-Nov%2014%202026-brightgreen.svg)](./CHANGELOG.md)
 
+> **November 2026 — v4.0:** The premium skills are now free. Founder Intelligence, Competitor Intel Brief, Brand Voice Extractor, Brand Positioning Audit and the full AI Discoverability Audit (previously $9-$19) are in the library below. [See what changed →](./CHANGELOG.md)
+>
 > **March 2026 — v3.1:** All 16 free skills support `quick|standard|deep` execution modes. Get fast answers or deep audits from the same skill — no extra prompting. [See what changed →](./CHANGELOG.md)
 
 ---
@@ -55,7 +57,7 @@ Core positioning framework for founders and marketers. Clarify who you're for, w
 ---
 
 #### 🔍 AI Discoverability Audit
-Audit how a brand appears in AI-powered search and recommendation systems (ChatGPT, Perplexity, Claude, Gemini).
+The full Signal Audit (formerly the $19 paid version): score how ChatGPT, Perplexity, Claude and Gemini describe and recommend a brand, see which sources they cite, then get a prioritized fix list. Includes a worksheet and a prep script.
 
 **Use when:** "How do I show up in ChatGPT?", "AI search visibility", "AEO audit"
 
@@ -71,6 +73,25 @@ Apply timeless marketing and business principles from the masters (Drucker, Ogil
 → [marketing-principles/SKILL.md](./marketing-principles/SKILL.md)
 
 ---
+
+#### 🧠 Founder Intelligence
+High-judgment advice on a strategic decision, routed through specific founder and operator lenses (Drucker, Helmer, Buffett and more) to a concrete recommendation.
+
+**Use when:** "Should we narrow our market?", "pricing decision", "what would a great operator do here?"
+
+→ [founder-intelligence/SKILL.md](./founder-intelligence/SKILL.md)
+
+---
+
+#### 🧭 Brand Positioning Audit
+Diagnose positioning problems (ICP clarity, differentiation, proof) with a scored audit and specific fixes. Includes a competitor scan script.
+
+**Use when:** "Our positioning is generic", "what makes us different?", "we struggle to explain what we do"
+
+→ [brand-positioning-audit/SKILL.md](./brand-positioning-audit/SKILL.md)
+
+---
+
 
 ### Content & Authority
 
@@ -101,6 +122,15 @@ Extract and document someone's authentic writing voice from samples. Create voic
 
 ---
 
+#### 🗣️ Brand Voice Extractor
+The deep version of Voice Extractor. Two modes: Extract (analyze writing you are proud of) or Build (construct a voice from scratch). Outputs a voice profile any AI can follow, plus before/after rewrites.
+
+**Use when:** "Make AI sound like me", "build our brand voice", "document our tone"
+
+→ [brand-voice-extractor/SKILL.md](./brand-voice-extractor/SKILL.md)
+
+---
+
 #### 📱 Social Card Generator
 Generate platform-specific social post variants (Twitter, LinkedIn, Reddit) from one source input. No API dependency.
 
@@ -118,6 +148,15 @@ Audit and rewrite your LinkedIn profile to attract the right people. Scores each
 **Use when:** "Optimize my LinkedIn", "Rewrite my about section", "LinkedIn profile help", "AI search visibility"
 
 → [linkedin-profile-optimizer/SKILL.md](./linkedin-profile-optimizer/SKILL.md)
+
+---
+
+#### ⚔️ Competitor Intel Brief
+A structured teardown of a real competitor: positioning, ICP, pricing signals, channel patterns, moat, vulnerabilities, and a clear angle of attack.
+
+**Use when:** "Tear down this competitor", "where are they weak?", "how do we beat X?"
+
+→ [competitor-intel-brief/SKILL.md](./competitor-intel-brief/SKILL.md)
 
 ---
 
@@ -161,6 +200,44 @@ Systematically gather and format client testimonials for social proof.
 
 ### Productivity & Operations
 
+#### 📝 Daily Briefing Builder
+Generate a clean morning brief: today's priorities, unposted content, and weather from your notes.
+
+**Use when:** "Build my morning brief", "what matters today?"
+
+→ [daily-briefing-builder/SKILL.md](./daily-briefing-builder/SKILL.md)
+
+---
+
+#### 🤝 Meeting Prep
+A pre-meeting brief: participant research, context from your notes, an agenda, and sharp questions.
+
+**Use when:** "Prep for this meeting", "I have a call with..."
+
+→ [meeting-prep/SKILL.md](./meeting-prep/SKILL.md)
+
+---
+
+#### 🐦 Tweet Draft Reviewer
+Score tweet drafts 1-10 against 8 voice rules and rewrite anything below 7.
+
+**Use when:** "Review this tweet", "tighten this post"
+
+→ [tweet-draft-reviewer/SKILL.md](./tweet-draft-reviewer/SKILL.md)
+
+---
+
+#### 🗄️ Vault Cleanup Auditor
+Audit an Obsidian vault for stale drafts, empty folders, duplicate filenames, and incomplete files. Saves a dated report.
+
+**Use when:** "Clean up my vault", "audit my notes"
+
+→ [vault-cleanup-auditor/SKILL.md](./vault-cleanup-auditor/SKILL.md)
+
+---
+
+## Installation
+
 ### Quick Install (any platform)
 
 ```bash
@@ -175,7 +252,6 @@ Auto-detects Claude Code, Cursor, and Windsurf. Walks you through the rest.
 ```bash
 bash scripts/install.sh --all              # install to every detected platform
 bash scripts/install.sh --platform=cursor  # specific platform only
-bash scripts/install.sh --include-pro      # include pro/ skills (if purchased)
 bash scripts/install.sh --dry-run          # preview without writing files
 ```
 
@@ -221,22 +297,6 @@ bash scripts/convert.sh --all   # convert for all platforms into ./converted/
 
 ---
 
-## 🔥 Premium Skills (Gumroad)
-
-Full Claude Code editions with structured reasoning phases, self-critique loops, and output precision.
-
-→ [Browse all on Gumroad](https://brianrwagner.gumroad.com)
-
-| Skill | Price | Link |
-|-------|-------|------|
-| AI Marketing Bundle (all 7) | $49 | [Buy →](https://brianrwagner.gumroad.com/l/brw-cc-marketing-bundle) |
-| AI Discoverability Audit v2 | $19 | [Buy →](https://brianrwagner.gumroad.com/l/ai-discoverability-audit) |
-| Founder Intelligence | $15 | [Buy →](https://brianrwagner.gumroad.com/l/brw-founder-intelligence) |
-| Competitor Intel Brief | $12 | [Buy →](https://brianrwagner.gumroad.com/l/brw-competitor-intel-brief) |
-| Morning Brief System | $14 | [Buy →](https://brianrwagner.gumroad.com/l/brw-morning-brief-system) |
-| Brand Voice Extractor | $9 | [Buy →](https://brianrwagner.gumroad.com/l/brand-voice-extractor) |
-| AI Employee Onboarding | $9 | [Buy →](https://brianrwagner.gumroad.com/l/brw-ai-employee-onboarding) |
-| Brand Positioning Audit | $9 | [Buy →](https://brianrwagner.gumroad.com/l/brw-brand-positioning-audit) |
 ## About
 
 Created by **Brian Wagner** — AI Marketing Architect

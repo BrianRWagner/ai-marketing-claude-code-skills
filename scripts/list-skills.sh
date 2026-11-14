@@ -99,20 +99,7 @@ for skill_file in "$REPO_DIR"/*/SKILL.md; do
   (( free_count++ )) || true
 done
 
-# Pro skills
-echo -e "${BOLD}PRO SKILLS${RESET}  ${DIM}(Gumroad — brianrwagner.gumroad.com)${RESET}"
-echo -e "${DIM}─────────────────────────────────────────────────────────${RESET}"
-
-pro_count=0
-if [ -d "$REPO_DIR/pro" ]; then
-  for skill_file in "$REPO_DIR"/pro/*/SKILL.md; do
-    [ -f "$skill_file" ] || continue
-    print_skill "$skill_file" "PRO"
-    (( pro_count++ )) || true
-  done
-fi
-
 echo -e "${BOLD}${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${RESET}"
-echo -e "  ${GREEN}${free_count} free${RESET}  •  ${YELLOW}${pro_count} pro${RESET}  •  $((free_count + pro_count)) total"
+echo -e "  ${GREEN}${free_count} skills${RESET}  •  all free"
 echo -e "${BOLD}${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${RESET}"
 echo ""
