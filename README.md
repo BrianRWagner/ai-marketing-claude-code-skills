@@ -7,7 +7,7 @@ Not guides. Not courses. *Skills* — packaged expertise your AI coding agent lo
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Skills](https://img.shields.io/badge/Skills-16%20Free%20%2B%2010%20Pro-green.svg)](#available-skills)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-Native-blueviolet.svg)](#installation)
-[![Also Works](https://img.shields.io/badge/Also%20Works-Copilot%20%7C%20Cursor-gray.svg)](#compatibility)
+[![Also Works](https://img.shields.io/badge/Also%20Works-Codex%20%7C%20ChatGPT%20%7C%20Meta%20Muse%20%7C%20Grok%20%7C%20Cursor-gray.svg)](#compatibility)
 [![Updated](https://img.shields.io/badge/Updated-Mar%2014%202026-brightgreen.svg)](./CHANGELOG.md)
 
 > **March 2026 — v3.1:** All 16 free skills support `quick|standard|deep` execution modes. Get fast answers or deep audits from the same skill — no extra prompting. [See what changed →](./CHANGELOG.md)
@@ -209,10 +209,15 @@ bash scripts/convert.sh --all   # convert for all platforms into ./converted/
 | Platform | Status | Notes |
 |----------|--------|-------|
 | **Claude Code** | ✅ Native | Primary target |
+| **OpenAI Codex** | ✅ Compatible | Copy the skill folder into Codex's skills directory (e.g. `~/.agents/skills/`) |
 | **GitHub Copilot** | ✅ Compatible | Via .github/skills |
 | **Cursor** | ✅ Compatible | Via rules/context |
-| **ChatGPT** | ⚠️ Manual | Paste SKILL.md content |
-| **Claude.ai** | ⚠️ Manual | Paste SKILL.md content |
+| **Claude.ai** | ⚠️ Manual | Upload as a skill, or paste SKILL.md |
+| **ChatGPT (incl. Dots)** | ⚠️ Manual | Upload or paste SKILL.md into a Project or custom GPT |
+| **Meta Muse** | ⚠️ Manual | Paste SKILL.md as the instructions |
+| **Grok** | ⚠️ Manual | Paste or upload SKILL.md as the instructions |
+
+> Every skill is plain markdown instructions, so any assistant that can follow a written brief can run it. Claude Code is the native target; the others work by giving the assistant the SKILL.md.
 
 ---
 
