@@ -2,7 +2,7 @@
 
 ---
 
-## WRS Client Meeting
+## Client Meeting
 **Objective:** Relationship health + project status + next sprint alignment
 
 **Agenda:**

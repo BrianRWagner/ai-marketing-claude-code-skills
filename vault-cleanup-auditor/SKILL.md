@@ -35,7 +35,7 @@ Check whether the user has provided:
 **If missing, ask:**
 
 ```
-What's the absolute path to your Obsidian vault? (e.g. /root/obsidian-vault)
+What's the absolute path to your Obsidian vault? (e.g. $HOME/vault)
 ```
 
 Do not proceed until confirmed.
@@ -68,7 +68,7 @@ echo "=== CHECK 2: INCOMPLETE FILES ==="
 find "$VAULT" -name "*.md" \
   -not -path "*/.git/*" \
   -not -path "*/.obsidian/*" \
-  -not -path "*/.openclaw/*" | while read f; do
+  -not -path "*/.trash/*" | while read f; do
   if ! grep -qE '^#{1,6} ' "$f" 2>/dev/null; then
     lines=$(wc -l < "$f")
     if [ "$lines" -gt 5 ]; then
@@ -87,7 +87,7 @@ echo "=== CHECK 3: DUPLICATE FILENAMES ==="
 find "$VAULT" -name "*.md" \
   -not -path "*/.git/*" \
   -not -path "*/.obsidian/*" \
-  -not -path "*/.openclaw/*" \
+  -not -path "*/.trash/*" \
   -printf "%f\n" | sort | uniq -d | while read name; do
   echo "DUPE:$name"
   find "$VAULT" -name "$name" \
@@ -107,7 +107,7 @@ echo "=== CHECK 4: EMPTY FOLDERS ==="
 find "$VAULT" -type d -empty \
   -not -path "*/.git/*" \
   -not -path "*/.obsidian/*" \
-  -not -path "*/.openclaw/*" | while read d; do
+  -not -path "*/.trash/*" | while read d; do
   echo "${d##$VAULT/}/"
 done
 echo "=== END CHECK 4 ==="
@@ -215,19 +215,19 @@ Generated: 2026-03-01 08:14
 
 ## 🟡 Incomplete Files (no headings, 5+ lines)
 
-- bambf/research/untitled-notes.md (23 lines)
+- notes/research/untitled-notes.md (23 lines)
 - thinking/random-thoughts.md (11 lines)
 
 ## 🟡 Duplicate Filenames
 
 - **README.md**
-  - bambf/brand/README.md
-  - bambf/tracking/README.md
+  - notes/brand/README.md
+  - notes/tracking/README.md
 
 ## 🟢 Empty Folders
 
 - content/queue/rejected/
-- bambf/clients/archived/
+- notes/clients/archived/
 
 ---
 

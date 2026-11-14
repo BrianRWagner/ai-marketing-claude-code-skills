@@ -15,7 +15,7 @@ Use at least 2 questions that reference specific participant context (their role
 
 ---
 
-## Relationship / WRS Questions
+## Relationship / Client Questions
 - What's working well that we should double down on?
 - What's one thing that would make your life easier right now?
 - If you had to prioritize one thing for next quarter, what would it be?

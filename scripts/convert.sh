@@ -5,7 +5,6 @@
 #   ./scripts/convert.sh --platform=cursor [--output-dir=./output] [--include-pro] [--dry-run]
 #   ./scripts/convert.sh --platform=windsurf
 #   ./scripts/convert.sh --platform=claude   # copies as-is
-#   ./scripts/convert.sh --platform=openclaw # copies as-is
 #   ./scripts/convert.sh --all               # all platforms into ./converted/
 
 set -euo pipefail
@@ -37,7 +36,6 @@ usage() {
   echo ""
   echo "Platforms:"
   echo "  claude    — Copy as-is (.md, no conversion needed)"
-  echo "  openclaw  — Copy as-is (.md, no conversion needed)"
   echo "  cursor    — Convert to .mdc with Cursor rule frontmatter"
   echo "  windsurf  — Convert to .md with Windsurf rule frontmatter"
   echo ""
@@ -146,7 +144,7 @@ convert_for_platform() {
     fi
 
     case "$platform" in
-      claude|openclaw)
+      claude)
         local dest_file="$dest_subdir/$skill_name/SKILL.md"
         if [ "$DRY_RUN" = true ]; then
           echo -e "  ${DIM}[dry-run]${RESET} ${skill_name} → ${dest_file}"
@@ -228,7 +226,7 @@ description: ${description}
 
 PLATFORMS_TO_CONVERT=()
 if [ "$CONVERT_ALL" = true ]; then
-  PLATFORMS_TO_CONVERT=(claude openclaw cursor windsurf)
+  PLATFORMS_TO_CONVERT=(claude cursor windsurf)
 else
   PLATFORMS_TO_CONVERT=("$PLATFORM")
 fi

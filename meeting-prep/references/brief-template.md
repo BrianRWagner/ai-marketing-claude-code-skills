@@ -1,6 +1,6 @@
 # Meeting Prep: [Name] | [Date] [Time]
 
-**Meeting type:** [WRS / Sales / Strategy / Partnership / Interview]  
+**Meeting type:** [Client / Sales / Strategy / Partnership / Interview]  
 **Duration:** [time]  
 **Their role:** [role at company]  
 **Relationship stage:** [new / existing / lapsed]  

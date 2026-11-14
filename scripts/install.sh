@@ -1,15 +1,12 @@
 #!/usr/bin/env bash
 # install.sh — Multi-platform installer for AI Marketing Skills
 #
-# Dual-file system:
-#   SKILL.md    → Claude Code, Cursor, Windsurf (full detail, all phases)
-#   SKILL-OC.md → OpenClaw (token-efficient, ~200 lines) — falls back to SKILL.md if not yet available
+# Installs SKILL.md for Claude Code, Cursor, Windsurf, or a generic folder.
 #
 # Usage:
 #   ./scripts/install.sh                         # auto-detect + interactive
 #   ./scripts/install.sh --all                   # install to all detected platforms
 #   ./scripts/install.sh --platform=claude       # specific platform
-#   ./scripts/install.sh --platform=openclaw
 #   ./scripts/install.sh --platform=cursor
 #   ./scripts/install.sh --platform=windsurf
 #   ./scripts/install.sh --platform=generic
@@ -50,7 +47,7 @@ for arg in "$@"; do
       echo "Usage: ./scripts/install.sh [options]"
       echo ""
       echo "Options:"
-      echo "  --platform=<name>  Target platform: claude | openclaw | cursor | windsurf | generic"
+      echo "  --platform=<name>  Target platform: claude | cursor | windsurf | generic"
       echo "  --all              Install to all detected platforms"
       echo "  --include-pro      Include pro/ skills (requires local copies from Gumroad)"
       echo "  --dry-run          Preview installs without writing files"
@@ -68,11 +65,6 @@ detect_platforms() {
   # Claude Code: binary on PATH or ~/.claude/ dir exists
   if command -v claude &>/dev/null || [ -d "$HOME/.claude" ]; then
     DETECTED+=("claude")
-  fi
-
-  # OpenClaw: ~/.openclaw/ dir exists
-  if [ -d "$HOME/.openclaw" ]; then
-    DETECTED+=("openclaw")
   fi
 
   # Cursor: .cursor/ in current working directory
@@ -100,29 +92,18 @@ platform_dest() {
         echo "$HOME/.claude/skills"
       fi
       ;;
-    openclaw)  echo "$HOME/.openclaw/skills" ;;
     cursor)    echo "$(pwd)/.cursor/rules" ;;
     windsurf)  echo "$(pwd)/.windsurf/rules" ;;
     generic)   echo "$(pwd)/ai-marketing-skills" ;;
   esac
 }
 
-# ── Source file selection (dual-file system) ──────────────────────────────────
-# Claude Code / Cursor / Windsurf / generic → SKILL.md
-# OpenClaw → SKILL-OC.md (fallback to SKILL.md if SKILL-OC.md not present)
+# ── Source file selection ──
 select_source() {
   local skill_dir="$1"
   local platform="$2"
 
-  if [ "$platform" = "openclaw" ]; then
-    if [ -f "$skill_dir/SKILL-OC.md" ]; then
-      echo "$skill_dir/SKILL-OC.md"
-    else
-      echo "$skill_dir/SKILL.md"
-    fi
-  else
-    echo "$skill_dir/SKILL.md"
-  fi
+  echo "$skill_dir/SKILL.md"
 }
 
 # ── Parse YAML frontmatter field (handles inline, quoted, and block scalars | >) ──
@@ -194,12 +175,9 @@ install_skill() {
   fi
 
   local fallback_note=""
-  if [ "$platform" = "openclaw" ] && [ "$source_variant" = "SKILL.md" ]; then
-    fallback_note="${DIM} (SKILL-OC.md not found, using SKILL.md)${RESET}"
-  fi
 
   case "$platform" in
-    claude|openclaw|generic)
+    claude|generic)
       local dest_dir="$install_base/$skill_name"
       local dest_file="$dest_dir/SKILL.md"
       if [ "$DRY_RUN" = true ]; then

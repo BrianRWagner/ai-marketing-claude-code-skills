@@ -43,7 +43,7 @@ Check whether the user has provided:
 
 ```
 To run your morning brief, I need two things:
-1. Your vault path (e.g. /root/obsidian-vault)
+1. Your vault path (e.g. $HOME/vault)
 2. Your city for weather (e.g. Ann+Arbor or London)
 ```
 
@@ -60,7 +60,7 @@ Run these shell commands in sequence. Capture all output before formatting.
 ```bash
 TODAY=$(date +%Y-%m-%d)
 VAULT="VAULT_PATH_HERE"
-ACTIONS_FILE="$VAULT/bambf/tracking/daily-actions/${TODAY}.md"
+ACTIONS_FILE="$VAULT/tracking/daily-actions/${TODAY}.md"
 
 if [ -f "$ACTIONS_FILE" ]; then
   echo "FILE_FOUND"
@@ -122,7 +122,7 @@ WEATHER
 - Cap ready-to-post display at **5 items** (newest-modified first)
 - If `content/ready-to-post/` doesn't exist: `No ready-to-post folder found`
 - If no unposted files: `Content queue is empty`
-- If actions file missing: `No actions file for today — create one at bambf/tracking/daily-actions/YYYY-MM-DD.md`
+- If actions file missing: `No actions file for today — create one at tracking/daily-actions/YYYY-MM-DD.md`
 - If weather fails: `Weather unavailable (offline)` — do not abort the brief
 
 ---
@@ -145,7 +145,7 @@ Before delivering, run this internal check. Fix anything that fails — do not d
 
 TODAY'S 3 ACTIONS
 1. Finish Q1 content calendar
-2. Send invoice to BAMBF client
+2. Send invoice to a client
 3. Publish LinkedIn post on AI ops
 
 READY TO POST (5 of 9)
@@ -164,7 +164,7 @@ Ann Arbor: ☀️  +42°F
 
 ## Daily Actions File Format
 
-Expected path: `<vault>/bambf/tracking/daily-actions/YYYY-MM-DD.md`
+Expected path: `<vault>/tracking/daily-actions/YYYY-MM-DD.md`
 
 Expected structure:
 ```markdown

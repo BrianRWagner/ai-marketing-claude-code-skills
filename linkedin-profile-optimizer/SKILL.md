@@ -320,7 +320,6 @@ Write 5 LinkedIn posts that reinforce the new positioning. Each post should:
 | Platform | Works? |
 |----------|--------|
 | Claude Code | ✅ |
-| OpenClaw | ✅ |
 | Claude.ai | ✅ (paste SKILL.md) |
 | ChatGPT | ✅ (paste SKILL.md) |
 | GitHub Copilot | ✅ |

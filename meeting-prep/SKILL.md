@@ -14,7 +14,7 @@ Generate a meeting prep brief from your Obsidian vault. Researches participants,
 Open Claude Code in your vault directory and say:
 
 ```
-Run the Meeting Prep skill. Meeting with [name] from [company]. Type: [sales/WRS/strategy/partnership/interview]. Time: [date/time].
+Run the Meeting Prep skill. Meeting with [name] from [company]. Type: [sales/client/strategy/partnership/interview]. Time: [date/time].
 ```
 
 ---
@@ -23,14 +23,14 @@ Run the Meeting Prep skill. Meeting with [name] from [company]. Type: [sales/WRS
 
 Check that the user has provided:
 - Participant name(s) and company
-- Meeting type (WRS / Sales / Strategy / Partnership / Interview / Other)
+- Meeting type (Client / Sales / Strategy / Partnership / Interview / Other)
 - Meeting time/date
 - Optional: prior notes, last meeting summary
 
 If meeting type is missing, ask:
 ```
 What type of meeting is this?
-WRS client / Sales / Strategy / Partnership / Interview / Other
+Client / Sales / Strategy / Partnership / Interview / Other
 ```
 
 ---
@@ -42,7 +42,7 @@ Run these steps in order. Capture all output before formatting the brief.
 ### Step 1 — Vault Search
 
 ```bash
-VAULT="${VAULT_PATH:-/root/obsidian-vault}"
+VAULT="${VAULT_PATH:-$HOME/vault}"
 NAME="[PARTICIPANT_NAME]"
 COMPANY="[COMPANY_NAME]"
 
@@ -60,8 +60,8 @@ grep -rl "$NAME\|$COMPANY" "$VAULT" \
 ### Step 2 — Prior Meeting Notes
 
 ```bash
-VAULT="${VAULT_PATH:-/root/obsidian-vault}"
-find "$VAULT/bambf/meeting-prep" -name "*.md" 2>/dev/null \
+VAULT="${VAULT_PATH:-$HOME/vault}"
+find "$VAULT/meeting-prep" -name "*.md" 2>/dev/null \
   | xargs grep -l "$NAME\|$COMPANY" 2>/dev/null \
   | sort -r | head -3 | while read f; do
     echo "--- Prior brief: ${f##$VAULT/} ---"
@@ -72,7 +72,7 @@ find "$VAULT/bambf/meeting-prep" -name "*.md" 2>/dev/null \
 ### Step 3 — Open Commitments Check
 
 ```bash
-VAULT="${VAULT_PATH:-/root/obsidian-vault}"
+VAULT="${VAULT_PATH:-$HOME/vault}"
 grep -rn "TODO\|action item\|follow up\|promised" "$VAULT" \
   --include="*.md" \
   -l 2>/dev/null \
@@ -126,7 +126,7 @@ NEXT STEP TO PROPOSE
 [Specific: "schedule X," "send Y," "agree on Z"]
 ```
 
-**Then:** Save brief to `bambf/meeting-prep/YYYY-MM-DD-[lastname]-prep.md`
+**Then:** Save brief to `meeting-prep/YYYY-MM-DD-[lastname]-prep.md`
 
 **Then:** Print 3-line summary:
 ```
@@ -148,5 +148,5 @@ TOP QUESTION: [The single sharpest question to ask]
 ## Requirements
 
 - Claude Code with bash tool access
-- Vault with bambf/ structure
+- Vault with a meeting-prep/ folder
 - No external APIs required

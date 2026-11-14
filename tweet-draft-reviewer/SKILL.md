@@ -50,7 +50,7 @@ done
 
 If no vault path was given and no `content/tweet-drafts/` exists in the current directory, ask:
 ```
-Where is your tweet drafts folder? (full path, e.g. /root/obsidian-vault/content/tweet-drafts)
+Where is your tweet drafts folder? (full path, e.g. $HOME/vault/content/tweet-drafts)
 ```
 
 **Mode C — Ambiguous:** No draft provided and no folder context. Ask:
